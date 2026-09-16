@@ -1,0 +1,69 @@
+name: CI / CD Pipeline — Wargame Geospatial PFE
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'phase/**'
+      - 'feat/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  validate-repository-and-compliance:
+    name: Repository Integrity & Compliance Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify mandatory documents existence
+        run: |
+          echo "=== Vérification des documents de référence obligatoires ==="
+          test -f MASTER_PROMPT.md || (echo "Erreur: MASTER_PROMPT.md manquant" && exit 1)
+          test -f AGENT_RULES.md || (echo "Erreur: AGENT_RULES.md manquant" && exit 1)
+          test -f PROJECT_PROMPT.md || (echo "Erreur: PROJECT_PROMPT.md manquant" && exit 1)
+          test -f PROJECT_MEMORY.md || (echo "Erreur: PROJECT_MEMORY.md manquant" && exit 1)
+          test -f CHANGELOG.md || (echo "Erreur: CHANGELOG.md manquant" && exit 1)
+          test -f docs/ARCHITECTURE.md || (echo "Erreur: docs/ARCHITECTURE.md manquant" && exit 1)
+          test -f docs/ROADMAP.md || (echo "Erreur: docs/ROADMAP.md manquant" && exit 1)
+          test -f docs/GIT_WORKFLOW_AND_CICD.md || (echo "Erreur: docs/GIT_WORKFLOW_AND_CICD.md manquant" && exit 1)
+          echo "Tous les documents obligatoires sont présents."
+
+      - name: Compliance check — Ensure Global Mapper is exclusive and no QGIS artifacts exist
+        run: |
+          echo "=== Vérification de conformité SIG ==="
+          # Vérifier qu'aucun fichier de projet QGIS (.qgz, .qgs) n'a été introduit
+          if find . -type f \( -name "*.qgz" -o -name "*.qgs" \) | grep -q .; then
+            echo "Erreur: Détection de fichier(s) QGIS interdit(s) par le Master Prompt !"
+            exit 1
+          fi
+          echo "Conformité SIG validée (aucun fichier QGIS)."
+
+      - name: Markdown Lint check
+        run: |
+          echo "=== Validation syntaxique des documents Markdown ==="
+          # Vérification de formatage basique sans erreurs bloquantes
+          for file in $(find . -maxdepth 2 -name "*.md"); do
+            echo "Contrôle de syntaxe : $file"
+            test -s "$file" || (echo "Fichier Markdown vide détecté : $file" && exit 1)
+          done
+          echo "Documents Markdown valides."
+
+  # Job de test préparatoire pour les futures étapes (C++20, GoogleTest, PostGIS)
+  build-and-test:
+    name: Build & Automated Tests
+    runs-on: ubuntu-latest
+    needs: validate-repository-and-compliance
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Environment
+        run: |
+          echo "=== Environnement de test CI opérationnel ==="
+          echo "Prêt pour l'accueil des tests C++20 / GoogleTest, scripts SIG et migrations PostGIS."

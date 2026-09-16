@@ -1,0 +1,46 @@
+# System & Temporary Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+*.log
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*~
+.gemini/
+
+# Build & Dependencies (C++, CMake, Node)
+build/
+build-*/
+bin/
+lib/
+CMakeUserPresets.json
+CMakeFiles/
+CMakeCache.txt
+node_modules/
+dist/
+.coverage
+*.out
+*.exe
+*.o
+*.obj
+
+# SIG / GIS Big Datasets & Binary Dumps (Global Mapper workspaces & raw rasters)
+# Les données SIG brutes lourdes (TIFF volumineux, MNT bruts) doivent être stockées hors git
+# ou référencées via script / métadonnées
+*.gmw.bak
+*.dem.gz
+*.tif.gz
+*.geotiff
+data/raw/
+data/cache/
+data/tmp/
+
+# Testing & Coverage outputs
+coverage/
+*.gcda
+*.gcno
