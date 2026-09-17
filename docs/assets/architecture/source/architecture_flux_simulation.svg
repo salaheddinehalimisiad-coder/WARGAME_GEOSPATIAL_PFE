@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960" width="960" height="1100" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="1100" fill="#ffffff"/>
+
+  <!-- Header -->
+  <g transform="translate(40, 25)">
+    <rect x="0" y="0" width="880" height="55" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="24" y="34" font-size="18" font-weight="800" fill="#0f172a">CYCLE &amp; FLUX DE SIMULATION — WARGAME GÉOSPATIAL PFE</text>
+    <text x="856" y="34" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">BOUCLE OODA &amp; DÉTERMINISME BIT-À-BIT</text>
+  </g>
+
+  <!-- 1. ÉTAT INITIAL -->
+  <g transform="translate(260, 100)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">1. ÉTAT INITIAL (WORLD STATE S0)</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Positions de départ sur grille, ORBAT, MNT, météo initiale, seed RNG</text>
+  </g>
+  <path d="M 480 160 L 480 185" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 2. ACTIONS -->
+  <g transform="translate(260, 185)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">2. ACTIONS &amp; ORDRES ENTRANTS</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Ordres de déplacement, changements de posture, scans capteurs</text>
+  </g>
+  <path d="M 480 245 L 480 270" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 3. RÈGLES -->
+  <g transform="translate(260, 270)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">3. RÈGLES MÉTIER &amp; CONTRAINTES PHYSIQUES</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Pentes limites, coûts de surface, franchissement, doctrine bataillon</text>
+  </g>
+  <path d="M 480 330 L 480 355" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 4. TEMPS -->
+  <g transform="translate(260, 355)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">4. GESTION DU TEMPS (SIMULATION CLOCK)</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Avancement pas-à-pas, pas de temps discret Δt, horodatage d'échéance</text>
+  </g>
+  <path d="M 480 415 L 480 440" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 5. ÉVÉNEMENTS -->
+  <g transform="translate(260, 440)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">5. ORDONNANCEMENT DES ÉVÉNEMENTS (EVENT QUEUE)</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">File prioritaire chronologique, résolution déterministe des conflits</text>
+  </g>
+  <path d="M 480 500 L 480 525" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 6. OBSERVATIONS -->
+  <g transform="translate(260, 525)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">6. CALCUL DES OBSERVATIONS &amp; LIGNES DE VUE (LOS)</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Tracé de rayon MNT, masquage végétal, sensibilité capteurs, bruit gaussien</text>
+  </g>
+  <path d="M 480 585 L 480 610" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 7. ÉTAT RÉEL -->
+  <g transform="translate(260, 610)">
+    <rect x="0" y="0" width="440" height="65" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">7. ÉTAT RÉEL DU MONDE (WORLD STATE T)</text>
+    <text x="220" y="44" font-size="10" font-weight="600" fill="#1e293b" text-anchor="middle">Vérité terrain absolue : positions réelles, consommations, statuts</text>
+    <text x="220" y="58" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">ACCESSIBLE EXCLUSIVEMENT À L'ARBITRE (UMPIRE)</text>
+  </g>
+  <path d="M 480 675 L 480 700" stroke="#dc2626" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+  <!-- 8. ÉTAT PERÇU -->
+  <g transform="translate(260, 700)">
+    <rect x="0" y="0" width="440" height="70" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2" filter="url(#shadow)"/>
+    <text x="220" y="24" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">8. ÉTAT PERÇU SÉPARÉ (PERCEIVED STATE)</text>
+    <text x="220" y="44" font-size="10" font-weight="600" fill="#7f1d1d" text-anchor="middle">Filtrage asymétrique • Brouillard de guerre • Biais de capteur</text>
+    <text x="110" y="62" font-size="9.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Vue Perçue Blue</text>
+    <text x="330" y="62" font-size="9.5" font-weight="700" fill="#b91c1c" text-anchor="middle">Vue Perçue Red</text>
+  </g>
+  <path d="M 480 770 L 480 795" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 9. DÉCISIONS -->
+  <g transform="translate(260, 795)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">9. PROCESSUS DE DÉCISION JOUEUR</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Analyse de la situation perçue, choix tactique, soumission d'ordres</text>
+  </g>
+  <path d="M 480 855 L 480 880" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- 10. NOUVEL ÉTAT -->
+  <g transform="translate(260, 880)">
+    <rect x="0" y="0" width="440" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">10. NOUVEL ÉTAT DU MONDE (WORLD STATE T+1)</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Application des transitions validées, mise à jour des positions et postures</text>
+  </g>
+  <path d="M 480 940 L 480 965" stroke="#059669" stroke-width="2" marker-end="url(#arrow-emerald)"/>
+
+  <!-- 11. JOURNALISATION -->
+  <g transform="translate(260, 965)">
+    <rect x="0" y="0" width="440" height="65" rx="8" fill="#f0fdf4" stroke="#059669" stroke-width="2" filter="url(#shadow)"/>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">11. JOURNALISATION STRUCTURÉE (LOGENTRY)</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#065f46" text-anchor="middle">Persistance immuable asynchrone (spdlog -> PostgreSQL) • Clé de Rejeu &amp; AAR</text>
+  </g>
+
+  <!-- FEEDBACK LOOP PATH (from 11 back to 2 Actions) -->
+  <path d="M 260 997 L 180 997 L 180 215 L 250 215" stroke="#2563eb" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arrow-blue)"/>
+  <text x="135" y="600" font-size="11" font-weight="800" fill="#2563eb" text-anchor="middle" transform="rotate(-90 135 600)">BOUCLE CONTINUE DE TOURS (T → T+1)</text>
+
+</svg>

@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 920" width="1180" height="920" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1180" height="920" fill="#ffffff"/>
+
+  <!-- Title Header -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="1100" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">SÉPARATION DES VUES &amp; RÔLES — BLUE / RED / UMPIRE</text>
+    <text x="1076" y="36" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">ÉTAT RÉEL vs ÉTATS PERÇUS &amp; SUPERVISION ARBITRE</text>
+  </g>
+
+  <!-- 1. COMMON INFORMATION LAYER (SHARED KNOWLEDGE) -->
+  <g transform="translate(40, 110)">
+    <rect x="0" y="0" width="1100" height="100" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="1100" height="30" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="550" y="20" font-size="12" font-weight="800" fill="#1e293b" text-anchor="middle">SOCLE D'INFORMATIONS COMMUNES (ACCESSIBLE À TOUS LES RÔLES)</text>
+    
+    <g transform="translate(30, 42)">
+      <rect x="0" y="0" width="230" height="46" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="115" y="20" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Relief SIG &amp; MNT</text>
+      <text x="115" y="36" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Altitudes, pentes, courbes de niveau</text>
+    </g>
+
+    <g transform="translate(290, 42)">
+      <rect x="0" y="0" width="230" height="46" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="115" y="20" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Grille Hexagonale</text>
+      <text x="115" y="36" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Identifiants de cellules, géométrie axiale</text>
+    </g>
+
+    <g transform="translate(550, 42)">
+      <rect x="0" y="0" width="230" height="46" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="115" y="20" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Infrastructures Publiques</text>
+      <text x="115" y="36" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Réseau routier, ponts, cours d'eau, villes</text>
+    </g>
+
+    <g transform="translate(810, 42)">
+      <rect x="0" y="0" width="260" height="46" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="130" y="20" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Horloge &amp; Météo Globale</text>
+      <text x="130" y="36" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Numéro de tour courant, météo du théâtre</text>
+    </g>
+  </g>
+
+  <!-- 2. PLAYERS VIEW LAYER: BLUE vs RED (STRICT ISOLATION) -->
+
+  <!-- BLUE PERSPECTIVE -->
+  <g transform="translate(40, 240)">
+    <rect x="0" y="0" width="410" height="380" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="410" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="205" y="26" font-size="14" font-weight="800" fill="#1d4ed8" text-anchor="middle">PERSPECTIVE DU JOUEUR BLUE</text>
+
+    <!-- Sub boxes -->
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="370" height="85" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+      <text x="185" y="22" font-size="11.5" font-weight="700" fill="#1e40af" text-anchor="middle">Forces Amies Blue (État Connu)</text>
+      <text x="14" y="44" font-size="10" font-weight="500" fill="#334155">• Position exacte de chaque bataillon Blue</text>
+      <text x="14" y="60" font-size="10" font-weight="500" fill="#334155">• Effectifs réels, posture, cohésion et mobilité</text>
+      <text x="14" y="76" font-size="10" font-weight="500" fill="#334155">• Ordres en cours d'exécution et intentions saisies</text>
+    </g>
+
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="370" height="95" rx="6" fill="#ffffff" stroke="#ef4444" stroke-width="1.2"/>
+      <text x="185" y="22" font-size="11.5" font-weight="700" fill="#b91c1c" text-anchor="middle">État Perçu Ennemi Red (Brouillard Blue)</text>
+      <text x="14" y="44" font-size="10" font-weight="500" fill="#7f1d1d">• Pistes ennemies détectées par capteurs Blue</text>
+      <text x="14" y="60" font-size="10" font-weight="500" fill="#7f1d1d">• Coordonnées bruitées avec rayon d'incertitude</text>
+      <text x="14" y="76" font-size="10" font-weight="500" fill="#7f1d1d">• Indice de confiance dégradé et classification partielle</text>
+      <text x="14" y="90" font-size="9" font-weight="700" fill="#dc2626">• INVISIBILITÉ TOTALE des unités Red non détectées</text>
+    </g>
+
+    <g transform="translate(20, 255)">
+      <rect x="0" y="0" width="370" height="105" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <text x="185" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Commandement &amp; Contrôle Blue</text>
+      <text x="14" y="44" font-size="9.5" font-weight="500" fill="#334155">• Formulaire de soumission d'ordres Blue</text>
+      <text x="14" y="62" font-size="9.5" font-weight="500" fill="#334155">• Journal tactique des alertes reçues</text>
+      <text x="14" y="80" font-size="9.5" font-weight="500" fill="#334155">• Pas d'accès aux canaux Red ni à l'état réel du monde</text>
+      <text x="14" y="98" font-size="9.5" font-weight="600" fill="#2563eb">• Sécurité : Payloads réseau filtrés côté serveur</text>
+    </g>
+  </g>
+
+  <!-- ISOLATION WALL / FIREWALL BETWEEN BLUE AND RED -->
+  <g transform="translate(480, 270)">
+    <rect x="0" y="0" width="220" height="320" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="110" y="32" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">CLOISONNEMENT STRICT</text>
+    <text x="110" y="52" font-size="10.5" font-weight="700" fill="#991b1b" text-anchor="middle">SÉCURITÉ APPLICATIVE</text>
+    
+    <text x="110" y="90" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">Zéro fuite mémoire</text>
+    <text x="110" y="115" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">Tokens WebSocket isolés</text>
+    <text x="110" y="140" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">Filtrage REST par rôle</text>
+    <text x="110" y="165" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">Calcul d'incertitude serveur</text>
+    <text x="110" y="190" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">Pas de positions vraies</text>
+    <text x="110" y="215" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">dans les flux clients</text>
+    <text x="110" y="240" font-size="10" font-weight="500" fill="#334155" text-anchor="middle">Audit permanent</text>
+    <text x="110" y="275" font-size="11" font-weight="800" fill="#dc2626" text-anchor="middle">BROUILLARD DE GUERRE</text>
+  </g>
+
+  <!-- RED PERSPECTIVE -->
+  <g transform="translate(730, 240)">
+    <rect x="0" y="0" width="410" height="380" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="410" height="40" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="205" y="26" font-size="14" font-weight="800" fill="#b91c1c" text-anchor="middle">PERSPECTIVE DU JOUEUR RED</text>
+
+    <!-- Sub boxes -->
+    <g transform="translate(20, 55)">
+      <rect x="0" y="0" width="370" height="85" rx="6" fill="#ffffff" stroke="#fca5a5" stroke-width="1.2"/>
+      <text x="185" y="22" font-size="11.5" font-weight="700" fill="#991b1b" text-anchor="middle">Forces Amies Red (État Connu)</text>
+      <text x="14" y="44" font-size="10" font-weight="500" fill="#334155">• Position exacte de chaque bataillon Red</text>
+      <text x="14" y="60" font-size="10" font-weight="500" fill="#334155">• Effectifs réels, posture, cohésion et mobilité</text>
+      <text x="14" y="76" font-size="10" font-weight="500" fill="#334155">• Ordres selon doctrine et tactique Red</text>
+    </g>
+
+    <g transform="translate(20, 150)">
+      <rect x="0" y="0" width="370" height="95" rx="6" fill="#ffffff" stroke="#3b82f6" stroke-width="1.2"/>
+      <text x="185" y="22" font-size="11.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">État Perçu Ennemi Blue (Brouillard Red)</text>
+      <text x="14" y="44" font-size="10" font-weight="500" fill="#1e40af">• Pistes ennemies détectées par capteurs Red</text>
+      <text x="14" y="60" font-size="10" font-weight="500" fill="#1e40af">• Coordonnées bruitées avec rayon d'incertitude</text>
+      <text x="14" y="76" font-size="10" font-weight="500" fill="#1e40af">• Indice de confiance dégradé et classification partielle</text>
+      <text x="14" y="90" font-size="9" font-weight="700" fill="#2563eb">• INVISIBILITÉ TOTALE des unités Blue non détectées</text>
+    </g>
+
+    <g transform="translate(20, 255)">
+      <rect x="0" y="0" width="370" height="105" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+      <text x="185" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Commandement &amp; Contrôle Red</text>
+      <text x="14" y="44" font-size="9.5" font-weight="500" fill="#334155">• Formulaire de soumission d'ordres Red</text>
+      <text x="14" y="62" font-size="9.5" font-weight="500" fill="#334155">• Journal tactique des alertes reçues</text>
+      <text x="14" y="80" font-size="9.5" font-weight="500" fill="#334155">• Pas d'accès aux canaux Blue ni à l'état réel du monde</text>
+      <text x="14" y="98" font-size="9.5" font-weight="600" fill="#dc2626">• Sécurité : Payloads réseau filtrés côté serveur</text>
+    </g>
+  </g>
+
+  <!-- 3. UMPIRE PRIVILEGED ROLE (OMNISCIENT ARBITER) -->
+  <g transform="translate(40, 650)">
+    <rect x="0" y="0" width="1100" height="230" rx="10" fill="#f8fafc" stroke="#0f172a" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="1100" height="40" rx="10" fill="#0f172a"/>
+    <text x="550" y="26" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">RÔLE PRIVILÉGIÉ DE L'ARBITRE (UMPIRE) — ACCÈS OMNISCIENT &amp; SUPERVISION</text>
+
+    <!-- Column 1: Omniscient View -->
+    <g transform="translate(30, 55)">
+      <rect x="0" y="0" width="320" height="155" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="160" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">1. Vision Omnisciente (État Réel)</text>
+      <text x="14" y="50" font-size="10" font-weight="500" fill="#334155">• Positions réelles exactes de toutes les unités</text>
+      <text x="14" y="70" font-size="10" font-weight="500" fill="#334155">• Affichage simultané des calques Réel, Blue et Red</text>
+      <text x="14" y="90" font-size="10" font-weight="500" fill="#334155">• Visualisation instantanée des écarts de perception</text>
+      <text x="14" y="110" font-size="10" font-weight="500" fill="#334155">• Calcul en direct de la distorsion d'appréciation</text>
+      <text x="14" y="130" font-size="9.5" font-weight="600" fill="#047857">• Audit de l'absence d'angle mort pour l'arbitre</text>
+    </g>
+
+    <!-- Column 2: Simulation Control -->
+    <g transform="translate(390, 55)">
+      <rect x="0" y="0" width="320" height="155" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="160" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">2. Maîtrise de la Simulation</text>
+      <text x="14" y="50" font-size="10" font-weight="500" fill="#334155">• Démarrage, pause et exécution pas-à-pas</text>
+      <text x="14" y="70" font-size="10" font-weight="500" fill="#334155">• Modulation de la vitesse d'horloge de jeu</text>
+      <text x="14" y="90" font-size="10" font-weight="500" fill="#334155">• Validation ou annulation d'ordres litigieux</text>
+      <text x="14" y="110" font-size="10" font-weight="500" fill="#334155">• Clôture anticipée ou prolongation de session</text>
+      <text x="14" y="130" font-size="9.5" font-weight="600" fill="#2563eb">• Pouvoir de décision supérieur aux automates</text>
+    </g>
+
+    <!-- Column 3: Event Injection -->
+    <g transform="translate(750, 55)">
+      <rect x="0" y="0" width="320" height="155" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="160" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">3. Injection d'Aléas &amp; Débriefing</text>
+      <text x="14" y="50" font-size="10" font-weight="500" fill="#334155">• Injection dynamique d'aléas météo (brume, pluie)</text>
+      <text x="14" y="70" font-size="10" font-weight="500" fill="#334155">• Déclenchement de pannes ou pertes de transmission</text>
+      <text x="14" y="90" font-size="10" font-weight="500" fill="#334155">• Accès immédiat au Rejeu temporel haute fidélité</text>
+      <text x="14" y="110" font-size="10" font-weight="500" fill="#334155">• Génération des rapports de débriefing (AAR)</text>
+      <text x="14" y="130" font-size="9.5" font-weight="600" fill="#b45309">• Traçabilité intégrale des arbitrages dans le journal</text>
+    </g>
+  </g>
+</svg>

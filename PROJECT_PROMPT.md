@@ -11,7 +11,7 @@ Terrain SIG → grille hexagonale → situation initiale → Blue/Red → capteu
 Choix techniques du projet :
 - C++20 / Drogon
 - PostgreSQL/PostGIS
-- SIG / ETL : Global Mapper (outil principal) + QGIS, GDAL, PROJ (traitements complémentaires et automatisation)
+- SIG / ETL : Global Mapper (unique outil SIG du workflow courant)
 - H3 ou équivalent après validation
 - React/TypeScript
 - OpenLayers ou Leaflet

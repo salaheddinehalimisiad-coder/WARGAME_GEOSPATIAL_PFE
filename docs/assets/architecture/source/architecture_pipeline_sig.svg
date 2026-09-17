@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 960" width="1000" height="960" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="960" fill="#ffffff"/>
+
+  <!-- Header -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="920" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">PIPELINE SIG &amp; ETL — EXCLUSIVITÉ GLOBAL MAPPER</text>
+    <text x="896" y="36" font-size="12" font-weight="600" fill="#2563eb" text-anchor="end">WORKFLOW OFFICIEL DU PROJET</text>
+  </g>
+
+  <!-- STEP 1 : DONNÉES SOURCES -->
+  <g transform="translate(180, 110)">
+    <rect x="0" y="0" width="640" height="85" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="320" y="28" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">1. DONNÉES SOURCES BRUTES (DATA RAW)</text>
+    <text x="160" y="54" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">• Rasters MNT : SRTM 30m / Copernicus</text>
+    <text x="160" y="70" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">Modèles Numériques d'Élévation bruts</text>
+    <text x="480" y="54" font-size="11" font-weight="600" fill="#475569" text-anchor="middle">• Vecteurs : OpenStreetMap / BD TOPO</text>
+    <text x="480" y="70" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">Réseau routier, hydrographie, bâti, limites</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 500 195 L 500 230" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STEP 2 : GLOBAL MAPPER MAIN CONTAINER -->
+  <g transform="translate(140, 235)">
+    <rect x="0" y="0" width="720" height="430" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Title inside GM -->
+    <rect x="0" y="0" width="720" height="44" rx="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="360" y="28" font-size="15" font-weight="800" fill="#1d4ed8" text-anchor="middle">GLOBAL MAPPER — UNIQUE OUTIL SIG DU WORKFLOW COURANT</text>
+
+    <!-- Phase 2A: Collecte -->
+    <g transform="translate(30, 60)">
+      <rect x="0" y="0" width="660" height="70" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="13" font-weight="700" fill="#1e40af">A. Collecte &amp; Importation dans Workspace Global Mapper (.gmw)</text>
+      <text x="24" y="46" font-size="10.5" font-weight="500" fill="#334155">• Définition stricte de la Bounding Box (AOI) d'exercice tactique</text>
+      <text x="24" y="60" font-size="10.5" font-weight="500" fill="#334155">• Import direct des dalles altimétriques et shapefiles avec structuration des calques</text>
+    </g>
+
+    <path d="M 360 130 L 360 150" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Phase 2B: Préparation -->
+    <g transform="translate(30, 150)">
+      <rect x="0" y="0" width="660" height="75" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="13" font-weight="700" fill="#1e40af">B. Préparation &amp; Harmonisation Altimétrique / Projections</text>
+      <text x="24" y="46" font-size="10.5" font-weight="500" fill="#334155">• Reprojection de toutes les couches dans le CRS officiel métrique (UTM)</text>
+      <text x="24" y="60" font-size="10.5" font-weight="500" fill="#334155">• Mosaïquage transparent des rasters MNT et interpolation sans artefact des zones NoData</text>
+    </g>
+
+    <path d="M 360 225 L 360 245" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Phase 2C: Nettoyage -->
+    <g transform="translate(30, 245)">
+      <rect x="0" y="0" width="660" height="75" rx="6" fill="#ffffff" stroke="#93c5fd" stroke-width="1.2"/>
+      <text x="24" y="26" font-size="13" font-weight="700" fill="#1e40af">C. Nettoyage Topologique &amp; Découpage Vectoriel</text>
+      <text x="24" y="46" font-size="10.5" font-weight="500" fill="#334155">• Découpage strict des réseaux routiers, cours d'eau et forêts sur l'emprise exacte</text>
+      <text x="24" y="60" font-size="10.5" font-weight="500" fill="#334155">• Élimination des micro-polygones, nœuds pendants et normalisation des attributs de franchissement</text>
+    </g>
+
+    <path d="M 360 320 L 360 340" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Phase 2D: Contrôle QA -->
+    <g transform="translate(30, 340)">
+      <rect x="0" y="0" width="660" height="75" rx="6" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+      <text x="24" y="26" font-size="13" font-weight="800" fill="#047857">D. Contrôle Qualité SIG (QA) &amp; Certification</text>
+      <text x="24" y="46" font-size="10.5" font-weight="600" fill="#065f46">• Audit de conformité géométrique : CRS, tolérances altimétriques, attributs obligatoires</text>
+      <text x="24" y="60" font-size="10.5" font-weight="500" fill="#047857">• Génération du rapport de certification docs/RAPPORT_QA_SIG.md avant tout export</text>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 500 665 L 500 700" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STEP 3 : DONNÉES SIG PROPRES -->
+  <g transform="translate(180, 705)">
+    <rect x="0" y="0" width="640" height="85" rx="8" fill="#f8fafc" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <text x="320" y="28" font-size="14" font-weight="800" fill="#047857" text-anchor="middle">3. DONNÉES SIG PROPRES &amp; CERTIFIÉES (DATA PROCESSED / VALIDATED)</text>
+    <text x="160" y="54" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">MNT GeoTIFF Projeté Métrique</text>
+    <text x="160" y="70" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">Élévations fiables sans NoData</text>
+    <text x="480" y="54" font-size="11" font-weight="600" fill="#334155" text-anchor="middle">Couches Vectorielles Découpées</text>
+    <text x="480" y="70" font-size="10" font-weight="500" fill="#64748b" text-anchor="middle">GeoPackage / Shapefiles conformes</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 500 790 L 500 825" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- STEP 4 : POSTGRESQL / POSTGIS -->
+  <g transform="translate(180, 830)">
+    <rect x="0" y="0" width="640" height="95" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2" filter="url(#shadow)"/>
+    <text x="320" y="28" font-size="14" font-weight="800" fill="#1e3a8a" text-anchor="middle">4. INGESTION ET PERSISTANCE POSTGRESQL / POSTGIS</text>
+    <text x="320" y="52" font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle">Tables spatiales : hex_cell, elevation_grid, terrain_features</text>
+    <text x="320" y="72" font-size="10.5" font-weight="500" fill="#334155" text-anchor="middle">Index spatiaux GiST • Relations topologiques • Exploitation immédiate par le Moteur C++20</text>
+  </g>
+</svg>

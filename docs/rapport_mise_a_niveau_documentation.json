@@ -1,0 +1,199 @@
+{
+  "titre": "Rapport de mise à niveau structurelle de la documentation, de la gouvernance et de l'architecture visuelle",
+  "date": "2026-09-18",
+  "statut_global": "PASS",
+  "etat_initial": {
+    "branche_git": "main",
+    "fichiers_existants": [
+      "MASTER_PROMPT.md",
+      "PROJECT_PROMPT.md",
+      "PROJECT_MEMORY.md",
+      "AGENT_RULES.md",
+      "CHANGELOG.md",
+      "IDEAS.md",
+      "docs/ROADMAP.md",
+      "docs/ARCHITECTURE.md",
+      "docs/REFERENCE_CHECKLIST.md",
+      "docs/GIT_WORKFLOW_AND_CICD.md",
+      ".github/workflows/ci.yml"
+    ],
+    "roadmap_initiale": "Liste sommaire de 31 étapes sans tâches ni sous-tâches détaillées, sans identifiants ni cases à cocher",
+    "architecture_initiale": "Schéma ASCII général et texte descriptif, absence de diagrammes vectoriels",
+    "suivi_avancement_initial": "Aucun outil de calcul automatique, aucun fichier ETAT_AVANCEMENT.md, aucun donut SVG",
+    "presence_dossier_duplique": true
+  },
+  "etat_final": {
+    "roadmap_officielle": "docs/ROADMAP.md exhaustif sur 31 étapes (ÉTAPE 00 à ÉTAPE 30)",
+    "tableau_de_bord": "docs/ETAT_AVANCEMENT.md généré automatiquement",
+    "graphique_avancement": "docs/assets/progress/progress_donut.svg (fond blanc, 0.00 % au centre, 247 sous-tâches)",
+    "architecture_visuelle": "docs/ARCHITECTURE.md intégrant 6 diagrammes vectoriels SVG professionnels sur fond blanc",
+    "sources_architecture": "docs/assets/architecture/source/ contenant les 6 fichiers SVG modifiables et un README guide d'édition",
+    "script_calcul": "scripts/update_progress.py (lecture ROADMAP.md, calcul précis, génération dashboard et donut)",
+    "banc_de_test": "scripts/test_progress_calculation.py (test échantillon 5/20 = 25.00%, intégrité roadmap 31 étapes, détection doublons)",
+    "coherence_documentaire": "Parfaite cohérence entre MASTER_PROMPT.md, PROJECT_PROMPT.md, PROJECT_MEMORY.md, CHANGELOG.md, docs/ et CI/CD"
+  },
+  "roadmap_creee_modifiee": {
+    "fichier": "docs/ROADMAP.md",
+    "nombre_etapes": 31,
+    "etapes": [
+      "ÉTAPE 00 — Initialisation du projet",
+      "ÉTAPE 01 — Analyse détaillée du cahier des charges",
+      "ÉTAPE 02 — Architecture fonctionnelle et technique",
+      "ÉTAPE 03 — Modèle de données",
+      "ÉTAPE 04 — Préparation de l’environnement",
+      "ÉTAPE 05 — Collecte SIG avec Global Mapper",
+      "ÉTAPE 06 — Préparation et nettoyage SIG avec Global Mapper",
+      "ÉTAPE 07 — Contrôle qualité SIG",
+      "ÉTAPE 08 — Modèle du terrain",
+      "ÉTAPE 09 — Conception de la grille hexagonale",
+      "ÉTAPE 10 — Validation de la grille",
+      "ÉTAPE 11 — Intégration PostgreSQL/PostGIS",
+      "ÉTAPE 12 — Modèle des unités",
+      "ÉTAPE 13 — Modèle des équipements",
+      "ÉTAPE 14 — Modèle des capteurs",
+      "ÉTAPE 15 — Moteur de simulation",
+      "ÉTAPE 16 — Déplacements",
+      "ÉTAPE 17 — Observations et incertitude",
+      "ÉTAPE 18 — État réel / état perçu",
+      "ÉTAPE 19 — Temps et événements",
+      "ÉTAPE 20 — Modèle de décision",
+      "ÉTAPE 21 — Services Drogon",
+      "ÉTAPE 22 — Interface Blue",
+      "ÉTAPE 23 — Interface Red",
+      "ÉTAPE 24 — Interface Umpire",
+      "ÉTAPE 25 — Journalisation",
+      "ÉTAPE 26 — Rejeu",
+      "ÉTAPE 27 — Débriefing et indicateurs",
+      "ÉTAPE 28 — Scénario de démonstration complet",
+      "ÉTAPE 29 — Validation globale",
+      "ÉTAPE 30 — Documentation finale et soutenance"
+    ],
+    "structure_par_etape": "Objectif, Entrées, Sorties, Livrables, Critères d'acceptation, Tests, Tâches, Sous-tâches"
+  },
+  "nombre_taches": 62,
+  "nombre_sous_taches": 247,
+  "sous_taches_terminales_uniques": {
+    "total": 247,
+    "format_id": "PXX-TYY-SZZ",
+    "doublons_detectes": 0
+  },
+  "outil_calcul_cree": {
+    "fichier": "scripts/update_progress.py",
+    "dependances_externes": "Aucune (standard library Python 3 : sys, re, math, pathlib, datetime)",
+    "formule_officielle": "AVANCEMENT = (sous-tâches terminales cochées / total sous-tâches) * 100",
+    "sources_de_verite": "docs/ROADMAP.md",
+    "sorties_generees": [
+      "docs/ETAT_AVANCEMENT.md",
+      "docs/assets/progress/progress_donut.svg"
+    ]
+  },
+  "resultat_test_calcul": {
+    "script_test": "scripts/test_progress_calculation.py",
+    "test_1_echantillon_controle": "20 sous-tâches dont 5 terminées => résultat attendu: 25.00 %, résultat obtenu: 25.00 %, statut: PASS",
+    "test_2_integrite_roadmap_officielle": "31 étapes validées, 247 sous-tâches uniques valides, étape active ÉTAPE 00, statut: PASS",
+    "test_3_rejet_doublons": "Rejet immédiat avec ValueError explicite en cas d'identifiant en double, statut: PASS",
+    "statut_banc_test": "PASS (tous les tests validés)"
+  },
+  "fichiers_architecture_crees": [
+    "docs/ARCHITECTURE.md",
+    "docs/assets/architecture/source/README.md"
+  ],
+  "diagrammes_crees": [
+    {
+      "nom": "architecture_globale.svg",
+      "chemin": "docs/assets/architecture/architecture_globale.svg",
+      "source": "docs/assets/architecture/source/architecture_globale.svg",
+      "description": "Architecture complète de bout en bout : Global Mapper amont, PostGIS, Moteur C++20, Services Drogon, Frontend React/TS, extension CommandView Ready"
+    },
+    {
+      "nom": "architecture_pipeline_sig.svg",
+      "chemin": "docs/assets/architecture/architecture_pipeline_sig.svg",
+      "source": "docs/assets/architecture/source/architecture_pipeline_sig.svg",
+      "description": "Pipeline SIG & ETL exclusif Global Mapper : Collecte, Préparation, Nettoyage, Contrôle QA, Données Propres et Ingestion PostGIS"
+    },
+    {
+      "nom": "architecture_donnees.svg",
+      "chemin": "docs/assets/architecture/architecture_donnees.svg",
+      "source": "docs/assets/architecture/source/architecture_donnees.svg",
+      "description": "Modèle relationnel et entités métier : Scenario, Session, Unit, Equipment, Sensor, Cell, Observation, Decision, Event, LogEntry, DebriefMetric"
+    },
+    {
+      "nom": "architecture_flux_simulation.svg",
+      "chemin": "docs/assets/architecture/architecture_flux_simulation.svg",
+      "source": "docs/assets/architecture/source/architecture_flux_simulation.svg",
+      "description": "Flux d'exécution de la boucle OODA de simulation : État initial -> Actions -> Règles -> Temps -> Événements -> Observations -> État Réel -> État Perçu -> Décisions -> Nouvel État -> Journalisation"
+    },
+    {
+      "nom": "architecture_blue_red_umpire.svg",
+      "chemin": "docs/assets/architecture/architecture_blue_red_umpire.svg",
+      "source": "docs/assets/architecture/source/architecture_blue_red_umpire.svg",
+      "description": "Cloisonnement des vues et rôles : Informations communes, Vision amie et contacts bruités Blue, Doctrine et brouillard Red, Rôle omniscient et arbitrage Umpire"
+    },
+    {
+      "nom": "architecture_technique.svg",
+      "chemin": "docs/assets/architecture/architecture_technique.svg",
+      "source": "docs/assets/architecture/source/architecture_technique.svg",
+      "description": "Stack technique et infrastructure : React 18, Drogon REST/WebSocket, Moteur C++20 GoogleTest, PostgreSQL 16 / PostGIS 3.4, Docker Compose et GitHub Actions CI/CD"
+    }
+  ],
+  "verification_coherence": {
+    "alignement_master_prompt": "Conforme (31 étapes, stack C++20/Drogon/PostGIS/React/Global Mapper)",
+    "alignement_project_prompt": "Conforme (Autonomous First — CommandView Ready, Global Mapper unique outil SIG)",
+    "alignement_project_memory": "Conforme (Roadmap source de vérité, ETAT_AVANCEMENT vue calculée, prochaine étape ÉTAPE 00)",
+    "alignement_reference_checklist": "Conforme (Check-lists complètes pour documentation, roadmap, suivi et architecture)",
+    "alignement_git_and_ci": "Conforme (.github/workflows/ci.yml valide, conventions de branches respectées)"
+  },
+  "audit_dossier_duplique": {
+    "chemin_detecte": "WARGAME_GEOSPATIAL_PFE/WARGAME_GEOSPATIAL_PFE",
+    "statut_presence": "Présent dans le workspace (issu d'une extraction d'archive imbriquée)",
+    "suivi_par_git_racine": false,
+    "difference_fichiers_suivis": "0 différence détectée par rapport à la racine",
+    "fichiers_uniques": "Aucun fichier unique",
+    "action_menee": "Conservation intégrale sans suppression automatique conformément aux instructions strictes de sécurité"
+  },
+  "problemes_rencontres": [
+    {
+      "probleme": "Erreur d'encodage console Windows (cp1256) lors de l'impression du caractère 'É' par python scripts/update_progress.py",
+      "impact": "Échec d'exécution du script en console PowerShell sur environnement Windows",
+      "resolution": "Ajout de la reconfiguration automatique de sys.stdout et sys.stderr en UTF-8 dans update_progress.py et test_progress_calculation.py"
+    }
+  ],
+  "corrections_effectuees": [
+    "Reconfiguration sys.stdout / sys.stderr UTF-8 pour robustesse multi-plateformes",
+    "Alignement de PROJECT_PROMPT.md et PROJECT_MEMORY.md sur la règle exclusive Global Mapper pour le workflow courant",
+    "Mise à jour de CHANGELOG.md avec l'entrée dédiée à la roadmap détaillée, au système d'avancement et à l'architecture visuelle"
+  ],
+  "etat_git": {
+    "branche": "main",
+    "statut": "Modifications prêtes à être commitées, aucun push prématuré",
+    "fichiers_modifies": [
+      "CHANGELOG.md",
+      "PROJECT_MEMORY.md",
+      "PROJECT_PROMPT.md",
+      "docs/ARCHITECTURE.md",
+      "docs/REFERENCE_CHECKLIST.md",
+      "docs/ROADMAP.md"
+    ],
+    "fichiers_crees": [
+      "scripts/update_progress.py",
+      "scripts/test_progress_calculation.py",
+      "docs/ETAT_AVANCEMENT.md",
+      "docs/assets/progress/progress_donut.svg",
+      "docs/assets/architecture/architecture_globale.svg",
+      "docs/assets/architecture/architecture_pipeline_sig.svg",
+      "docs/assets/architecture/architecture_donnees.svg",
+      "docs/assets/architecture/architecture_flux_simulation.svg",
+      "docs/assets/architecture/architecture_blue_red_umpire.svg",
+      "docs/assets/architecture/architecture_technique.svg",
+      "docs/assets/architecture/source/README.md",
+      "docs/assets/architecture/source/architecture_globale.svg",
+      "docs/assets/architecture/source/architecture_pipeline_sig.svg",
+      "docs/assets/architecture/source/architecture_donnees.svg",
+      "docs/assets/architecture/source/architecture_flux_simulation.svg",
+      "docs/assets/architecture/source/architecture_blue_red_umpire.svg",
+      "docs/assets/architecture/source/architecture_technique.svg",
+      "docs/rapport_mise_a_niveau_documentation.json"
+    ]
+  },
+  "prochaine_etape": "ÉTAPE 00 — Initialisation du projet (en attente de validation explicite)"
+}

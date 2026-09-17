@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 880" width="1160" height="880" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="rel" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1160" height="880" fill="#ffffff"/>
+
+  <!-- Title Header -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="1080" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">MODÈLE RELATIONNEL &amp; ENTITÉS — WARGAME GÉOSPATIAL PFE</text>
+    <text x="1056" y="36" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">SCHÉMA DE DONNÉES MÉTIER &amp; PERSISTANCE</text>
+  </g>
+
+  <!-- ENTITY: SCENARIO -->
+  <g transform="translate(40, 120)">
+    <rect x="0" y="0" width="200" height="150" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="200" height="32" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="100" y="21" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">Scenario</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="500" fill="#475569">nom : String</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">emprise_bbox : Polygon</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">regles_jeu : JSON</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">conditions_meteo : JSON</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">duree_max_tours : Int</text>
+  </g>
+
+  <!-- ENTITY: GAME_SESSION -->
+  <g transform="translate(320, 120)">
+    <rect x="0" y="0" width="220" height="150" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="220" height="32" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="110" y="21" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">GameSession</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#2563eb">FK scenario_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">statut : Enum (Init, Play, Pause, End)</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">tour_courant : Int</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">graine_aleatoire : BigInt</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">date_debut / fin : Timestamp</text>
+  </g>
+
+  <!-- Relation Scenario -> GameSession -->
+  <path d="M 240 195 L 320 195" stroke="#475569" stroke-width="1.5" marker-end="url(#rel)"/>
+  <text x="280" y="185" font-size="9.5" font-weight="700" fill="#64748b" text-anchor="middle">1 .. N</text>
+
+  <!-- ENTITY: SIDE -->
+  <g transform="translate(620, 120)">
+    <rect x="0" y="0" width="180" height="150" rx="8" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="180" height="32" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="90" y="21" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">Side (Faction)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : Enum</text>
+    <text x="14" y="70" font-size="9.5" font-weight="500" fill="#475569">code : (Blue, Red, Umpire)</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">nom : String</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">doctrine : String</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">objectifs_secrets : JSON</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">score_actuel : Float</text>
+  </g>
+
+  <!-- Relation GameSession -> Side -->
+  <path d="M 540 195 L 620 195" stroke="#475569" stroke-width="1.5" marker-end="url(#rel)"/>
+  <text x="580" y="185" font-size="9.5" font-weight="700" fill="#64748b" text-anchor="middle">1 .. N</text>
+
+  <!-- ENTITY: DEBRIEF_METRIC -->
+  <g transform="translate(880, 120)">
+    <rect x="0" y="0" width="240" height="150" rx="8" fill="#ffffff" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="240" height="32" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+    <text x="120" y="21" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">DebriefMetric (AAR)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#047857">FK session_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="600" fill="#047857">FK side_id : Enum</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">temps_reaction_moyen : Float</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">taux_perte_attrition : Float</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">ecart_moyen_reel_percu : Float</text>
+  </g>
+
+  <!-- Relation GameSession -> DebriefMetric -->
+  <path d="M 430 120 L 430 95 L 1000 95 L 1000 120" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#rel)"/>
+
+  <!-- ROW 2: TERRAIN / CELL, UNIT, EQUIPMENT, SENSOR -->
+
+  <!-- ENTITY: TERRAIN_CELL -->
+  <g transform="translate(40, 340)">
+    <rect x="0" y="0" width="230" height="190" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="230" height="32" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+    <text x="115" y="21" font-size="12" font-weight="800" fill="#1e293b" text-anchor="middle">TerrainCell (Hexagone)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK hex_id : String (q, r, s)</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#0284c7">geom : Polygon (CRS Métrique)</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">altitude_moyenne : Float</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">pente_max : Float</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">type_surface : Enum (Route, Plaine, Foret..)</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">cout_franchissement : Float</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">coeff_masquage_los : Float</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">franchissable_roue / chenille : Bool</text>
+  </g>
+
+  <!-- ENTITY: UNIT -->
+  <g transform="translate(340, 340)">
+    <rect x="0" y="0" width="230" height="190" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="230" height="32" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="115" y="21" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">Unit (Niveau Bataillon)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#2563eb">FK side_id : Enum</text>
+    <text x="14" y="88" font-size="9.5" font-weight="600" fill="#0284c7">FK current_hex_id : String</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">nom_bataillon : String</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">type : Enum (Infanterie, Blinde..)</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">posture : Enum (Defensif, Mvt, Halte..)</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">cohesion_relative : Float [0..1]</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">points_mouvement_restants : Int</text>
+  </g>
+
+  <!-- Relation TerrainCell <-> Unit -->
+  <path d="M 270 435 L 340 435" stroke="#475569" stroke-width="1.5" marker-end="url(#rel)"/>
+  <text x="305" y="425" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">1 .. N</text>
+
+  <!-- Relation Side -> Unit -->
+  <path d="M 680 270 L 680 305 L 480 305 L 480 340" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#rel)"/>
+
+  <!-- ENTITY: EQUIPMENT -->
+  <g transform="translate(640, 340)">
+    <rect x="0" y="0" width="210" height="190" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="210" height="32" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="105" y="21" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Equipment (Abstrait)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#334155">FK unit_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">categorie : Enum (Chenille, Roue..)</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">mobilite_relative : Float</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">protection_relative : Float</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">puissance_relative : Float</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">disponibilite : Float [0..1]</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">taux_usure : Float</text>
+  </g>
+
+  <!-- Relation Unit -> Equipment -->
+  <path d="M 570 435 L 640 435" stroke="#475569" stroke-width="1.5" marker-end="url(#rel)"/>
+  <text x="605" y="425" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">1 .. N</text>
+
+  <!-- ENTITY: SENSOR -->
+  <g transform="translate(910, 340)">
+    <rect x="0" y="0" width="210" height="190" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="210" height="32" rx="8" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="105" y="21" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Sensor (Capteur)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#334155">FK unit_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">type : Enum (Optique, Radar..)</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">portee_max_hex : Int</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">precision_mesure : Float</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">sensibilite_meteo : Float</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">cone_ouverture_deg : Float</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">actif_status : Bool</text>
+  </g>
+
+  <!-- Relation Unit -> Sensor -->
+  <path d="M 500 530 L 500 555 L 1015 555 L 1015 530" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#rel)"/>
+
+  <!-- ROW 3: OBSERVATION, DECISION, EVENT, LOG_ENTRY -->
+
+  <!-- ENTITY: OBSERVATION -->
+  <g transform="translate(40, 600)">
+    <rect x="0" y="0" width="240" height="190" rx="8" fill="#ffffff" stroke="#ef4444" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="240" height="32" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="120" y="21" font-size="12" font-weight="800" fill="#b91c1c" text-anchor="middle">Observation (Perception)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#b91c1c">FK sensor_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="600" fill="#b91c1c">FK target_unit_id_vrai : UUID (Secret)</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">position_estimee_hex : String</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">indice_confiance : Float [0..1]</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">type_estime : Enum</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">timestamp_observation : Timestamp</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">tour_validite : Int</text>
+  </g>
+
+  <!-- ENTITY: DECISION -->
+  <g transform="translate(340, 600)">
+    <rect x="0" y="0" width="230" height="190" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="230" height="32" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="115" y="21" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">Decision (Ordre Tactique)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#2563eb">FK unit_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="600" fill="#2563eb">FK side_id : Enum</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">type_ordre : Enum (Mvt, Feu, Posture)</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">destination_hex : String</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">justification_tactique : Text</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">horodatage_ordre : Timestamp</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">statut_validation : Enum</text>
+  </g>
+
+  <!-- Relation Unit -> Decision -->
+  <path d="M 455 530 L 455 600" stroke="#475569" stroke-width="1.5" marker-end="url(#rel)"/>
+
+  <!-- ENTITY: EVENT -->
+  <g transform="translate(630, 600)">
+    <rect x="0" y="0" width="220" height="190" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="220" height="32" rx="8" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+    <text x="110" y="21" font-size="12" font-weight="800" fill="#1e293b" text-anchor="middle">Event (Événement Simu)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#64748b">FK session_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">tour_declenchement : Int</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">type : Enum (Contact, FinMvt, Alea)</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">contexte_declencheur : JSON</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">resultats_resolus : JSON</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">injecte_par_umpire : Bool</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">timestamp_resolution : Timestamp</text>
+  </g>
+
+  <!-- ENTITY: LOG_ENTRY -->
+  <g transform="translate(900, 600)">
+    <rect x="0" y="0" width="220" height="190" rx="8" fill="#ffffff" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="220" height="32" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+    <text x="110" y="21" font-size="12" font-weight="800" fill="#047857" text-anchor="middle">LogEntry (Audit Immuable)</text>
+    <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK log_id : BigSerial</text>
+    <text x="14" y="70" font-size="9.5" font-weight="600" fill="#047857">FK session_id : UUID</text>
+    <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">timestamp_us : BigInt (µs)</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">acteur : String (Blue, Red, Umpire, Sys)</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">categorie_evenement : String</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">payload_json : JSONB</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">checksum_sha256 : String</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">statut_rejeu_valide : Bool</text>
+  </g>
+
+  <!-- Bottom Info -->
+  <g transform="translate(40, 815)">
+    <rect x="0" y="0" width="1080" height="40" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="20" y="25" font-size="11" font-weight="600" fill="#334155">Principes Clés : 3NF relationnelle • Indexation spatiale GiST sur geom • Immutabilité des LogEntry • Abstraction totale du matériel • Zéro arme réelle</text>
+  </g>
+</svg>

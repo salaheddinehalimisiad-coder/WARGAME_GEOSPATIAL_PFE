@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 950" width="1200" height="950" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="950" fill="#ffffff"/>
+
+  <!-- Title Header -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="1120" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">ARCHITECTURE TECHNIQUE DU SYSTÈME &amp; DÉPLOIEMENT</text>
+    <text x="1096" y="36" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">STACK LOGICIELLE, CONTENEURS &amp; CI/CD</text>
+  </g>
+
+  <!-- COLUMN 1: CLIENT FRONTEND (REACT / TYPESCRIPT) -->
+  <g transform="translate(40, 110)">
+    <rect x="0" y="0" width="280" height="650" rx="10" fill="#f8fafc" stroke="#2563eb" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="280" height="42" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="140" y="26" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">1. COUCHE CLIENT FRONTEND</text>
+
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="250" height="95" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="125" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">React 18 / TypeScript</text>
+      <text x="12" y="48" font-size="10" font-weight="500" fill="#334155">• Single Page Application (SPA) modulaire</text>
+      <text x="12" y="66" font-size="10" font-weight="500" fill="#334155">• Typage strict, hooks et state management</text>
+      <text x="12" y="84" font-size="10" font-weight="500" fill="#334155">• Vite / NPM build pipeline optimisé</text>
+    </g>
+
+    <g transform="translate(15, 170)">
+      <rect x="0" y="0" width="250" height="95" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="125" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Moteur Cartographique</text>
+      <text x="12" y="48" font-size="10" font-weight="500" fill="#334155">• OpenLayers / Leaflet avec tuiles SIG</text>
+      <text x="12" y="66" font-size="10" font-weight="500" fill="#334155">• Couche vectorielle Canvas pour grille hex</text>
+      <text x="12" y="84" font-size="10" font-weight="500" fill="#334155">• Rendu fluide à 60 FPS sans latence</text>
+    </g>
+
+    <g transform="translate(15, 280)">
+      <rect x="0" y="0" width="250" height="150" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="125" y="24" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">Interfaces par Profil</text>
+      <text x="12" y="50" font-size="10.5" font-weight="700" fill="#2563eb">• Client Blue (COP Tactique)</text>
+      <text x="24" y="68" font-size="9.5" font-weight="500" fill="#64748b">Vision amie et contacts bruités</text>
+      <text x="12" y="88" font-size="10.5" font-weight="700" fill="#dc2626">• Client Red (Forces d'Opposition)</text>
+      <text x="24" y="106" font-size="9.5" font-weight="500" fill="#64748b">Doctrine Red et brouillard de guerre</text>
+      <text x="12" y="126" font-size="10.5" font-weight="700" fill="#0f172a">• Client Umpire (Supervision Globale)</text>
+      <text x="24" y="142" font-size="9.5" font-weight="500" fill="#64748b">Vérité terrain et contrôle simulation</text>
+    </g>
+
+    <g transform="translate(15, 445)">
+      <rect x="0" y="0" width="250" height="85" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+      <text x="125" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Console de Rejeu &amp; AAR</text>
+      <text x="12" y="48" font-size="10" font-weight="500" fill="#334155">• Lecteur temporel (Play, Pause, Slider)</text>
+      <text x="12" y="66" font-size="10" font-weight="500" fill="#334155">• Courbes de pertes et indicateurs décision</text>
+    </g>
+
+    <g transform="translate(15, 545)">
+      <rect x="0" y="0" width="250" height="85" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="125" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Communication Frontend</text>
+      <text x="12" y="44" font-size="10" font-weight="500" fill="#334155">• Requêtes REST Fetch / Axios</text>
+      <text x="12" y="62" font-size="10" font-weight="500" fill="#334155">• Flux WebSocket natif bidirectionnel</text>
+      <text x="12" y="78" font-size="10" font-weight="500" fill="#334155">• Reconnexion automatique et buffer</text>
+    </g>
+  </g>
+
+  <!-- Network Arrow Frontend <-> Drogon -->
+  <path d="M 320 400 L 375 400" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 375 415 L 320 415" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- COLUMN 2: SERVICES & API (DROGON C++) -->
+  <g transform="translate(380, 110)">
+    <rect x="0" y="0" width="250" height="650" rx="10" fill="#f8fafc" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="250" height="42" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="125" y="26" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">2. BACKEND &amp; API DROGON</text>
+
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="220" height="125" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+      <text x="110" y="24" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Contrôleurs REST Drogon</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• HttpControllers asynchrones C++</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Spécification OpenAPI 3.0 conforme</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Endpoints Scénarios &amp; Sessions</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Endpoints Ordres &amp; Débriefing</text>
+      <text x="12" y="118" font-size="9.5" font-weight="600" fill="#047857">• Temps de réponse &lt; 15 ms</text>
+    </g>
+
+    <g transform="translate(15, 200)">
+      <rect x="0" y="0" width="220" height="125" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+      <text x="110" y="24" font-size="11.5" font-weight="800" fill="#1d4ed8" text-anchor="middle">Serveur WebSocket Drogon</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• WebSocketControllers haute perf.</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Canaux séparés Blue, Red, Umpire</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Diffusion instantanée des tours</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Gestion fine des connexions</text>
+      <text x="12" y="118" font-size="9.5" font-weight="600" fill="#047857">• Latence réseau minimale</text>
+    </g>
+
+    <g transform="translate(15, 340)">
+      <rect x="0" y="0" width="220" height="120" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="110" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">Sécurité &amp; Sessions</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• Tokens d'authentification de session</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Filtrage strict des payloads JSON</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Protection contre injection d'ordres</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Validation des droits par rôle</text>
+    </g>
+
+    <g transform="translate(15, 475)">
+      <rect x="0" y="0" width="220" height="155" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+      <text x="110" y="22" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">Passerelle CommandView</text>
+      <text x="12" y="44" font-size="9" font-weight="500" fill="#334155">• Points d'extension C4ISR prêts</text>
+      <text x="12" y="62" font-size="9" font-weight="500" fill="#334155">• Bus de publication d'événements</text>
+      <text x="12" y="80" font-size="9" font-weight="500" fill="#334155">• Schémas compatibles COP</text>
+      <text x="12" y="98" font-size="9" font-weight="500" fill="#334155">• Logs auditables par CommandView</text>
+      <text x="12" y="116" font-size="9" font-weight="500" fill="#334155">• Architecture Autonomous First</text>
+      <text x="12" y="134" font-size="9" font-weight="500" fill="#334155">• 100% fonctionnel sans CommandView</text>
+    </g>
+  </g>
+
+  <!-- Arrow Drogon <-> Simulation Engine -->
+  <path d="M 630 400 L 685 400" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 685 415 L 630 415" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- COLUMN 3: CORE SIMULATION ENGINE C++20 -->
+  <g transform="translate(690, 110)">
+    <rect x="0" y="0" width="260" height="650" rx="10" fill="#f8fafc" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="260" height="42" rx="10" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+    <text x="130" y="26" font-size="13" font-weight="800" fill="#047857" text-anchor="middle">3. MOTEUR SIMULATION C++20</text>
+
+    <g transform="translate(15, 60)">
+      <rect x="0" y="0" width="230" height="110" rx="6" fill="#ffffff" stroke="#10b981" stroke-width="1.2"/>
+      <text x="115" y="24" font-size="11.5" font-weight="800" fill="#047857" text-anchor="middle">SimulationEngine</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• C++20 pur sans couplage IHM</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• WorldState (État Réel immuable)</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Reproductibilité bit-à-bit stricte</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• RNG Mersenne Twister seedé</text>
+    </g>
+
+    <g transform="translate(15, 185)">
+      <rect x="0" y="0" width="230" height="110" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="115" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">Moteurs Tactiques</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• Pathfinding A* sur grille hexagonale</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Calcul Ligne de Vue MNT (LOS)</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Détection et bruitage de position</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Modèle d'ordres et validation OODA</text>
+    </g>
+
+    <g transform="translate(15, 310)">
+      <rect x="0" y="0" width="230" height="110" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="115" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">Journalisation Asynchrone</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• spdlog asynchrone multithread</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Traces JSON formatées à la microseconde</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Flush non-bloquant vers PostgreSQL</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Checksums d'intégrité de log</text>
+    </g>
+
+    <g transform="translate(15, 435)">
+      <rect x="0" y="0" width="230" height="95" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="115" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">Moteur de Rejeu &amp; Métriques</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• Reconstitution d'état à l'instant T</text>
+      <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Calcul des métriques AAR débriefing</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Écart moyen perception vs réalité</text>
+    </g>
+
+    <g transform="translate(15, 545)">
+      <rect x="0" y="0" width="230" height="85" rx="6" fill="#f0fdf4" stroke="#10b981" stroke-width="1"/>
+      <text x="115" y="22" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">Tests &amp; Qualité C++20</text>
+      <text x="12" y="44" font-size="9.5" font-weight="500" fill="#334155">• GoogleTest / CTest intégrés</text>
+      <text x="12" y="62" font-size="9.5" font-weight="500" fill="#334155">• Zero-warning (-Wall -Wextra -Wpedantic)</text>
+      <text x="12" y="78" font-size="9.5" font-weight="500" fill="#334155">• Couverture de test cible >= 85%</text>
+    </g>
+  </g>
+
+  <!-- Arrow Simulation Engine <-> PostGIS -->
+  <path d="M 950 400 L 1005 400" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 1005 415 L 950 415" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- COLUMN 4: DATA & INFRASTRUCTURE (POSTGIS / GLOBAL MAPPER) -->
+  <g transform="translate(1010, 110)">
+    <rect x="0" y="0" width="150" height="650" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="150" height="42" rx="10" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="75" y="26" font-size="12" font-weight="800" fill="#1e293b" text-anchor="middle">4. DONNÉES &amp; SIG</text>
+
+    <!-- Global Mapper Box -->
+    <g transform="translate(10, 60)">
+      <rect x="0" y="0" width="130" height="150" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="65" y="22" font-size="11" font-weight="800" fill="#1d4ed8" text-anchor="middle">Global Mapper</text>
+      <text x="65" y="38" font-size="9" font-weight="700" fill="#2563eb" text-anchor="middle">Unique Outil SIG</text>
+      <text x="8" y="60" font-size="9" font-weight="500" fill="#334155">• Traitement MNT</text>
+      <text x="8" y="78" font-size="9" font-weight="500" fill="#334155">• Reprojection</text>
+      <text x="8" y="96" font-size="9" font-weight="500" fill="#334155">• Nettoyage NoData</text>
+      <text x="8" y="114" font-size="9" font-weight="500" fill="#334155">• Découpage AOI</text>
+      <text x="8" y="132" font-size="9" font-weight="500" fill="#334155">• Contrôle QA</text>
+    </g>
+
+    <path d="M 75 210 L 75 240" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+    <!-- PostGIS Box -->
+    <g transform="translate(10, 245)">
+      <rect x="0" y="0" width="130" height="230" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+      <text x="65" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">PostgreSQL 16</text>
+      <text x="65" y="42" font-size="10.5" font-weight="700" fill="#2563eb" text-anchor="middle">PostGIS 3.4</text>
+      <text x="8" y="68" font-size="9" font-weight="500" fill="#334155">• hex_cell</text>
+      <text x="8" y="86" font-size="9" font-weight="500" fill="#334155">• elevation_grid</text>
+      <text x="8" y="104" font-size="9" font-weight="500" fill="#334155">• terrain_feature</text>
+      <text x="8" y="122" font-size="9" font-weight="500" fill="#334155">• simulation_log</text>
+      <text x="8" y="140" font-size="9" font-weight="500" fill="#334155">• scenario_data</text>
+      <text x="8" y="160" font-size="9" font-weight="600" fill="#0284c7">• Index GiST</text>
+      <text x="8" y="178" font-size="9" font-weight="500" fill="#334155">• ST_Intersects</text>
+      <text x="8" y="196" font-size="9" font-weight="500" fill="#334155">• ST_DWithin</text>
+      <text x="8" y="214" font-size="9" font-weight="600" fill="#047857">• Persistance 3NF</text>
+    </g>
+
+    <g transform="translate(10, 490)">
+      <rect x="0" y="0" width="130" height="140" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="65" y="22" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="middle">Docker Compose</text>
+      <text x="8" y="46" font-size="9" font-weight="500" fill="#334155">• Conteneur DB</text>
+      <text x="8" y="66" font-size="9" font-weight="500" fill="#334155">• Ports mappés</text>
+      <text x="8" y="86" font-size="9" font-weight="500" fill="#334155">• Volumes montés</text>
+      <text x="8" y="106" font-size="9" font-weight="500" fill="#334155">• Healthchecks</text>
+      <text x="8" y="126" font-size="9" font-weight="500" fill="#334155">• Démarrage 1 clic</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM PANEL: DEVOPS, TOOLING & CI/CD -->
+  <g transform="translate(40, 780)">
+    <rect x="0" y="0" width="1120" height="140" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="0" y="0" width="1120" height="32" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <text x="560" y="22" font-size="12" font-weight="800" fill="#1e293b" text-anchor="middle">5. CHAÎNE D'INGÉNIERIE, GOUVERNANCE GIT &amp; PIPELINE CI/CD</text>
+
+    <!-- Sub boxes -->
+    <g transform="translate(30, 45)">
+      <rect x="0" y="0" width="240" height="80" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="120" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Gouvernance Git &amp; Branches</text>
+      <text x="12" y="44" font-size="9.5" font-weight="500" fill="#334155">• Branches isolées par phase (phase/XX-*)</text>
+      <text x="12" y="60" font-size="9.5" font-weight="500" fill="#334155">• main (stable) &amp; develop (intégration)</text>
+      <text x="12" y="74" font-size="9.5" font-weight="600" fill="#2563eb">• Commits conventionnels sémantiques</text>
+    </g>
+
+    <g transform="translate(300, 45)">
+      <rect x="0" y="0" width="240" height="80" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="120" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">GitHub Actions CI/CD</text>
+      <text x="12" y="44" font-size="9.5" font-weight="500" fill="#334155">• .github/workflows/ci.yml opérationnel</text>
+      <text x="12" y="60" font-size="9.5" font-weight="500" fill="#334155">• Vérification intégrité documents maîtres</text>
+      <text x="12" y="74" font-size="9.5" font-weight="600" fill="#047857">• Contrôle qualité, lint &amp; compilation</text>
+    </g>
+
+    <g transform="translate(570, 45)">
+      <rect x="0" y="0" width="240" height="80" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="120" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Pilotage &amp; Automatisation</text>
+      <text x="12" y="44" font-size="9.5" font-weight="500" fill="#334155">• scripts/update_progress.py autonome</text>
+      <text x="12" y="60" font-size="9.5" font-weight="500" fill="#334155">• Calcul avancement depuis ROADMAP.md</text>
+      <text x="12" y="74" font-size="9.5" font-weight="600" fill="#2563eb">• Dashboard &amp; Donut SVG régénérables</text>
+    </g>
+
+    <g transform="translate(840, 45)">
+      <rect x="0" y="0" width="250" height="80" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="125" y="22" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Conteneurs &amp; Portabilité</text>
+      <text x="12" y="44" font-size="9.5" font-weight="500" fill="#334155">• Docker &amp; Docker Compose</text>
+      <text x="12" y="60" font-size="9.5" font-weight="500" fill="#334155">• Environnement Linux / Windows reproductible</text>
+      <text x="12" y="74" font-size="9.5" font-weight="600" fill="#047857">• Zéro dépendance cachée</text>
+    </g>
+  </g>
+</svg>
