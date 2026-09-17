@@ -44,3 +44,9 @@ data/tmp/
 coverage/
 *.gcda
 *.gcno
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
