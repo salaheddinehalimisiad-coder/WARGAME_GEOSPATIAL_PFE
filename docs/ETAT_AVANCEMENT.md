@@ -1,8 +1,11 @@
 # ÉTAT D’AVANCEMENT DU PROJET
 
-**Dernière mise à jour automatique :** 2026-09-18 00:09:34  
+**Dernière mise à jour automatique :** 2026-09-18 00:16:48  
 **Source de vérité :** [`docs/ROADMAP.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ROADMAP.md)  
 **Outil de synchronisation :** `python scripts/update_progress.py`
+
+> [!TIP]
+> 📊 **Tableau de bord interactif & dynamique disponible :** Consultez [`docs/dashboard.html`](dashboard.html) dans votre navigateur pour une exploration réactive temps réel (recherche instantanée parmi les 247 sous-tâches, filtres dynamiques, accordéons déroulants et animation fluide du donut d'avancement).
 
 ---
 

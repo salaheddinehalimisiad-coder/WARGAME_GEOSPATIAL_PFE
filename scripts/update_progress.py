@@ -13,6 +13,7 @@ Usage :
 import sys
 import re
 import math
+import json
 from pathlib import Path
 from datetime import datetime
 
@@ -28,6 +29,8 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 ROADMAP_FILE = ROOT_DIR / "docs" / "ROADMAP.md"
 DASHBOARD_FILE = ROOT_DIR / "docs" / "ETAT_AVANCEMENT.md"
 DONUT_SVG_FILE = ROOT_DIR / "docs" / "assets" / "progress" / "progress_donut.svg"
+DATA_JSON_FILE = ROOT_DIR / "docs" / "assets" / "progress" / "progress_data.json"
+HTML_DASHBOARD_FILE = ROOT_DIR / "docs" / "dashboard.html"
 
 RE_STEP = re.compile(r"^##\s+ÉTAPE\s+(\d{2})\s+[—\-]\s+(.+)$")
 RE_TASK = re.compile(r"^###\s+Tâche\s+(T\d{2}-\d{2})\s+[—\-]\s+(.+)$")
@@ -159,7 +162,9 @@ def calculate_metrics(steps):
             "remaining": s_remaining,
             "pct": s_pct,
             "status": status,
-            "is_blocked": step["is_blocked"]
+            "is_blocked": step["is_blocked"],
+            "tasks": step.get("tasks", []),
+            "subtasks": step.get("subtasks", [])
         }
         steps_metrics.append(step_data)
 
@@ -323,6 +328,9 @@ def generate_dashboard_md(metrics, output_path: Path):
 **Source de vérité :** [`docs/ROADMAP.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ROADMAP.md)  
 **Outil de synchronisation :** `python scripts/update_progress.py`
 
+> [!TIP]
+> 📊 **Tableau de bord interactif & dynamique disponible :** Consultez [`docs/dashboard.html`](dashboard.html) dans votre navigateur pour une exploration réactive temps réel (recherche instantanée parmi les 247 sous-tâches, filtres dynamiques, accordéons déroulants et animation fluide du donut d'avancement).
+
 ---
 
 ## Progression globale
@@ -393,6 +401,30 @@ def generate_dashboard_md(metrics, output_path: Path):
         f.write(md_content.strip() + "\n")
 
 
+def export_json_and_sync_html(metrics, json_path: Path, html_path: Path):
+    json_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+    print(f"Export des données JSON : {json_path}")
+
+    if html_path.exists():
+        with open(html_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+
+        json_str = json.dumps(metrics, ensure_ascii=False)
+        tag_pattern = r"<!-- __DATA_START__ -->.*?<!-- __DATA_END__ -->"
+        injection = f"<!-- __DATA_START__ -->\n  <script>\n    window.__INITIAL_DATA__ = {json_str};\n  </script>\n  <!-- __DATA_END__ -->"
+
+        if re.search(tag_pattern, html_content, flags=re.DOTALL):
+            html_content = re.sub(tag_pattern, injection, html_content, flags=re.DOTALL)
+        else:
+            html_content = html_content.replace("</head>", f"  {injection}\n</head>")
+
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"Synchronisation des données réactives dans : {html_path}")
+
+
 def main():
     print("=== Mise à jour de l'avancement du projet ===")
     print(f"Lecture de la feuille de route : {ROADMAP_FILE}")
@@ -412,8 +444,11 @@ def main():
     print(f"Génération du tableau de bord : {DASHBOARD_FILE}")
     generate_dashboard_md(metrics, DASHBOARD_FILE)
 
+    export_json_and_sync_html(metrics, DATA_JSON_FILE, HTML_DASHBOARD_FILE)
+
     print("=== Mise à jour terminée avec succès ===")
 
 
 if __name__ == "__main__":
     main()
+

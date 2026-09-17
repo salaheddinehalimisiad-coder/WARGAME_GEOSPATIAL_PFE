@@ -23,7 +23,7 @@ if sys.platform == "win32" and hasattr(sys.stdout, "reconfigure"):
 # Import logic from update_progress.py
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR / "scripts"))
-from update_progress import parse_roadmap, calculate_metrics, generate_donut_svg, generate_dashboard_md
+from update_progress import parse_roadmap, calculate_metrics, generate_donut_svg, generate_dashboard_md, export_json_and_sync_html
 
 
 def test_controlled_sample():
@@ -91,9 +91,24 @@ def test_controlled_sample():
             svg_text = f.read()
             assert "25.00 %" in svg_text, "Pourcentage 25.00 % absent du SVG"
 
+        # Test JSON and HTML sync
+        with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False, suffix=".json") as json_tmp:
+            json_path = Path(json_tmp.name)
+        with tempfile.NamedTemporaryFile("w", encoding="utf-8", delete=False, suffix=".html") as html_tmp:
+            html_tmp.write("<html><head><title>Test</title></head><body></body></html>")
+            html_path = Path(html_tmp.name)
+
+        export_json_and_sync_html(metrics, json_path, html_path)
+        assert json_path.exists() and json_path.stat().st_size > 100, "Le JSON n'a pas été exporté"
+        with open(html_path, "r", encoding="utf-8") as f:
+            html_text = f.read()
+            assert "window.__INITIAL_DATA__" in html_text, "Injection __INITIAL_DATA__ absente du HTML"
+
         # Cleanup temp files
         svg_path.unlink()
         md_path.unlink()
+        json_path.unlink()
+        html_path.unlink()
 
         print("  -> Succès : 20 sous-tâches, 5 cochées => 25.00% exact, SVG et Dashboard vérifiés.")
     finally:

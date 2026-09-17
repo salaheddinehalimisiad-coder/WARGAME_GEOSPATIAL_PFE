@@ -24,12 +24,14 @@
   },
   "etat_final": {
     "roadmap_officielle": "docs/ROADMAP.md exhaustif sur 31 étapes (ÉTAPE 00 à ÉTAPE 30)",
-    "tableau_de_bord": "docs/ETAT_AVANCEMENT.md généré automatiquement",
+    "tableau_de_bord_markdown": "docs/ETAT_AVANCEMENT.md généré automatiquement",
+    "tableau_de_bord_interactif_web": "docs/dashboard.html (IHM réactive standalone, recherche temps réel, filtres, accordéons, animations)",
+    "donnees_reactives_json": "docs/assets/progress/progress_data.json",
     "graphique_avancement": "docs/assets/progress/progress_donut.svg (fond blanc, 0.00 % au centre, 247 sous-tâches)",
     "architecture_visuelle": "docs/ARCHITECTURE.md intégrant 6 diagrammes vectoriels SVG professionnels sur fond blanc",
     "sources_architecture": "docs/assets/architecture/source/ contenant les 6 fichiers SVG modifiables et un README guide d'édition",
-    "script_calcul": "scripts/update_progress.py (lecture ROADMAP.md, calcul précis, génération dashboard et donut)",
-    "banc_de_test": "scripts/test_progress_calculation.py (test échantillon 5/20 = 25.00%, intégrité roadmap 31 étapes, détection doublons)",
+    "script_calcul": "scripts/update_progress.py (lecture ROADMAP.md, calcul précis, génération dashboard MD, JSON, SVG et synchronisation HTML)",
+    "banc_de_test": "scripts/test_progress_calculation.py (test échantillon 5/20 = 25.00%, intégrité roadmap 31 étapes, détection doublons, synchro JSON/HTML)",
     "coherence_documentaire": "Parfaite cohérence entre MASTER_PROMPT.md, PROJECT_PROMPT.md, PROJECT_MEMORY.md, CHANGELOG.md, docs/ et CI/CD"
   },
   "roadmap_creee_modifiee": {
