@@ -124,6 +124,12 @@ Construire un prototype fonctionnel de wargame géospatial permettant :
 
 Le système est destiné à l’entraînement et à l’expérimentation de la prise de décision.
 
+Il doit respecter le principe directeur officiel :
+
+**« Autonomous First — CommandView Ready »**
+
+Le prototype doit fonctionner de manière 100% autonome tout en préparant une architecture et des interfaces compatibles avec une intégration ultérieure dans le système C4ISR moderne **CommandView** (connexion à une base opérationnelle distribuée, flux d'événements, intégration COP, alertes, observabilité).
+
 Il ne doit pas être présenté comme :
 
 - une doctrine opérationnelle ;
@@ -391,26 +397,25 @@ Le débriefing doit progressivement fournir :
 
 ---
 
-# 5. PIPELINE SIG — RÈGLE ABSOLUE
+# 5. PIPELINE SIG & ETL
+ 
+## 5.1 Outils SIG et chaîne de traitement
 
-## 5.1 Outil SIG retenu
+**GLOBAL MAPPER EST L'OUTIL SIG PRINCIPAL DE RÉFÉRENCE DU PROJET.**
 
-**GLOBAL MAPPER EST LE SEUL OUTIL SIG DU PROJET.**
+Le projet s'appuie en priorité sur Global Mapper pour les opérations de préparation, visualisation et traitement des données géospatiales.
 
-Le workflow SIG courant du projet doit utiliser exclusivement Global Mapper pour les opérations de préparation des données.
+Toutefois, conformément aux technologies recommandées par le cahier des charges officiel (Section 17 : QGIS, GDAL, PROJ pour la préparation des données) :
 
-Ne pas utiliser QGIS dans le projet courant.
+- L'utilisation de **QGIS**, **GDAL** et **PROJ** est pleinement autorisée en complément de Global Mapper dès lors qu'elle répond à un besoin technique avéré (scripts d'automatisation ETL, reprojections avancées, conversions de formats, traitements batch).
+- La chaîne SIG doit rester cohérente, traçable et documentée, quel que soit l'outil utilisé.
+- Les données sources brutes ne doivent jamais être modifiées directement ; seules des données propres et contrôlées sont transmises à l'application et à PostGIS.
 
-Ne pas créer de chaîne SIG parallèle dans un autre logiciel.
-
-Ne pas disperser les opérations SIG entre plusieurs logiciels.
-
-Toute opération SIG supplémentaire non prévue doit faire l’objet d’une décision explicite avant utilisation.
 
 ---
 
-# 6. RÔLE DE GLOBAL MAPPER
-
+# 6. RÔLE DU PIPELINE SIG / ETL
+ 
 Global Mapper constitue l’outil principal de :
 
 - collecte ;
@@ -424,29 +429,34 @@ Global Mapper constitue l’outil principal de :
 - contrôle ;
 - export des données SIG propres.
 
+Les outils open source **QGIS**, **GDAL** et **PROJ** peuvent intervenir en appui pour :
+- les scripts de conversion et d'automatisation ETL ;
+- le reprojetage matriciel / vectoriel par lots ;
+- les contrôles topologiques et de géométrie.
+
 Le pipeline doit être articulé autour de :
 
 ```text
 DONNÉES SOURCES
         ↓
-GLOBAL MAPPER
+GLOBAL MAPPER / QGIS / GDAL
         ↓
-COLLECTE
+COLLECTE & EXTRACTION
         ↓
 PRÉTRAITEMENT
         ↓
-NETTOYAGE
+NETTOYAGE & HARMONISATION
         ↓
-TRAITEMENT
+TRAITEMENT & REPROJECTION
         ↓
-CONTRÔLE
+CONTRÔLE QUALITÉ
         ↓
 DONNÉES SIG PROPRES
         ↓
 POSTGIS / APPLICATION
 ```
 
-Global Mapper ne contient aucune logique de simulation.
+Les outils SIG ne contiennent aucune logique de simulation.
 
 ---
 
@@ -641,7 +651,8 @@ Le moteur doit être :
 
 ## 11.4 SIG / ETL
 
-- Global Mapper exclusivement
+- Global Mapper (outil principal d'appui et de préparation)
+- QGIS, GDAL, PROJ (outils complémentaires de traitement, reprojection et scripts ETL)
 
 ---
 
@@ -697,6 +708,19 @@ Le choix définitif doit être documenté et validé.
 
 - Git ;
 - GitHub Actions.
+
+---
+
+## 11.12 Compatibilité et intégration CommandView (« Autonomous First — CommandView Ready »)
+
+Conformément à la Section 33 du cahier des charges officiel :
+- Fonctionnement autonome pour le PFE avec socle prêt pour une intégration C4ISR CommandView.
+- Interfaces ouvertes REST/OpenAPI et flux WebSocket.
+- Connexion future à une base opérationnelle distribuée CommandView.
+- Modèle d'événements publiables/consommables.
+- Interopérabilité COP (Common Operational Picture) et alertes.
+- Compatibilité IAM/RBAC et observabilité standardisée.
+
 
 ---
 
@@ -2029,23 +2053,16 @@ Les choix structurants doivent être documentés.
 
 ---
 
-# 53. RÈGLE SUR GLOBAL MAPPER COMME CHOIX DE PROJET
+# 53. RÈGLE SUR LES OUTILS SIG ET LA PRÉPARATION DES DONNÉES
 
-Le cahier des charges constitue la référence fonctionnelle.
+Le cahier des charges officiel (Section 17) recommande la boîte à outils open source : **QGIS, GDAL, PROJ**.
 
-Global Mapper est le choix technique retenu par le projet pour la préparation SIG.
+Le projet retient **Global Mapper** comme outil SIG principal de référence pour la visualisation, le traitement de MNT, la manipulation et la préparation des couches géospatiales.
 
-Ne jamais affirmer que :
+Lorsque la nécessité technique le requiert (scripts d'automatisation ETL, conversions spécifiques, reprojections matricielles/vectorielles par lot, vérifications topologiques), les outils **QGIS**, **GDAL** et **PROJ** sont mobilisés en complément naturel.
 
-**« le cahier des charges impose Global Mapper »**
+Toute donnée préparée pour le système doit être contrôlée, propre et documentée.
 
-si ce n’est pas explicitement écrit dans le cahier.
-
-Dire plutôt :
-
-**« le projet retient Global Mapper comme outil SIG/ETL exclusif »**.
-
-Cette distinction doit être conservée dans les documents techniques et le mémoire.
 
 ---
 

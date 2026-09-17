@@ -11,7 +11,8 @@ Alignement complet du projet :
 `Cahier_des_charges_PFE_Wargame_geospatial.docx` — Version 1.0.
 
 ## Règles maîtresses
-- **SIG** : Global Mapper est le seul outil SIG du projet. QGIS est totalement exclu.
+- **SIG & ETL** : Global Mapper est l'outil principal de référence pour la préparation SIG. Complété par la suite open source recommandée par le cahier des charges (QGIS, GDAL, PROJ) selon les nécessités techniques.
+- **Principe d'intégration** : « Autonomous First — CommandView Ready » (PFE 100% autonome, architecture et APIs préparées pour une intégration ultérieure dans le C4ISR CommandView).
 - **Unités** : Niveau minimal d'agrégation fixé au bataillon.
 - **Équipements** : Capacités abstraites uniquement (aucune arme réelle détaillée).
 - **Incertitude** : Séparation stricte État Réel (Umpire) vs État Perçu (Blue/Red).
@@ -19,8 +20,10 @@ Alignement complet du projet :
 - **Développement** : Progression séquentielle stricte, validation par preuves, pas de développement prématuré.
 
 ## Prochaine étape
-Phase 0 — Cadrage, initialisation de l'environnement, structure propre et premier push vers le dépôt distant.
+ÉTAPE 00 — Initialisation du projet (dépôt, structure, documentation initiale, environnement, CI/CD).
 
 ## Historique
-- Adoption du Master Prompt v1.0 complet et mise en conformité des règles agent et de la checklist de référence.
-- Mise en place du workflow Git, du `.gitignore`, du guide de branches par phase, de la CI/CD GitHub Actions et configuration du remote GitHub.
+- Clarification et alignement : intégration du principe « Autonomous First — CommandView Ready » (Section 33 du CdC) et ouverture du pipeline SIG (Global Mapper principal + QGIS, GDAL, PROJ).
+- Intégration du Master Prompt v1.0 officiel (62 sections).
+- Mise en place du workflow Git, du `.gitignore`, du guide de branches par phase, de la CI/CD GitHub Actions et synchronisation avec GitHub.
+
