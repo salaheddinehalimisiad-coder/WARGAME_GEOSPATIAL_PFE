@@ -1,49 +1,241 @@
-# ROADMAP — PROJET REPARTI DE ZERO
+# ROADMAP OFFICIELLE DU PROJET
 
-## Phase 0 — Initialisation
-Références, règles agent, structure projet, Git, documentation.
+Référence : Section 15 du `MASTER_PROMPT.md` (Version 1.0 — PFE 2026–2027).
 
-## Phase 1 — Analyse et architecture
-Exigences, acteurs, scénarios fonctionnels, architecture, modèle de données.
+---
 
-## Phase 2 — SIG / ETL avec Global Mapper
-Collecte des données, MNT/DEM, routes, hydrographie, végétation/occupation du sol, zones urbaines/infrastructures, limites et emprises.
-Objectif : produire des couches propres et documentées.
+## ÉTAPE 00 — Initialisation du projet
+- Création du dépôt
+- Structure des dossiers
+- Documentation initiale
+- Règles de travail
+- Environnement
+- Git
+- CI/CD de base
 
-## Phase 3 — QA des données SIG
-Contrôle géométrique, CRS, emprises, attributs, cohérence topologique, métadonnées et reproductibilité.
+## ÉTAPE 01 — Analyse détaillée du cahier des charges
+- Exigences
+- Objectifs
+- Acteurs
+- Fonctionnalités
+- Contraintes
+- Critères d’acceptation
+- Livrables
 
-## Phase 4 — Grille hexagonale
-Choix H3 ou équivalent, génération/chargement de la grille, règles d'identification et voisinage.
+## ÉTAPE 02 — Architecture fonctionnelle et technique
+- Architecture globale
+- Responsabilités
+- Flux
+- Dépendances
+- Interfaces entre composants
 
-## Phase 5 — PostGIS
-Schéma, contraintes, index spatiaux, ingestion des données propres et de la grille.
+## ÉTAPE 03 — Modèle de données
+- Modèle conceptuel
+- Modèle logique
+- Entités
+- Relations
+- Données géospatiales
+- Données de simulation
 
-## Phase 6 — Unités et équipements
-Unit, Side, Equipment, Sensor, capacités abstraites.
+## ÉTAPE 04 — Préparation de l’environnement
+- C++20
+- Drogon
+- PostgreSQL
+- PostGIS
+- React
+- TypeScript
+- GoogleTest
+- Docker
+- GitHub Actions
 
-## Phase 7 — Moteur de simulation
-État du monde, déplacements, règles, transitions et reproductibilité.
+## ÉTAPE 05 — Collecte des données SIG
+Traitement exclusivement avec Global Mapper.
+Collecter selon le périmètre :
+- MNT/DEM
+- Routes/pistes
+- Hydrographie
+- Zones urbaines
+- Occupation du sol / végétation
+- Infrastructures
+- Limites
+- Emprises
 
-## Phase 8 — Capteurs et incertitude
-Observations, confiance, précision, état réel vs état perçu.
+## ÉTAPE 06 — Préparation et nettoyage SIG
+Global Mapper exclusivement.
+- Nettoyage
+- Correction
+- Harmonisation
+- Reprojection
+- Mosaïquage
+- Découpage
+- Préparation des attributs
+- Export
 
-## Phase 9 — Temps, événements et décisions
-Horloge, événements planifiés/conditionnels, délais, décisions, contraintes.
+## ÉTAPE 07 — Contrôle qualité SIG
+Vérifier :
+- CRS
+- Emprise
+- Géométrie
+- Attributs
+- Unités
+- Cohérence spatiale
+- Cohérence thématique
+- Métadonnées
+- Validité des sorties
+Aucune donnée ne passe à l’étape suivante sans validation.
 
-## Phase 10 — Services
-Drogon, REST, WebSocket, gestion de session.
+## ÉTAPE 08 — Modèle du terrain
+Construire progressivement les modèles nécessaires :
+- Altitude
+- Pente
+- Hydrographie
+- Occupation du sol
+- Zones urbaines
+- Infrastructures
+- Propriétés utiles au mouvement et à l’observation
 
-## Phase 11 — Interfaces
-Blue, Red, Umpire, carte et COP.
+## ÉTAPE 09 — Conception de la grille hexagonale
+- Étude H3 / équivalent
+- Comparaison
+- Choix
+- Identifiants
+- Voisinage
+- Relation terrain/cellule
 
-## Phase 12 — Journalisation et rejeu
-Log structuré, reconstruction d'une session.
+## ÉTAPE 10 — Validation de la grille
+- Géométrie
+- Couverture
+- Voisinage
+- Cohérence
+- Tests
 
-## Phase 13 — Débriefing
-Chronologie, décisions majeures, indicateurs, comparaison réel/perçu.
+## ÉTAPE 11 — Intégration PostgreSQL / PostGIS
+- Schéma
+- Contraintes
+- Index
+- Terrain
+- Grille
+- Vérification
 
-## Phase 14 — Validation
-Tests, démonstration de bout en bout, documentation finale.
+## ÉTAPE 12 — Modèle des unités
+- Unit
+- Side
+- Positions
+- États
+- Capacités abstraites
 
-Règle : une phase ne passe à la suivante qu'après validation.
+## ÉTAPE 13 — Modèle des équipements
+- Equipment
+- Capacité
+- Disponibilité
+- Mobilité relative
+- Protection
+- Observation
+- Endurance
+- Portée relative
+
+## ÉTAPE 14 — Modèle des capteurs
+- Sensor
+- Portée
+- Précision
+- Disponibilité
+- Conditions d’observation
+
+## ÉTAPE 15 — Moteur de simulation
+- État initial
+- État courant
+- Transitions
+- Règles
+- Reproductibilité
+
+## ÉTAPE 16 — Déplacements
+- Déplacement sur grille
+- Contraintes terrain
+- Règles
+- Tests
+
+## ÉTAPE 17 — Observations et incertitude
+- Observations
+- Positions estimées
+- Précision
+- Confiance
+- Horodatage
+- Source
+
+## ÉTAPE 18 — État réel / état perçu
+- Séparation des informations
+- Visibilité Blue
+- Visibilité Red
+- Accès Umpire
+- Règles de diffusion
+
+## ÉTAPE 19 — Temps et événements
+- Horloge
+- Mode pas-à-pas
+- Accélération
+- Événements
+- Délais
+- Échéances
+
+## ÉTAPE 20 — Modèle de décision
+- Situation perçue
+- Informations
+- Options
+- Choix
+- Validation
+- Résultat
+
+## ÉTAPE 21 — Services Drogon
+- REST
+- OpenAPI
+- WebSocket
+- Scénarios
+- Sessions
+- Commandes
+
+## ÉTAPE 22 — Interface Blue
+- Carte interactive & COP Blue
+- Symbolisation des unités
+- Commandes et décisions
+- Visualisation perçue
+
+## ÉTAPE 23 — Interface Red
+- Carte interactive & COP Red
+- Symbolisation des unités
+- Commandes et décisions
+- Visualisation perçue
+
+## ÉTAPE 24 — Interface Umpire
+- Vue globale Arbitre (état réel)
+- Contrôle de la simulation
+- Injection d'événements
+- Supervision
+
+## ÉTAPE 25 — Journalisation
+- Traces structurées (joueur, observation, événement, décision, système, simulation)
+- Persistance et reproductibilité
+
+## ÉTAPE 26 — Rejeu
+- Lecture, pause, vitesse variable
+- Navigation temporelle
+- Visualisation des décisions
+- Comparaison réel / perçu
+
+## ÉTAPE 27 — Débriefing et indicateurs
+- Chronologie
+- Évolution des indicateurs et charge décisionnelle
+- Analyse des écarts réel vs perçu
+- Rapport de session
+
+## ÉTAPE 28 — Scénario de démonstration complet
+- Déroulement complet de bout en bout
+- Terrain → Grille → Déploiement → Incertitude → Décision → Simulation → Rejeu → Débriefing
+
+## ÉTAPE 29 — Validation globale
+- Tests de non-régression et d'intégration
+- Critères d'acceptation du cahier des charges
+
+## ÉTAPE 30 — Documentation finale et soutenance
+- Documentation technique et utilisateur
+- Rapport final de PFE
+- Support de soutenance
