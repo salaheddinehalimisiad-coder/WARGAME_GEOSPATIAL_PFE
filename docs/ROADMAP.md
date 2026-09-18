@@ -44,8 +44,8 @@ Mettre en place le socle d'ingénierie, la gouvernance Git, l'arborescence norma
 
 ### Tâche T00-02 — Arborescence et environnement de base
 #### Sous-tâches
-- [ ] P00-T02-S01 — Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker
-- [ ] P00-T02-S02 — Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster
+- [x] P00-T02-S01 — Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker
+- [x] P00-T02-S02 — Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster
 - [x] P00-T02-S03 — Mettre en place le pipeline CI de base dans .github/workflows/ci.yml
 - [x] P00-T02-S04 — Valider l'exécution locale des scripts d'intégrité documentaire
 

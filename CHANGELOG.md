@@ -41,5 +41,14 @@
 - **Synchronisation complète des diagrammes SVG** : Diagrammes dans `docs/assets/architecture/` et sources dans `docs/assets/architecture/source/` rigoureusement identiques et validés.
 - **Mise à jour du rapport JSON de conformité** : `docs/rapport_mise_a_niveau_documentation.json` consolidé avec tous les indicateurs et preuves exigés.
 
+## [PASS / ÉTAPE 00] — Finalisation de l'arborescence et validation de l'Étape 00
+- **Création des répertoires racines (`P00-T02-S01`)** : Matérialisation de `src/`, `tests/`, `docker/` et `data/` (préservation stricte de `docs/` et `scripts/` existants sans altération des fichiers).
+- **Création des répertoires de données (`P00-T02-S02`)** : Matérialisation sous `data/` des conteneurs `data/raw/`, `data/processed/`, `data/vector/`, `data/raster/` avec conservation de l'interdiction de données SIG brutes.
+- **Ajout des fichiers `.gitkeep`** : Suivi de la structure de répertoires vides dans Git via `.gitkeep` sans inclure de code ni de données volumineuses.
+- **Validation formelle de l'ÉTAPE 00** : Complétion des 8 sous-tâches de l'étape 00 (8/8, 100,00 %), statut de l'ÉTAPE 00 déclaré `PASS`.
+- **Mise à jour de l'avancement global** : Avancement global porté à **3,24 %** (8 / 247 sous-tâches).
+- **Étape active suivante** : ÉTAPE 01 — Analyse détaillée du cahier des charges (statut : `PLANNED`).
+
+
 
 

@@ -1,14 +1,15 @@
 {
-  "titre": "Rapport d'audit et de correction finale de la mise à niveau documentaire",
+  "titre": "Rapport d'audit et de validation de l'Étape 00 — Initialisation du projet",
   "date": "2026-09-18",
-  "statut_global": "PASS_CORRECTIONS_DOC_TERMINEES",
+  "statut_global": "PASS_ETAPE_00_VALIDEE",
   "nombre_total_sous_taches": 247,
-  "nombre_sous_taches_terminees": 6,
-  "nombre_sous_taches_restantes": 241,
-  "pourcentage_reel": "2.43 %",
-  "etape_active": "ÉTAPE 00 — Initialisation du projet",
-  "statut_etape_active": "IN_PROGRESS",
-  "progression_etape_active": "6 / 8 sous-tâches (75.00 %)",
+  "nombre_sous_taches_terminees": 8,
+  "nombre_sous_taches_restantes": 239,
+  "pourcentage_reel": "3.24 %",
+  "etapes_terminees_pass": "1 / 31 (ÉTAPE 00 validée à 100 %)",
+  "etape_active": "ÉTAPE 01 — Analyse détaillée du cahier des charges",
+  "statut_etape_active": "PLANNED",
+  "progression_etape_active": "0 / 7 sous-tâches (0.00 %)",
   "sous_taches_cochees_sur_preuve": [
     {
       "id": "P00-T01-S01",
@@ -35,6 +36,18 @@
       "preuve": "Règle n°15 dans AGENT_RULES.md imposant la convention de commits sémantiques (feat, fix, docs, refactor, test, chore) avec scope obligatoire"
     },
     {
+      "id": "P00-T02-S01",
+      "titre": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
+      "statut": "DONE",
+      "preuve": "Répertoires src/, tests/, docker/, data/ créés à la racine, préservation de docs/ et scripts/ existants, suivi via .gitkeep"
+    },
+    {
+      "id": "P00-T02-S02",
+      "titre": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
+      "statut": "DONE",
+      "preuve": "Conteneurs data/raw/, data/processed/, data/vector/ et data/raster/ créés avec suivi via .gitkeep, aucune donnée SIG importée prématurément"
+    },
+    {
       "id": "P00-T02-S03",
       "titre": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
       "statut": "DONE",
@@ -47,49 +60,21 @@
       "preuve": "Exécution réussie de scripts/test_progress_calculation.py (tous tests PASS) et scripts/update_progress.py générant sans erreur le tableau de bord et les métriques"
     }
   ],
-  "sous_taches_non_cochees_car_non_realisees": [
-    {
-      "id": "P00-T02-S01",
-      "titre": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
-      "statut": "TODO",
-      "motif": "Dossiers src, tests, data et docker non encore matérialisés sur le disque afin de respecter la consigne de ne pas démarrer prématurément le développement fonctionnel"
-    },
-    {
-      "id": "P00-T02-S02",
-      "titre": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
-      "statut": "TODO",
-      "motif": "Sous-dossiers de données data/ non encore créés afin d'éviter tout import ou stockage non validé de données SIG"
-    }
-  ],
+  "sous_taches_non_cochees_car_non_realisees": [],
+  "criteres_acceptation_etape_00": {
+    "integrite_fichiers_maitres": "VALIDÉ (MASTER_PROMPT.md, AGENT_RULES.md, PROJECT_MEMORY.md, CHANGELOG.md intègres)",
+    "pipeline_ci": "VALIDÉ (.github/workflows/ci.yml opérationnel)",
+    "exclusion_donnees_sig_et_binaires": "VALIDÉ (.gitignore configuré et actif)",
+    "arborescence_normalisee": "VALIDÉ (src/, tests/, docker/, data/raw/, data/processed/, data/vector/, data/raster/)",
+    "statut_etape_00": "PASS"
+  },
   "diagrammes_valides": [
     "architecture_globale.svg : Fond blanc (#ffffff), 100% vectoriel, lisibilité optimale, aucune source de données arbitraire imposée, principe CommandView Ready intégré",
     "architecture_pipeline_sig.svg : Fond blanc (#ffffff), workflow exclusif Global Mapper, traitement NoData documenté et validé, sources rasters et vecteurs génériques",
     "architecture_donnees.svg : Fond blanc (#ffffff), modèle relationnel clair sans technologie fictive, entités métier du CdC (Scenario, Session, Unit, Cell, etc.)",
     "architecture_flux_simulation.svg : Fond blanc (#ffffff), boucle OODA causale et séquentielle, découplage total moteur / IHM",
-    "architecture_blue_red_umpire.svg : Fond blanc (#ffffff), cloisonnement étanche strict des perspectives Blue / Red / Umpire",
+    "architecture_blue_red_umpire.svg : Fond blanc (#ffffff), cloisonnement étanche des perspectives Blue / Red / Umpire",
     "architecture_technique.svg : Fond blanc (#ffffff), exigence de fluidité sans seuil FPS arbitraire, composants technologiques conformes au CdC"
   ],
-  "problemes_corriges": [
-    "Suppression de l'ensemble des seuils arbitraires de latence (< 2 ms, < 10 ms, < 15 ms, < 1 µs) dans docs/ROADMAP.md au profit de protocoles de mesure sur scénario de référence avec documentation des métriques",
-    "Suppression du seuil de couverture de code imposé sans validation (>= 85%) dans docs/ROADMAP.md",
-    "Suppression des nombres de tours de simulation arbitraires (100 tours, 200 tours, 500 tours) dans docs/ROADMAP.md au profit de scénarios multi-tours et sessions d'endurance de référence",
-    "Suppression des sources de données imposées (SRTM, Copernicus, OpenStreetMap, BD TOPO) dans docs/ROADMAP.md, docs/ARCHITECTURE.md et les diagrammes SVG, avec mention explicite de sélection et validation en phase de collecte (CHOIX À VALIDER)",
-    "Remplacement de l'interpolation systématique NoData par un traitement selon méthode documentée et validée dans docs/ROADMAP.md, docs/ARCHITECTURE.md et architecture_pipeline_sig.svg",
-    "Suppression de la mention '60 FPS sans latence' dans architecture_technique.svg et son homologue source au profit de l'exigence de rendu et navigation fluides",
-    "Audit rigoureux des 8 sous-tâches de l'ÉTAPE 00 : 6 sous-tâches prouvées cochées [x], 2 sous-tâches non réalisées maintenues à [ ]",
-    "Distinction nette entre l'avancement calculé (75.00 % de l'ÉTAPE 00, 2.43 % global) et le statut de validation de l'étape active (IN_PROGRESS)",
-    "Mise à jour du tableau de bord docs/ETAT_AVANCEMENT.md respectant exactement les sections et colonnes obligatoires (Étape, Terminées, Total, %, Statut)",
-    "Synchronisation parfaite entre les diagrammes SVG de rendu docs/assets/architecture/*.svg et les sources éditables docs/assets/architecture/source/*.svg"
-  ],
-  "coherence_documentaire": {
-    "MASTER_PROMPT.md": "Conforme (Référence de cadrage, 31 étapes, CommandView Ready, Global Mapper unique outil SIG)",
-    "PROJECT_PROMPT.md": "Conforme (Principes directeurs, aucun seuil arbitraire)",
-    "PROJECT_MEMORY.md": "Conforme (Historique réel, 6/247 sous-tâches, ÉTAPE 00 IN_PROGRESS)",
-    "CHANGELOG.md": "Conforme (Historique des modifications sémantiques)",
-    "docs/ROADMAP.md": "Conforme (247 sous-tâches, formulations validées, 6 cochées)",
-    "docs/ETAT_AVANCEMENT.md": "Conforme (Calcul dynamique 2.43%, 6/247, Étape 00 IN_PROGRESS)",
-    "docs/ARCHITECTURE.md": "Conforme (6 diagrammes SVG intégrés, explications détaillées, zéro schéma ASCII)",
-    "docs/REFERENCE_CHECKLIST.md": "Conforme (Check-lists complètes d'intégrité et de gouvernance)"
-  },
-  "prochaine_etape": "ÉTAPE 00 — Initialisation du projet (finalisation des sous-tâches P00-T02-S01 et P00-T02-S02 en attente de validation explicite)"
+  "prochaine_etape": "ÉTAPE 01 — Analyse détaillée du cahier des charges (en attente d'approbation et d'instruction explicite)"
 }

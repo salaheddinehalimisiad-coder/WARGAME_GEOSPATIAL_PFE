@@ -36,9 +36,11 @@ dist/
 *.dem.gz
 *.tif.gz
 *.geotiff
-data/raw/
+data/raw/*
+!data/raw/.gitkeep
 data/cache/
 data/tmp/
+!.gitkeep
 
 # Testing & Coverage outputs
 coverage/

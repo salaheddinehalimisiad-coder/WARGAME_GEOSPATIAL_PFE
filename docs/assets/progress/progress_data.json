@@ -1,162 +1,146 @@
 {
   "total_subtasks": 247,
-  "completed_subtasks": 6,
-  "remaining_subtasks": 241,
-  "global_pct": 2.42914979757085,
+  "completed_subtasks": 8,
+  "remaining_subtasks": 239,
+  "global_pct": 3.2388663967611335,
   "total_steps": 31,
-  "completed_steps_count": 0,
-  "remaining_steps": 31,
+  "completed_steps_count": 1,
+  "remaining_steps": 30,
   "active_step": {
-    "num": "00",
-    "title": "Initialisation du projet",
-    "total": 8,
-    "completed": 6,
-    "remaining": 2,
-    "pct": 75.0,
-    "status": "IN_PROGRESS",
+    "num": "01",
+    "title": "Analyse détaillée du cahier des charges",
+    "total": 7,
+    "completed": 0,
+    "remaining": 7,
+    "pct": 0.0,
+    "status": "PLANNED",
     "is_blocked": false,
     "tasks": [
       {
-        "id": "T00-01",
-        "title": "Configuration du dépôt et gouvernance Git",
+        "id": "T01-01",
+        "title": "Analyse des exigences fonctionnelles",
         "subtasks": [
           {
-            "id": "P00-T01-S01",
-            "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-            "checked": true,
-            "line": 40,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "id": "P01-T01-S01",
+            "title": "Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille",
+            "checked": false,
+            "line": 83,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P00-T01-S02",
-            "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-            "checked": true,
-            "line": 41,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "id": "P01-T01-S02",
+            "title": "Extraire les exigences relatives aux unités, équipements et capteurs",
+            "checked": false,
+            "line": 84,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P00-T01-S03",
-            "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-            "checked": true,
-            "line": 42,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "id": "P01-T01-S03",
+            "title": "Définir formellement les règles de l'arbitre et la séparation réel versus perçu",
+            "checked": false,
+            "line": 85,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P00-T01-S04",
-            "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-            "checked": true,
-            "line": 43,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "id": "P01-T01-S04",
+            "title": "Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md",
+            "checked": false,
+            "line": 86,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           }
         ]
       },
       {
-        "id": "T00-02",
-        "title": "Arborescence et environnement de base",
+        "id": "T01-02",
+        "title": "Matrice de traçabilité et critères d'acceptation",
         "subtasks": [
           {
-            "id": "P00-T02-S01",
-            "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
+            "id": "P01-T02-S01",
+            "title": "Construire le tableau de correspondance entre articles du CdC et composants logiciels",
             "checked": false,
-            "line": 47,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "line": 90,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P00-T02-S02",
-            "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
+            "id": "P01-T02-S02",
+            "title": "Identifier les contraintes de performance et de reproductibilité temporelle",
             "checked": false,
-            "line": 48,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "line": 91,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P00-T02-S03",
-            "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-            "checked": true,
-            "line": 49,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
-          },
-          {
-            "id": "P00-T02-S04",
-            "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-            "checked": true,
-            "line": 50,
-            "step_num": "00",
-            "step_title": "Initialisation du projet"
+            "id": "P01-T02-S03",
+            "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
+            "checked": false,
+            "line": 92,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           }
         ]
       }
     ],
     "subtasks": [
       {
-        "id": "P00-T01-S01",
-        "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-        "checked": true,
-        "line": 40,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
-      },
-      {
-        "id": "P00-T01-S02",
-        "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-        "checked": true,
-        "line": 41,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
-      },
-      {
-        "id": "P00-T01-S03",
-        "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-        "checked": true,
-        "line": 42,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
-      },
-      {
-        "id": "P00-T01-S04",
-        "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-        "checked": true,
-        "line": 43,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
-      },
-      {
-        "id": "P00-T02-S01",
-        "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
+        "id": "P01-T01-S01",
+        "title": "Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille",
         "checked": false,
-        "line": 47,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
+        "line": 83,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P00-T02-S02",
-        "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
+        "id": "P01-T01-S02",
+        "title": "Extraire les exigences relatives aux unités, équipements et capteurs",
         "checked": false,
-        "line": 48,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
+        "line": 84,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P00-T02-S03",
-        "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-        "checked": true,
-        "line": 49,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
+        "id": "P01-T01-S03",
+        "title": "Définir formellement les règles de l'arbitre et la séparation réel versus perçu",
+        "checked": false,
+        "line": 85,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P00-T02-S04",
-        "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-        "checked": true,
-        "line": 50,
-        "step_num": "00",
-        "step_title": "Initialisation du projet"
+        "id": "P01-T01-S04",
+        "title": "Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md",
+        "checked": false,
+        "line": 86,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
+      },
+      {
+        "id": "P01-T02-S01",
+        "title": "Construire le tableau de correspondance entre articles du CdC et composants logiciels",
+        "checked": false,
+        "line": 90,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
+      },
+      {
+        "id": "P01-T02-S02",
+        "title": "Identifier les contraintes de performance et de reproductibilité temporelle",
+        "checked": false,
+        "line": 91,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
+      },
+      {
+        "id": "P01-T02-S03",
+        "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
+        "checked": false,
+        "line": 92,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       }
     ]
   },
@@ -165,10 +149,10 @@
       "num": "00",
       "title": "Initialisation du projet",
       "total": 8,
-      "completed": 6,
-      "remaining": 2,
-      "pct": 75.0,
-      "status": "IN_PROGRESS",
+      "completed": 8,
+      "remaining": 0,
+      "pct": 100.0,
+      "status": "PASS",
       "is_blocked": false,
       "tasks": [
         {
@@ -216,7 +200,7 @@
             {
               "id": "P00-T02-S01",
               "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
-              "checked": false,
+              "checked": true,
               "line": 47,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -224,7 +208,7 @@
             {
               "id": "P00-T02-S02",
               "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
-              "checked": false,
+              "checked": true,
               "line": 48,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -284,7 +268,7 @@
         {
           "id": "P00-T02-S01",
           "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
-          "checked": false,
+          "checked": true,
           "line": 47,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -292,7 +276,7 @@
         {
           "id": "P00-T02-S02",
           "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
-          "checked": false,
+          "checked": true,
           "line": 48,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -4954,6 +4938,22 @@
       "step_title": "Initialisation du projet"
     },
     {
+      "id": "P00-T02-S01",
+      "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
+      "checked": true,
+      "line": 47,
+      "step_num": "00",
+      "step_title": "Initialisation du projet"
+    },
+    {
+      "id": "P00-T02-S02",
+      "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
+      "checked": true,
+      "line": 48,
+      "step_num": "00",
+      "step_title": "Initialisation du projet"
+    },
+    {
       "id": "P00-T02-S03",
       "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
       "checked": true,
@@ -4971,22 +4971,6 @@
     }
   ],
   "pending_subtask_list": [
-    {
-      "id": "P00-T02-S01",
-      "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
-      "checked": false,
-      "line": 47,
-      "step_num": "00",
-      "step_title": "Initialisation du projet"
-    },
-    {
-      "id": "P00-T02-S02",
-      "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
-      "checked": false,
-      "line": 48,
-      "step_num": "00",
-      "step_title": "Initialisation du projet"
-    },
     {
       "id": "P01-T01-S01",
       "title": "Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille",
