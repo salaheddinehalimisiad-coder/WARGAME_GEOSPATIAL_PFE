@@ -309,7 +309,7 @@ def generate_dashboard_md(metrics, output_path: Path):
     for s in metrics["steps_metrics"]:
         status_badge = f"`{s['status']}`"
         pct_str = f"{s['pct']:.2f} %".replace(".", ",")
-        table_rows.append(f"| ÉTAPE {s['num']} — {s['title']} | {s['total']} | {s['completed']} | {s['remaining']} | {pct_str} | {status_badge} |")
+        table_rows.append(f"| ÉTAPE {s['num']} — {s['title']} | {s['completed']} | {s['total']} | {pct_str} | {status_badge} |")
 
     table_md = "\n".join(table_rows)
 
@@ -329,7 +329,7 @@ def generate_dashboard_md(metrics, output_path: Path):
 **Outil de synchronisation :** `python scripts/update_progress.py`
 
 > [!TIP]
-> 📊 **Tableau de bord interactif & dynamique disponible :** Consultez [`docs/dashboard.html`](dashboard.html) dans votre navigateur pour une exploration réactive temps réel (recherche instantanée parmi les 247 sous-tâches, filtres dynamiques, accordéons déroulants et animation fluide du donut d'avancement).
+> 📊 **Tableau de bord interactif & dynamique disponible :** Consultez [`docs/dashboard.html`](dashboard.html) dans votre navigateur pour une exploration réactive temps réel (recherche instantanée parmi les sous-tâches, filtres dynamiques, accordéons déroulants et animation fluide du donut d'avancement).
 
 ---
 
@@ -337,14 +337,25 @@ def generate_dashboard_md(metrics, output_path: Path):
 
 ![Graphique d'avancement](assets/progress/progress_donut.svg)
 
-<div align="center">
+### Avancement global
 
 # **{pct_formatted}**
-### Avancement réel calculé sur les sous-tâches terminales
 
-</div>
+### Sous-tâches
 
-### Statistiques consolidées
+**{metrics['completed_subtasks']} / {metrics['total_subtasks']}** sous-tâches terminées ({metrics['remaining_subtasks']} restantes)
+
+### Étape active
+
+**ÉTAPE {active_step['num']} — {active_step['title']}**
+
+### Statut étape active
+
+`{active_step['status']}` ({active_step['completed']} / {active_step['total']} sous-tâches terminées — {active_step['pct']:.2f} %)
+
+---
+
+### Synthèse consolidée
 
 | Indicateur | Valeur |
 |---|---:|
@@ -354,16 +365,8 @@ def generate_dashboard_md(metrics, output_path: Path):
 | **Pourcentage global** | **{pct_formatted}** |
 | **Étapes terminées (PASS)** | {metrics['completed_steps_count']} / {metrics['total_steps']} |
 | **Étape active** | **ÉTAPE {active_step['num']} — {active_step['title']}** |
+| **Statut étape active** | `{active_step['status']}` |
 | **Étapes restantes** | {metrics['remaining_steps']} |
-
----
-
-## Étape active
-
-**ÉTAPE {active_step['num']} — {active_step['title']}**
-- **Statut :** `{active_step['status']}`
-- **Progression de l'étape :** {active_step['completed']} / {active_step['total']} sous-tâches ({active_step['pct']:.2f} %)
-- **Règle de l'étape active unique :** Cette étape doit être intégralement validée avec preuves avant tout engagement sur l'étape suivante.
 
 ---
 
@@ -385,10 +388,10 @@ def generate_dashboard_md(metrics, output_path: Path):
 
 ---
 
-## Avancement détaillé par étape
+### Avancement par étape
 
-| Étape | Total | Terminées | Restantes | Avancement | Statut |
-|:---|---:|---:|---:|---:|:---:|
+| Étape | Terminées | Total | % | Statut |
+|:---|---:|---:|---:|:---:|
 {table_md}
 
 ---

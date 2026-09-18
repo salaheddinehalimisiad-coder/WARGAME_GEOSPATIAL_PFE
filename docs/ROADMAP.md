@@ -37,17 +37,17 @@ Mettre en place le socle d'ingénierie, la gouvernance Git, l'arborescence norma
 
 ### Tâche T00-01 — Configuration du dépôt et gouvernance Git
 #### Sous-tâches
-- [ ] P00-T01-S01 — Configurer le dépôt distant GitHub avec la branche principale main
-- [ ] P00-T01-S02 — Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses
-- [ ] P00-T01-S03 — Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md
-- [ ] P00-T01-S04 — Mettre en place la convention de commits sémantiques dans AGENT_RULES.md
+- [x] P00-T01-S01 — Configurer le dépôt distant GitHub avec la branche principale main
+- [x] P00-T01-S02 — Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses
+- [x] P00-T01-S03 — Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md
+- [x] P00-T01-S04 — Mettre en place la convention de commits sémantiques dans AGENT_RULES.md
 
 ### Tâche T00-02 — Arborescence et environnement de base
 #### Sous-tâches
 - [ ] P00-T02-S01 — Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker
 - [ ] P00-T02-S02 — Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster
-- [ ] P00-T02-S03 — Mettre en place le pipeline CI de base dans .github/workflows/ci.yml
-- [ ] P00-T02-S04 — Valider l'exécution locale des scripts d'intégrité documentaire
+- [x] P00-T02-S03 — Mettre en place le pipeline CI de base dans .github/workflows/ci.yml
+- [x] P00-T02-S04 — Valider l'exécution locale des scripts d'intégrité documentaire
 
 ---
 
@@ -230,7 +230,7 @@ Acquérir et importer l'ensemble des couches géospatiales nécessaires sur la z
 
 ### Entrées
 - Délimitation de la zone d'intérêt géographique (AOI / Bounding Box).
-- Sources de données ouvertes (SRTM, Copernicus, OpenStreetMap, BD TOPO).
+- Sélectionner et documenter les sources de données retenues pendant la phase de collecte (sources ouvertes et institutionnelles) [CHOIX À VALIDER].
 
 ### Sorties
 - Couches brutes importées et cataloguées dans Global Mapper.
@@ -295,7 +295,7 @@ Nettoyer, harmoniser, reprojeter dans le système de coordonnées de référence
 #### Sous-tâches
 - [ ] P06-T01-S01 — Mosaïquer les dalles altimétriques dans Global Mapper
 - [ ] P06-T01-S02 — Reprojeter le MNT dans le système de projection métrique retenu
-- [ ] P06-T01-S03 — Combler les zones de NoData par interpolation dans Global Mapper
+- [ ] P06-T01-S03 — Traiter les NoData du MNT selon une méthode documentée et validée dans Global Mapper
 - [ ] P06-T01-S04 — Exporter le MNT nettoyé au format GeoTIFF dans data/processed/dem_clean.tif
 
 ### Tâche T06-02 — Nettoyage et harmonisation vectorielle
@@ -369,11 +369,11 @@ Concevoir les structures de données en C++20 pour modéliser le relief, le calc
 ### Critères d’acceptation
 - Calcul de pente mathématiquement exact à partir de la matrice d'élévation.
 - Détermination déterministe des types de surface (route, forêt, bâti, eau).
-- Couverture de code par les tests unitaires >= 85%.
+- Couverture de code significative par les tests unitaires validée sur les modules critiques.
 
 ### Tests
 - Tests unitaires GoogleTest sur profils de pente artificiels connus (pente nulle, 10%, 45%).
-- Tests de performance mesurant le temps d'accès aux propriétés du terrain (< 1 µs par point).
+- Tests de performance mesurant le temps d'accès aux propriétés du terrain sur un scénario de référence et documentation des métriques.
 
 ### Tâche T08-01 — Structures de données d'élévation et de pente
 #### Sous-tâches
@@ -495,7 +495,7 @@ Créer le schéma relationnel spatial, implémenter les tables de cellules, stoc
 ### Critères d’acceptation
 - Exécution sans erreur de l'intégralité des scripts SQL de migration.
 - Index spatiaux GiST opérationnels sur toutes les colonnes géométriques.
-- Requête spatiale de sélection de cellule par coordonnées métriques < 2 millisecondes.
+- Mesurer les performances des requêtes spatiales sur un scénario de référence et documenter le résultat.
 
 ### Tests
 - Test automatisé d'exécution de migration sur conteneur Docker vierge.
@@ -680,7 +680,7 @@ Concevoir et développer le cœur de simulation en C++20, orchestrant l'état du
 #### Sous-tâches
 - [ ] P15-T02-S01 — Implémenter la classe SimulationEngine gérant la progression des phases de jeu
 - [ ] P15-T02-S02 — Intégrer un générateur de nombres pseudo-aléatoires déterministe (std::mt19937_64)
-- [ ] P15-T02-S03 — Développer le banc d'essai de reproductibilité parfaite sur 100 tours
+- [ ] P15-T02-S03 — Développer le banc d'essai de reproductibilité parfaite sur un scénario multi-tours de référence
 - [ ] P15-T02-S04 — Valider l'isolation totale du moteur vis-à-vis des sockets et de la base de données
 
 ---
@@ -705,7 +705,7 @@ Implémenter la planification et l'exécution des déplacements sur la grille he
 ### Critères d’acceptation
 - Trajectoires optimales respectant strictement les coûts de relief et de voirie.
 - Blocage strict des mouvements sur cellules infranchissables (ex: plans d'eau majeurs).
-- Calcul de chemin entre deux points distants de 50 cellules résolu en moins de 10 ms.
+- Mesurer les performances du calcul de chemin sur un scénario de référence et documenter le résultat.
 
 ### Tests
 - Tests unitaires sur chemins d'école privilégiant la route malgré un détour géométrique.
@@ -915,7 +915,7 @@ Implémenter la couche de services backend avec le framework C++ Drogon, fournis
 ### Critères d’acceptation
 - Démarrage sans erreur du serveur HTTP/WebSocket Drogon sur port configurable.
 - Authentification et assignation stricte des sessions par profil (Blue, Red, Umpire).
-- Temps de réponse moyen des requêtes REST sous charge nominale < 15 ms.
+- Mesurer le temps de réponse moyen des requêtes REST sur un scénario de charge de référence et documenter le résultat.
 
 ### Tests
 - Tests d'intégration automatisés des endpoints HTTP via curl / client HTTP Drogon.
@@ -1129,7 +1129,7 @@ Développer le moteur de rejeu fidèle et la console de restitution temporelle p
 
 ### Tests
 - Test de conformité : comparaison automatique entre l'état initial simulé et l'état rejoué.
-- Test de performance lors du saut chronologique instantané sur une session de 200 tours.
+- Test de performance lors du saut chronologique instantané sur une session multi-tours de référence.
 
 ### Tâche T26-01 — Moteur de reconstitution chronologique
 #### Sous-tâches
@@ -1261,7 +1261,7 @@ Exécuter la campagne formelle de recette globale, de non-régression, d'audit d
 #### Sous-tâches
 - [ ] P29-T01-S01 — Exécuter l'intégralité des tests GoogleTest C++20 avec rapport de couverture
 - [ ] P29-T01-S02 — Exécuter la suite de tests frontend React et valider l'absence d'erreurs console
-- [ ] P29-T01-S03 — Réaliser le test d'endurance sur 500 tours de jeu continus
+- [ ] P29-T01-S03 — Réaliser le test d'endurance sur une session de jeu continue de référence
 - [ ] P29-T01-S04 — Auditer la conformité stricte du protocole de communication avec Drogon
 
 ### Tâche T29-02 — Recette formelle du cahier des charges

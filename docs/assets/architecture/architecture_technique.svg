@@ -40,7 +40,7 @@
       <text x="125" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">Moteur Cartographique</text>
       <text x="12" y="48" font-size="10" font-weight="500" fill="#334155">• OpenLayers / Leaflet avec tuiles SIG</text>
       <text x="12" y="66" font-size="10" font-weight="500" fill="#334155">• Couche vectorielle Canvas pour grille hex</text>
-      <text x="12" y="84" font-size="10" font-weight="500" fill="#334155">• Rendu fluide à 60 FPS sans latence</text>
+      <text x="12" y="84" font-size="10" font-weight="500" fill="#334155">• Rendu et navigation fluide de l'interface</text>
     </g>
 
     <g transform="translate(15, 280)">

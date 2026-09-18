@@ -30,4 +30,16 @@
 - **Banc de test d'avancement** : Création du script de validation [`scripts/test_progress_calculation.py`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/scripts/test_progress_calculation.py) validant mathématiquement le calcul d'avancement (test 5/20 = 25.00%), la détection d'étape active et le rejet strict des identifiants dupliqués.
 - **Check-list de référence** : Mise à jour de [`docs/REFERENCE_CHECKLIST.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/REFERENCE_CHECKLIST.md) avec l'ensemble des critères de conformité documentaire, roadmap, suivi et architecture.
 
+## [FIX / AUDIT] — Audit formel et correction de la mise à niveau documentaire
+- **Épuration des exigences arbitraires dans docs/ROADMAP.md** : Remplacement de l'ensemble des seuils de latence arbitraires (< 2 ms, < 10 ms, < 15 ms, < 1 µs) et seuils imposés (>= 85%) par des mesures objectives sur scénarios de référence avec métriques documentées.
+- **Suppression des nombres de tours arbitraires** : Remplacement des mentions 100, 200 et 500 tours par des bancs d'essai multi-tours et sessions d'endurance de référence.
+- **Suppression des sources de données prématurées** : Remplacement des mentions SRTM, Copernicus, OpenStreetMap et BD TOPO dans la feuille de route, l'architecture et les diagrammes SVG par une formulation de sélection et validation en phase de collecte (CHOIX À VALIDER).
+- **Harmonisation du traitement NoData** : Remplacement de l'interpolation systématique par un traitement selon méthode documentée et validée dans ROADMAP.md, ARCHITECTURE.md et architecture_pipeline_sig.svg.
+- **Suppression des FPS imposés** : Remplacement de « 60 FPS sans latence » par une exigence de fluidité de rendu et navigation dans architecture_technique.svg.
+- **Audit rigoureux des sous-tâches ÉTAPE 00** : Seules les 6 sous-tâches réellement prouvées sont cochées [x] (P00-T01-S01 à S04, P00-T02-S03 et S04) ; les sous-tâches P00-T02-S01 et P00-T02-S02 sont maintenues à [ ] (TODO).
+- **Distinction avancement et statut de validation** : ÉTAPE 00 passe au statut `IN_PROGRESS` (6 / 8 sous-tâches, 75,00 %) et avancement global à 2,43 % (6 / 247 sous-tâches), sans validation PASS prématurée.
+- **Synchronisation complète des diagrammes SVG** : Diagrammes dans `docs/assets/architecture/` et sources dans `docs/assets/architecture/source/` rigoureusement identiques et validés.
+- **Mise à jour du rapport JSON de conformité** : `docs/rapport_mise_a_niveau_documentation.json` consolidé avec tous les indicateurs et preuves exigés.
+
+
 

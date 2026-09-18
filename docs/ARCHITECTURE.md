@@ -36,8 +36,8 @@ Le pipeline SIG assure la transformation rigoureuse des données brutes en un mo
 
 - **Outil unique de référence** : Global Mapper est l'unique outil SIG du workflow courant pour l'ensemble des opérations de traitement géométrique, d'harmonisation altimétrique et de contrôle qualité.
 - **Cycle séquentiel** :
-  1. *Collecte* : Importation des dalles MNT (SRTM 30m / Copernicus) et vecteurs d'infrastructure (OpenStreetMap, BD TOPO) dans un projet de travail `.gmw`.
-  2. *Préparation* : Reprojection systématique dans le Système de Coordonnées de Référence (CRS) métrique officiel (UTM) et interpolation des valeurs NoData.
+  1. *Collecte* : Importation des dalles MNT et couches vectorielles sélectionnées et validées dans un projet de travail `.gmw`.
+  2. *Préparation* : Reprojection systématique dans le Système de Coordonnées de Référence (CRS) métrique officiel (UTM) et traitement des valeurs NoData selon une méthode documentée et validée.
   3. *Nettoyage topologique* : Découpage strict sur l'emprise géographique d'exercice (Bounding Box) et élimination des artefacts géométriques (micro-polygones, nœuds pendants).
   4. *Contrôle qualité (QA)* : Validation formelle consignée dans `docs/RAPPORT_QA_SIG.md` avant gel des données et ingestion dans PostGIS.
 

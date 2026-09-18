@@ -1,8 +1,8 @@
 {
   "total_subtasks": 247,
-  "completed_subtasks": 0,
-  "remaining_subtasks": 247,
-  "global_pct": 0.0,
+  "completed_subtasks": 6,
+  "remaining_subtasks": 241,
+  "global_pct": 2.42914979757085,
   "total_steps": 31,
   "completed_steps_count": 0,
   "remaining_steps": 31,
@@ -10,10 +10,10 @@
     "num": "00",
     "title": "Initialisation du projet",
     "total": 8,
-    "completed": 0,
-    "remaining": 8,
-    "pct": 0.0,
-    "status": "PLANNED",
+    "completed": 6,
+    "remaining": 2,
+    "pct": 75.0,
+    "status": "IN_PROGRESS",
     "is_blocked": false,
     "tasks": [
       {
@@ -23,7 +23,7 @@
           {
             "id": "P00-T01-S01",
             "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-            "checked": false,
+            "checked": true,
             "line": 40,
             "step_num": "00",
             "step_title": "Initialisation du projet"
@@ -31,7 +31,7 @@
           {
             "id": "P00-T01-S02",
             "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-            "checked": false,
+            "checked": true,
             "line": 41,
             "step_num": "00",
             "step_title": "Initialisation du projet"
@@ -39,7 +39,7 @@
           {
             "id": "P00-T01-S03",
             "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-            "checked": false,
+            "checked": true,
             "line": 42,
             "step_num": "00",
             "step_title": "Initialisation du projet"
@@ -47,7 +47,7 @@
           {
             "id": "P00-T01-S04",
             "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-            "checked": false,
+            "checked": true,
             "line": 43,
             "step_num": "00",
             "step_title": "Initialisation du projet"
@@ -77,7 +77,7 @@
           {
             "id": "P00-T02-S03",
             "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-            "checked": false,
+            "checked": true,
             "line": 49,
             "step_num": "00",
             "step_title": "Initialisation du projet"
@@ -85,7 +85,7 @@
           {
             "id": "P00-T02-S04",
             "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-            "checked": false,
+            "checked": true,
             "line": 50,
             "step_num": "00",
             "step_title": "Initialisation du projet"
@@ -97,7 +97,7 @@
       {
         "id": "P00-T01-S01",
         "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-        "checked": false,
+        "checked": true,
         "line": 40,
         "step_num": "00",
         "step_title": "Initialisation du projet"
@@ -105,7 +105,7 @@
       {
         "id": "P00-T01-S02",
         "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-        "checked": false,
+        "checked": true,
         "line": 41,
         "step_num": "00",
         "step_title": "Initialisation du projet"
@@ -113,7 +113,7 @@
       {
         "id": "P00-T01-S03",
         "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-        "checked": false,
+        "checked": true,
         "line": 42,
         "step_num": "00",
         "step_title": "Initialisation du projet"
@@ -121,7 +121,7 @@
       {
         "id": "P00-T01-S04",
         "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-        "checked": false,
+        "checked": true,
         "line": 43,
         "step_num": "00",
         "step_title": "Initialisation du projet"
@@ -145,7 +145,7 @@
       {
         "id": "P00-T02-S03",
         "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-        "checked": false,
+        "checked": true,
         "line": 49,
         "step_num": "00",
         "step_title": "Initialisation du projet"
@@ -153,7 +153,7 @@
       {
         "id": "P00-T02-S04",
         "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-        "checked": false,
+        "checked": true,
         "line": 50,
         "step_num": "00",
         "step_title": "Initialisation du projet"
@@ -165,10 +165,10 @@
       "num": "00",
       "title": "Initialisation du projet",
       "total": 8,
-      "completed": 0,
-      "remaining": 8,
-      "pct": 0.0,
-      "status": "PLANNED",
+      "completed": 6,
+      "remaining": 2,
+      "pct": 75.0,
+      "status": "IN_PROGRESS",
       "is_blocked": false,
       "tasks": [
         {
@@ -178,7 +178,7 @@
             {
               "id": "P00-T01-S01",
               "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-              "checked": false,
+              "checked": true,
               "line": 40,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -186,7 +186,7 @@
             {
               "id": "P00-T01-S02",
               "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-              "checked": false,
+              "checked": true,
               "line": 41,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -194,7 +194,7 @@
             {
               "id": "P00-T01-S03",
               "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-              "checked": false,
+              "checked": true,
               "line": 42,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -202,7 +202,7 @@
             {
               "id": "P00-T01-S04",
               "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-              "checked": false,
+              "checked": true,
               "line": 43,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -232,7 +232,7 @@
             {
               "id": "P00-T02-S03",
               "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-              "checked": false,
+              "checked": true,
               "line": 49,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -240,7 +240,7 @@
             {
               "id": "P00-T02-S04",
               "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-              "checked": false,
+              "checked": true,
               "line": 50,
               "step_num": "00",
               "step_title": "Initialisation du projet"
@@ -252,7 +252,7 @@
         {
           "id": "P00-T01-S01",
           "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-          "checked": false,
+          "checked": true,
           "line": 40,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -260,7 +260,7 @@
         {
           "id": "P00-T01-S02",
           "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-          "checked": false,
+          "checked": true,
           "line": 41,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -268,7 +268,7 @@
         {
           "id": "P00-T01-S03",
           "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-          "checked": false,
+          "checked": true,
           "line": 42,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -276,7 +276,7 @@
         {
           "id": "P00-T01-S04",
           "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-          "checked": false,
+          "checked": true,
           "line": 43,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -300,7 +300,7 @@
         {
           "id": "P00-T02-S03",
           "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-          "checked": false,
+          "checked": true,
           "line": 49,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -308,7 +308,7 @@
         {
           "id": "P00-T02-S04",
           "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-          "checked": false,
+          "checked": true,
           "line": 50,
           "step_num": "00",
           "step_title": "Initialisation du projet"
@@ -1101,7 +1101,7 @@
             },
             {
               "id": "P06-T01-S03",
-              "title": "Combler les zones de NoData par interpolation dans Global Mapper",
+              "title": "Traiter les NoData du MNT selon une méthode documentée et validée dans Global Mapper",
               "checked": false,
               "line": 298,
               "step_num": "06",
@@ -1175,7 +1175,7 @@
         },
         {
           "id": "P06-T01-S03",
-          "title": "Combler les zones de NoData par interpolation dans Global Mapper",
+          "title": "Traiter les NoData du MNT selon une méthode documentée et validée dans Global Mapper",
           "checked": false,
           "line": 298,
           "step_num": "06",
@@ -2525,7 +2525,7 @@
             },
             {
               "id": "P15-T02-S03",
-              "title": "Développer le banc d'essai de reproductibilité parfaite sur 100 tours",
+              "title": "Développer le banc d'essai de reproductibilité parfaite sur un scénario multi-tours de référence",
               "checked": false,
               "line": 683,
               "step_num": "15",
@@ -2593,7 +2593,7 @@
         },
         {
           "id": "P15-T02-S03",
-          "title": "Développer le banc d'essai de reproductibilité parfaite sur 100 tours",
+          "title": "Développer le banc d'essai de reproductibilité parfaite sur un scénario multi-tours de référence",
           "checked": false,
           "line": 683,
           "step_num": "15",
@@ -4643,7 +4643,7 @@
             },
             {
               "id": "P29-T01-S03",
-              "title": "Réaliser le test d'endurance sur 500 tours de jeu continus",
+              "title": "Réaliser le test d'endurance sur une session de jeu continue de référence",
               "checked": false,
               "line": 1264,
               "step_num": "29",
@@ -4717,7 +4717,7 @@
         },
         {
           "id": "P29-T01-S03",
-          "title": "Réaliser le test d'endurance sur 500 tours de jeu continus",
+          "title": "Réaliser le test d'endurance sur une session de jeu continue de référence",
           "checked": false,
           "line": 1264,
           "step_num": "29",
@@ -4920,12 +4920,11 @@
       ]
     }
   ],
-  "completed_subtask_list": [],
-  "pending_subtask_list": [
+  "completed_subtask_list": [
     {
       "id": "P00-T01-S01",
       "title": "Configurer le dépôt distant GitHub avec la branche principale main",
-      "checked": false,
+      "checked": true,
       "line": 40,
       "step_num": "00",
       "step_title": "Initialisation du projet"
@@ -4933,7 +4932,7 @@
     {
       "id": "P00-T01-S02",
       "title": "Créer le fichier .gitignore interdisant les caches, binaires et données SIG volumineuses",
-      "checked": false,
+      "checked": true,
       "line": 41,
       "step_num": "00",
       "step_title": "Initialisation du projet"
@@ -4941,7 +4940,7 @@
     {
       "id": "P00-T01-S03",
       "title": "Définir le guide de gestion des branches par phase dans docs/GIT_WORKFLOW_AND_CICD.md",
-      "checked": false,
+      "checked": true,
       "line": 42,
       "step_num": "00",
       "step_title": "Initialisation du projet"
@@ -4949,11 +4948,29 @@
     {
       "id": "P00-T01-S04",
       "title": "Mettre en place la convention de commits sémantiques dans AGENT_RULES.md",
-      "checked": false,
+      "checked": true,
       "line": 43,
       "step_num": "00",
       "step_title": "Initialisation du projet"
     },
+    {
+      "id": "P00-T02-S03",
+      "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
+      "checked": true,
+      "line": 49,
+      "step_num": "00",
+      "step_title": "Initialisation du projet"
+    },
+    {
+      "id": "P00-T02-S04",
+      "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
+      "checked": true,
+      "line": 50,
+      "step_num": "00",
+      "step_title": "Initialisation du projet"
+    }
+  ],
+  "pending_subtask_list": [
     {
       "id": "P00-T02-S01",
       "title": "Créer l'arborescence des dossiers src, tests, data, docs, scripts et docker",
@@ -4967,22 +4984,6 @@
       "title": "Définir les sous-dossiers data/raw, data/processed, data/vector et data/raster",
       "checked": false,
       "line": 48,
-      "step_num": "00",
-      "step_title": "Initialisation du projet"
-    },
-    {
-      "id": "P00-T02-S03",
-      "title": "Mettre en place le pipeline CI de base dans .github/workflows/ci.yml",
-      "checked": false,
-      "line": 49,
-      "step_num": "00",
-      "step_title": "Initialisation du projet"
-    },
-    {
-      "id": "P00-T02-S04",
-      "title": "Valider l'exécution locale des scripts d'intégrité documentaire",
-      "checked": false,
-      "line": 50,
       "step_num": "00",
       "step_title": "Initialisation du projet"
     },
@@ -5316,7 +5317,7 @@
     },
     {
       "id": "P06-T01-S03",
-      "title": "Combler les zones de NoData par interpolation dans Global Mapper",
+      "title": "Traiter les NoData du MNT selon une méthode documentée et validée dans Global Mapper",
       "checked": false,
       "line": 298,
       "step_num": "06",
@@ -5924,7 +5925,7 @@
     },
     {
       "id": "P15-T02-S03",
-      "title": "Développer le banc d'essai de reproductibilité parfaite sur 100 tours",
+      "title": "Développer le banc d'essai de reproductibilité parfaite sur un scénario multi-tours de référence",
       "checked": false,
       "line": 683,
       "step_num": "15",
@@ -6788,7 +6789,7 @@
     },
     {
       "id": "P29-T01-S03",
-      "title": "Réaliser le test d'endurance sur 500 tours de jeu continus",
+      "title": "Réaliser le test d'endurance sur une session de jeu continue de référence",
       "checked": false,
       "line": 1264,
       "step_num": "29",
