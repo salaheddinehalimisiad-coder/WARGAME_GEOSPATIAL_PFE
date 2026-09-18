@@ -49,6 +49,14 @@
 - **Mise à jour de l'avancement global** : Avancement global porté à **3,24 %** (8 / 247 sous-tâches).
 - **Étape active suivante** : ÉTAPE 01 — Analyse détaillée du cahier des charges (statut : `PLANNED`).
 
+## [CLEANUP / ARBORESCENCE] — Suppression du dossier dupliqué imbriqué et consolidation de la racine unique
+- **Audit exhaustif du sous-dossier imbriqué `WARGAME_GEOSPATIAL_PFE/`** : Comparaison récursive complète (45 fichiers analysés : 22 identiques, 17 versions obsolètes de documents maîtres, 6 fichiers de cache Git).
+- **Confirmation de zéro perte de données** : Vérification qu'aucune donnée SIG ni aucun code source métier n'étaient présents dans le dossier imbriqué.
+- **Suppression de la duplication accidentelle** : Élimination sécurisée du sous-dossier imbriqué `WARGAME_GEOSPATIAL_PFE/`.
+- **Création du répertoire centralisé de rapports** : Création de `docs/rapports/` et génération du rapport formel [`docs/rapports/rapport_audit_arborescence.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_arborescence.json).
+- **Validation de la racine unique** : Structure normalisée strictement conforme aux exigences (racine unique, 7 dossiers, 8 fichiers maîtres).
+
+
 
 
 

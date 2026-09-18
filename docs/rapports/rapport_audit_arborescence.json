@@ -1,0 +1,70 @@
+{
+  "titre": "Rapport d'audit et de nettoyage de l'arborescence du projet",
+  "date": "2026-09-18",
+  "statut": "SUCCES_RACINE_UNIQUE_VALIDEE",
+  "contexte": {
+    "probleme_initial": "Présence d'un sous-dossier imbriqué redondant WARGAME_GEOSPATIAL_PFE/ à la racine du projet",
+    "origine": "Extraction accidentelle ou clonage redondant issu d'une phase initiale du projet (HEAD imbriqué arrêté au commit f06b21c)"
+  },
+  "comparaison_recursive": {
+    "total_fichiers_imbriques": 45,
+    "fichiers_identiques": 22,
+    "fichiers_differents": 17,
+    "fichiers_uniques_imbriques": 6,
+    "detail_fichiers_uniques": [
+      "WARGAME_GEOSPATIAL_PFE/.git/FETCH_HEAD",
+      "WARGAME_GEOSPATIAL_PFE/.git/packed-refs",
+      "WARGAME_GEOSPATIAL_PFE/.git/objects/info/commit-graphs/graph-4faf15488d8ca550042b84724d8815ef88580704.graph",
+      "WARGAME_GEOSPATIAL_PFE/.git/objects/pack/pack-9743604379bad0c16a85afca9a8cec561e6161b8.idx",
+      "WARGAME_GEOSPATIAL_PFE/.git/objects/pack/pack-9743604379bad0c16a85afca9a8cec561e6161b8.pack",
+      "WARGAME_GEOSPATIAL_PFE/.git/objects/pack/pack-9743604379bad0c16a85afca9a8cec561e6161b8.rev"
+    ],
+    "nature_fichiers_uniques": "Fichiers purement internes de cache Git (.git/) de l'ancien dépôt imbriqué ; aucun fichier source métier, aucune donnée SIG",
+    "fichiers_differents_analyse": "Les 17 fichiers différents correspondaient à des versions obsolètes des documents maîtres (anciennes versions de ROADMAP.md, ARCHITECTURE.md, etc., antérieures à la mise à niveau)"
+  },
+  "determination_racine_officielle": {
+    "racine_retenue": "c:\\Users\\salah\\Desktop\\WARGAME_GEOSPATIAL_PFE",
+    "justifications": [
+      "Dépôt Git actif et synchronisé avec le remote GitHub (commit 9b2d06f)",
+      "Présence de la roadmap complète à 31 étapes et 247 sous-tâches (docs/ROADMAP.md)",
+      "Présence des 6 diagrammes d'architecture SVG vectoriels et sources éditables",
+      "Présence du moteur de suivi d'avancement automatique et dashboard (scripts/, docs/ETAT_AVANCEMENT.md)",
+      "Présence de l'arborescence normalisée (src/, tests/, docker/, data/)"
+    ]
+  },
+  "actions_menees": [
+    "Vérification d'absence de données SIG ou de code unique dans le dossier imbriqué",
+    "Suppression sécurisée du dossier dupliqué WARGAME_GEOSPATIAL_PFE/",
+    "Création du dossier dédié pour l'ensemble des rapports : docs/rapports/",
+    "Mise à jour des documents de suivi PROJECT_MEMORY.md et CHANGELOG.md"
+  ],
+  "arborescence_finale_verifiee": {
+    "racine_unique": true,
+    "dossiers_racine": [
+      ".github/",
+      "data/",
+      "docker/",
+      "docs/",
+      "scripts/",
+      "src/",
+      "tests/"
+    ],
+    "fichiers_racine": [
+      ".gitignore",
+      "AGENT_RULES.md",
+      "Cahier_des_charges_PFE_Wargame_geospatial.docx",
+      "CHANGELOG.md",
+      "IDEAS.md",
+      "MASTER_PROMPT.md",
+      "PROJECT_MEMORY.md",
+      "PROJECT_PROMPT.md"
+    ]
+  },
+  "verification_integrite": {
+    "git_status": "Dépôt propre, aucun fichier non suivi résiduel",
+    "absence_duplication": "Confirmée (Test-Path WARGAME_GEOSPATIAL_PFE == False)",
+    "intégrité_documents_maitres": "Conforme",
+    "arborescence_normalisee": "Conforme (data/raw, data/processed, data/vector, data/raster, src, tests, docker)"
+  },
+  "prochaine_etape": "ÉTAPE 01 — Analyse détaillée du cahier des charges (en attente de validation explicite)"
+}

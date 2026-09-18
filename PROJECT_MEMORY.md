@@ -40,6 +40,7 @@ L'**ÉTAPE 00 — Initialisation du projet** est officiellement validée (**`PAS
 **ÉTAPE 01 — Analyse détaillée du cahier des charges** (Statut : `PLANNED`. En attente de validation et d'instruction formelle de démarrage).
 
 ## Historique récent
+- **Audit et nettoyage de l'arborescence** : Détection et élimination sécurisée du sous-dossier imbriqué redondant `WARGAME_GEOSPATIAL_PFE/` (ancienne copie obsolète sans données uniques ni code). Consolidation de la racine unique du projet et création du dossier `docs/rapports/` ([`docs/rapports/rapport_audit_arborescence.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_arborescence.json)).
 - **Validation PASS ÉTAPE 00** : Matérialisation de l'arborescence normalisée (`src/`, `tests/`, `docker/`, `data/raw/`, `data/processed/`, `data/vector/`, `data/raster/`) avec fichiers `.gitkeep` ; validation des 8 sous-tâches de l'étape 00 ; passage du statut Étape 00 à PASS (100 %) ; avancement global à 3,24 %.
 - **Audit & correction documentaire** : Épuration des exigences arbitraires dans `docs/ROADMAP.md`, `docs/ARCHITECTURE.md` et les SVG ; harmonisation NoData ; recalibration stricte sur les faits vérifiés.
 - **Mise à niveau documentaire initiale** : Création de la roadmap 31 étapes avec 247 sous-tâches, script autonome de calcul et donut SVG, dashboard d'avancement, 6 diagrammes d'architecture SVG sur fond blanc avec sources éditables.

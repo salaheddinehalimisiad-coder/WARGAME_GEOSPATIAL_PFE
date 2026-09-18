@@ -1,6 +1,6 @@
 # ÉTAT D’AVANCEMENT DU PROJET
 
-**Dernière mise à jour automatique :** 2026-09-18 21:14:40  
+**Dernière mise à jour automatique :** 2026-09-18 21:19:24  
 **Source de vérité :** [`docs/ROADMAP.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ROADMAP.md)  
 **Outil de synchronisation :** `python scripts/update_progress.py`
 
