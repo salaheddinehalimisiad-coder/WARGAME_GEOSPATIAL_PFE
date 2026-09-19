@@ -1,28 +1,23 @@
 # PROJECT MEMORY
 
 ## État actuel du projet
-L'**ÉTAPE 00 — Initialisation du projet** est officiellement validée (**`PASS`**) :
-- **Arborescence normalisée matérialisée** :
-  - Racines créées : `src/`, `tests/`, `docker/`, `data/` (avec `docs/` et `scripts/` déjà existants).
-  - Sous-dossiers de données créés : `data/raw/`, `data/processed/`, `data/vector/`, `data/raster/`.
-  - Fichiers `.gitkeep` pour versionner la structure sans stocker de données volumineuses.
-  - Aucun code métier ni donnée SIG importée prématurément.
-- **Roadmap officielle source unique de vérité** : [`docs/ROADMAP.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ROADMAP.md) avec 31 étapes et 247 sous-tâches uniques (`PXX-TYY-SZZ`).
+L'**ÉTAPE 01 — Analyse détaillée du cahier des charges** est officiellement validée (**`PASS`**) :
+- **Spécifications fonctionnelles formelles** : Rédaction complète de [`docs/SPECIFICATIONS_FONCTIONNELLES.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/SPECIFICATIONS_FONCTIONNELLES.md) couvrant l'exploitation du MNT, la discrétisation hexagonale (coordonnées axiales/cubiques), le modèle d'unités à l'échelon minimal bataillon, l'abstraction capacitaire des équipements, la modélisation des capteurs (LOS, masquage crêtes, incertitude), l'étanchéité absolue entre État Réel et États Perçus, la boucle OODA et l'indicateur synthétique de charge décisionnelle.
+- **Matrice de traçabilité intégrale** : Rédaction de [`docs/MATRICE_TRACABILITE.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/MATRICE_TRACABILITE.md) associant 100% des 35 sections du Cahier des charges Version 1.0 aux modules logiciels, aux 31 étapes de la roadmap et aux méthodes de test/validation. Définition du protocole de mesure de performance sans seuils arbitraires, du déterminisme de simulation (`std::mt19937_64`) et des 15 critères majeurs de recette finale `[REC-01]` à `[REC-15]`.
 - **Suivi d'avancement consolidé** :
-  - **Avancement global calculé** : **3,24 %** (8 sous-tâches cochées sur 247 au total).
-  - **Étapes terminées (PASS)** : **1 / 31** (ÉTAPE 00 validée à 100,00 %).
-  - **Étape active** : **ÉTAPE 01 — Analyse détaillée du cahier des charges** (Statut : `PLANNED`, 0 / 7 sous-tâches — 0,00 %).
-  - **Sous-tâches validées de l'ÉTAPE 00 (8/8)** :
-    - `P00-T01-S01` [x] (Dépôt distant GitHub avec branche `main`).
-    - `P00-T01-S02` [x] (Fichier `.gitignore` excluant caches, binaires et rasters volumineux).
-    - `P00-T01-S03` [x] (Guide de gestion des branches dans `docs/GIT_WORKFLOW_AND_CICD.md`).
-    - `P00-T01-S04` [x] (Convention de commits sémantiques dans `AGENT_RULES.md`).
-    - `P00-T02-S01` [x] (Arborescence `src/`, `tests/`, `data/`, `docs/`, `scripts/`, `docker/`).
-    - `P00-T02-S02` [x] (Sous-dossiers `data/raw/`, `data/processed/`, `data/vector/`, `data/raster/`).
-    - `P00-T02-S03` [x] (Pipeline CI `.github/workflows/ci.yml` opérationnel).
-    - `P00-T02-S04` [x] (Validation locale des scripts d'intégrité réussie).
+  - **Avancement global calculé** : **6,07 %** (15 sous-tâches cochées sur 247 au total).
+  - **Étapes validées (PASS)** : **2 / 31** (ÉTAPE 00 et ÉTAPE 01 validées à 100 %).
+  - **Étape active** : **ÉTAPE 02 — Architecture fonctionnelle et technique** (Statut : `PLANNED`, 0 / 9 sous-tâches — 0,00 %).
+  - **Sous-tâches validées de l'ÉTAPE 01 (7/7)** :
+    - `P01-T01-S01` [x] (Exigences fonctionnelles terrain et grille hexagonale).
+    - `P01-T01-S02` [x] (Exigences unités bataillon, équipements abstraits, capteurs).
+    - `P01-T01-S03` [x] (Règles de l'arbitre et séparation étanche réel / perçu).
+    - `P01-T01-S04` [x] (Spécification des rôles Blue, Red, Umpire dans `docs/SPECIFICATIONS_FONCTIONNELLES.md`).
+    - `P01-T02-S01` [x] (Tableau de correspondance 35 sections CdC <-> composants).
+    - `P01-T02-S02` [x] (Contraintes non-fonctionnelles, reproductibilité et protocole de benchmark).
+    - `P01-T02-S03` [x] (Critères d'acceptation de recette finale dans `docs/MATRICE_TRACABILITE.md`).
 - **Tableau de bord synchronisé** : [`docs/ETAT_AVANCEMENT.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ETAT_AVANCEMENT.md) généré automatiquement avec donut vectoriel [`docs/assets/progress/progress_donut.svg`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/assets/progress/progress_donut.svg) et application interactive [`docs/dashboard.html`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/dashboard.html).
-- **Architecture visuelle validée** : 6 diagrammes vectoriels SVG sur fond blanc (#ffffff) dans [`docs/ARCHITECTURE.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ARCHITECTURE.md) et leurs sources éditables dans `docs/assets/architecture/source/`.
+- **Rapports d'étape archivés** : [`docs/rapports/rapport_etape_01.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_etape_01.json) consolidé.
 
 ## Référence officielle
 `Cahier_des_charges_PFE_Wargame_geospatial.docx` — Version 1.0 (PFE 2026–2027).
@@ -37,10 +32,9 @@ L'**ÉTAPE 00 — Initialisation du projet** est officiellement validée (**`PAS
 - **Développement** : Progression séquentielle stricte, une seule étape active à la fois, validation par preuves, zéro développement prématuré d'étapes aval.
 
 ## Prochaine étape
-**ÉTAPE 01 — Analyse détaillée du cahier des charges** (Statut : `PLANNED`. En attente de validation et d'instruction formelle de démarrage).
+**ÉTAPE 02 — Architecture fonctionnelle et technique** (Statut : `PLANNED`. En attente de validation et d'instruction formelle de démarrage).
 
 ## Historique récent
-- **Audit et nettoyage de l'arborescence** : Détection et élimination sécurisée du sous-dossier imbriqué redondant `WARGAME_GEOSPATIAL_PFE/` (ancienne copie obsolète sans données uniques ni code). Consolidation de la racine unique du projet et création du dossier `docs/rapports/` ([`docs/rapports/rapport_audit_arborescence.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_arborescence.json)).
-- **Validation PASS ÉTAPE 00** : Matérialisation de l'arborescence normalisée (`src/`, `tests/`, `docker/`, `data/raw/`, `data/processed/`, `data/vector/`, `data/raster/`) avec fichiers `.gitkeep` ; validation des 8 sous-tâches de l'étape 00 ; passage du statut Étape 00 à PASS (100 %) ; avancement global à 3,24 %.
-- **Audit & correction documentaire** : Épuration des exigences arbitraires dans `docs/ROADMAP.md`, `docs/ARCHITECTURE.md` et les SVG ; harmonisation NoData ; recalibration stricte sur les faits vérifiés.
-- **Mise à niveau documentaire initiale** : Création de la roadmap 31 étapes avec 247 sous-tâches, script autonome de calcul et donut SVG, dashboard d'avancement, 6 diagrammes d'architecture SVG sur fond blanc avec sources éditables.
+- **Validation PASS ÉTAPE 01** : Extraction intégrale des exigences du CdC, création de `docs/SPECIFICATIONS_FONCTIONNELLES.md` et `docs/MATRICE_TRACABILITE.md` (35 sections CdC mappées, critères [REC-01] à [REC-15], protocoles de performance) ; complétion des 7 sous-tâches (7/7) ; passage à 6,07 % d'avancement global (15/247 sous-tâches).
+- **Nettoyage arborescence** : Suppression du dossier dupliqué imbriqué `WARGAME_GEOSPATIAL_PFE/` et création du répertoire centralisé `docs/rapports/`.
+- **Validation PASS ÉTAPE 00** : Matérialisation de l'arborescence normalisée (`src/`, `tests/`, `docker/`, `data/raw/`, `data/processed/`, `data/vector/`, `data/raster/`) avec fichiers `.gitkeep`.

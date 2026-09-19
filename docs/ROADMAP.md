@@ -80,16 +80,16 @@ Extraire, analyser et formaliser l'ensemble des exigences fonctionnelles, contra
 
 ### Tâche T01-01 — Analyse des exigences fonctionnelles
 #### Sous-tâches
-- [ ] P01-T01-S01 — Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille
-- [ ] P01-T01-S02 — Extraire les exigences relatives aux unités, équipements et capteurs
-- [ ] P01-T01-S03 — Définir formellement les règles de l'arbitre et la séparation réel versus perçu
-- [ ] P01-T01-S04 — Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md
+- [x] P01-T01-S01 — Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille
+- [x] P01-T01-S02 — Extraire les exigences relatives aux unités, équipements et capteurs
+- [x] P01-T01-S03 — Définir formellement les règles de l'arbitre et la séparation réel versus perçu
+- [x] P01-T01-S04 — Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md
 
 ### Tâche T01-02 — Matrice de traçabilité et critères d'acceptation
 #### Sous-tâches
-- [ ] P01-T02-S01 — Construire le tableau de correspondance entre articles du CdC et composants logiciels
-- [ ] P01-T02-S02 — Identifier les contraintes de performance et de reproductibilité temporelle
-- [ ] P01-T02-S03 — Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md
+- [x] P01-T02-S01 — Construire le tableau de correspondance entre articles du CdC et composants logiciels
+- [x] P01-T02-S02 — Identifier les contraintes de performance et de reproductibilité temporelle
+- [x] P01-T02-S03 — Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md
 
 ---
 

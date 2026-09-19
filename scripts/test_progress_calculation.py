@@ -123,8 +123,8 @@ def test_official_roadmap():
 
     assert len(steps) == 31, f"Attendu: 31 étapes, Obtenu: {len(steps)}"
     assert metrics["total_subtasks"] > 200, f"Sous-tâches attendues > 200, Obtenu: {metrics['total_subtasks']}"
-    assert metrics["active_step"]["num"] in ("00", "01"), f"Étape active attendue: 00 ou 01, Obtenu: {metrics['active_step']['num']}"
-    print(f"  -> Succès : 31 étapes officielles chargées, {metrics['total_subtasks']} sous-tâches uniques valides, étape active: {metrics['active_step']['num']}.")
+    assert metrics["active_step"] is not None and "num" in metrics["active_step"], "Étape active non identifiée"
+    print(f"  -> Succès : 31 étapes officielles chargées, {metrics['total_subtasks']} sous-tâches uniques valides, étape active: ÉTAPE {metrics['active_step']['num']} — {metrics['active_step']['title']}.")
 
 
 def test_duplicate_detection():

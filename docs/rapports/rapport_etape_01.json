@@ -1,0 +1,77 @@
+{
+  "etape": "ÉTAPE 01",
+  "titre": "Analyse détaillée du cahier des charges",
+  "date": "2026-09-19",
+  "statut": "PASS",
+  "objectif": "Extraire, analyser et formaliser l'ensemble des exigences fonctionnelles, contraintes techniques, profils d'utilisateurs et critères de recette du cahier des charges officiel.",
+  "sous_taches": [
+    {
+      "id": "P01-T01-S01",
+      "titre": "Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille",
+      "statut": "DONE",
+      "resultat": "Spécification complète du MNT, pentes, couches vectorielles (voirie, hydro, bâti, couvert), coordonnées axiales/cubiques et rôle exclusif de Global Mapper.",
+      "preuve": "Section 2 de docs/SPECIFICATIONS_FONCTIONNELLES.md"
+    },
+    {
+      "id": "P01-T01-S02",
+      "titre": "Extraire les exigences relatives aux unités, équipements et capteurs",
+      "statut": "DONE",
+      "resultat": "Modélisation à l'échelon minimal bataillon, abstraction totale des équipements sans arme réelle, capteurs multi-modes avec lignes de vue (LOS) et incertitude.",
+      "preuve": "Section 3 de docs/SPECIFICATIONS_FONCTIONNELLES.md"
+    },
+    {
+      "id": "P01-T01-S03",
+      "titre": "Définir formellement les règles de l'arbitre et la séparation réel versus perçu",
+      "statut": "DONE",
+      "resultat": "Étanchéité stricte entre Ground Truth et Perceived States (Blue/Red COP), prérogatives de l'Arbitre (omniscience, contrôle temporel, injection d'événements).",
+      "preuve": "Section 4 de docs/SPECIFICATIONS_FONCTIONNELLES.md"
+    },
+    {
+      "id": "P01-T01-S04",
+      "titre": "Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md",
+      "statut": "DONE",
+      "resultat": "Document complet de spécifications fonctionnelles rédigé, couvrant également la boucle OODA, la formule de charge décisionnelle et le rejeu/débriefing.",
+      "preuve": "Document docs/SPECIFICATIONS_FONCTIONNELLES.md"
+    },
+    {
+      "id": "P01-T02-S01",
+      "titre": "Construire le tableau de correspondance entre articles du CdC et composants logiciels",
+      "statut": "DONE",
+      "resultat": "Tableau exhaustif reliant les 35 sections du Cahier des charges officiel aux modules logiciels, étapes de la roadmap et méthodes de test.",
+      "preuve": "Section 2 de docs/MATRICE_TRACABILITE.md"
+    },
+    {
+      "id": "P01-T02-S02",
+      "titre": "Identifier les contraintes de performance et de reproductibilité temporelle",
+      "statut": "DONE",
+      "resultat": "Formalisation du déterminisme (std::mt19937_64), isolation du moteur (zéro I/O réseau bloquant en simu), protocole de benchmark sur scénario étalon sans seuil arbitraire.",
+      "preuve": "Section 3 de docs/MATRICE_TRACABILITE.md"
+    },
+    {
+      "id": "P01-T02-S03",
+      "titre": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
+      "statut": "DONE",
+      "resultat": "Définition des 15 critères majeurs de recette finale [REC-01] à [REC-15] et glossaire officiel des acronymes du CdC.",
+      "preuve": "Sections 4 et 5 de docs/MATRICE_TRACABILITE.md"
+    }
+  ],
+  "livrables_crees": [
+    "docs/SPECIFICATIONS_FONCTIONNELLES.md",
+    "docs/MATRICE_TRACABILITE.md",
+    "docs/rapports/rapport_etape_01.json"
+  ],
+  "progression": {
+    "sous_taches_etape_01": "7/7 (100.00 %)",
+    "statut_etape_01": "PASS",
+    "sous_taches_globales": "15/247",
+    "pourcentage_global": "6.07 %",
+    "etapes_validees_pass": "2/31",
+    "prochaine_etape": "ÉTAPE 02 — Architecture fonctionnelle et technique (PLANNED)"
+  },
+  "criteres_acceptation_valides": {
+    "couverture_cdc": "100% des 35 sections du CdC mappées",
+    "contrainte_echelon": "Bataillon minimum strict respecté",
+    "profils_acteurs": "Blue, Red, Umpire formellement spécifiés",
+    "livrables_presents": "docs/SPECIFICATIONS_FONCTIONNELLES.md et docs/MATRICE_TRACABILITE.md créés et vérifiés"
+  }
+}

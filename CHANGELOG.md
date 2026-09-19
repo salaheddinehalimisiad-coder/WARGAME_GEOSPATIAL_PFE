@@ -56,6 +56,14 @@
 - **Création du répertoire centralisé de rapports** : Création de `docs/rapports/` et génération du rapport formel [`docs/rapports/rapport_audit_arborescence.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_arborescence.json).
 - **Validation de la racine unique** : Structure normalisée strictement conforme aux exigences (racine unique, 7 dossiers, 8 fichiers maîtres).
 
+## [PASS / ÉTAPE 01] — Analyse détaillée du cahier des charges et matrice de traçabilité
+- **Spécifications fonctionnelles formelles (`docs/SPECIFICATIONS_FONCTIONNELLES.md`)** : Modélisation du MNT, des pentes, des couches vectorielles et de la discrétisation en grille hexagonale (coordonnées axiales/cubiques) ; formalisation du modèle d'unités à l'échelon minimal bataillon ; abstraction totale des équipements militaires sans référence commerciale ni données classifiées ; modélisation des capteurs, lignes de vue (LOS) et incertitude d'observation ; définition étanche de l'état réel et des états perçus ; spécification des rôles Blue, Red et Umpire ; formalisation de la boucle OODA et de la métrique de charge décisionnelle.
+- **Matrice de traçabilité intégrale (`docs/MATRICE_TRACABILITE.md`)** : Correspondance 100% exhaustive entre les 35 sections du Cahier des charges Version 1.0, les composants logiciels, les 31 étapes de la roadmap et les méthodes de test ; formalisation du déterminisme temporel (`std::mt19937_64`) et du protocole de mesure de performance sans seuils arbitraires ; établissement des 15 critères majeurs de recette finale (`[REC-01]` à `[REC-15]`) et du glossaire officiel.
+- **Validation formelle de l'ÉTAPE 01** : Complétion des 7 sous-tâches (7/7, 100,00 %), statut de l'ÉTAPE 01 déclaré `PASS`.
+- **Progression consolidée** : Avancement global porté à **6,07 %** (15 / 247 sous-tâches), 2 / 31 étapes validées (`PASS`).
+- **Étape active suivante** : ÉTAPE 02 — Architecture fonctionnelle et technique (statut : `PLANNED`).
+
+
 
 
 
