@@ -1,47 +1,63 @@
 # PROJECT MEMORY
 
 ## État actuel du projet
-L'**ÉTAPE 01 — Analyse détaillée du cahier des charges** a fait l'objet d'un **audit critique des sources** pour éliminer tout risque de contamination par d'anciens cadrages.
-- **Statut actuel de l'ÉTAPE 01** : **`IN_PROGRESS`** (en attente de revue et validation client du rapport d'audit).
-- **Source contractuelle unique et exclusive** : `Cahier_des_charges_PFE_Wargame_geospatial.docx` Version 1.0 (PFE 2026–2027).
-- **Spécifications fonctionnelles auditées** : Réécriture de [`docs/SPECIFICATIONS_FONCTIONNELLES.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/SPECIFICATIONS_FONCTIONNELLES.md) avec classification systématique des exigences :
-  - `[A]` Directement présente dans le cahier des charges (MNT, hexagones, bataillon min, abstraction matérielle, séparation Réel/Perçu, horloge configurable, décision observable, charge décisionnelle paramétrable, rôles Blue/Red/Umpire, journalisation, rejeu, 9 critères d'acceptation).
-  - `[B]` Déduite de façon raisonnable sans extrapolation arbitraire.
-  - `[C]` Proposition d'architecture à valider (PRNG `std::mt19937_64`, coordonnées axiales `(q,r)`, conteneurisation Docker, choix ETL Global Mapper).
-  - `[D]` Éléments d'anciens cadrages formellement identifiés et purgés (suppression de la boucle rigide en 4 phases, suppression de REC-01..REC-15, suppression des classes rigides Inconnu/Catégorie/Identifié, suppression de VPC, suppression des probabilités de détection et décotes temporelles hardcodées, suppression de l'attribut psychologique subjectif moral 0-100%).
-- **Matrice de traçabilité auditée** : Réécriture de [`docs/MATRICE_TRACABILITE.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/MATRICE_TRACABILITE.md) :
-  - Dénombrement exact de 35 sections principales dans le fichier officiel XML du CdC (100% tracées).
-  - Distinction formelle de la nature de chaque ligne (Exigence du cahier, Interprétation, Décision d'architecture, Choix technologique, Proposition future).
-  - Clarification du statut de Global Mapper : choix technologique d'ingénierie interne validé par le projet, distinct des technologies indicatives recommandées dans la Section 17 du CdC (QGIS/GDAL).
-  - Remplacement de la nomenclature arbitraire REC-01..15 par les 9 critères contractuels de la Section 24 du CdC (`CRIT-01` à `CRIT-09`).
-- **Suivi d'avancement consolidé** :
-  - **Avancement global calculé** : **5,67 %** (14 sous-tâches cochées sur 247 au total).
-  - **Étapes validées (PASS)** : **1 / 31** (ÉTAPE 00 validée).
-  - **Étape active** : **ÉTAPE 01 — Analyse détaillée du cahier des charges** (Statut : `IN_PROGRESS`, 6 / 7 sous-tâches — 85,71 %).
-  - **Sous-tâches de l'ÉTAPE 01** :
-    - `P01-T01-S01` [x] (Exigences fonctionnelles terrain et grille hexagonale).
-    - `P01-T01-S02` [x] (Exigences unités bataillon, équipements abstraits, capteurs).
-    - `P01-T01-S03` [x] (Règles de l'arbitre et séparation étanche réel / perçu).
-    - `P01-T01-S04` [x] (Spécification des rôles Blue, Red, Umpire dans `docs/SPECIFICATIONS_FONCTIONNELLES.md`).
-    - `P01-T02-S01` [x] (Tableau de correspondance 35 sections CdC <-> composants).
-    - `P01-T02-S02` [x] (Contraintes non-fonctionnelles, reproductibilité et protocole de benchmark).
-    - `P01-T02-S03` [ ] (Validation finale des critères d'acceptation - en cours d'audit).
-- **Rapports d'audit archivés** :
-  - [`docs/rapports/rapport_audit_source_etape_01.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_source_etape_01.md)
-  - [`docs/rapports/rapport_audit_source_etape_01.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_source_etape_01.json)
+**Étape active :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`IN_PROGRESS`, 6/7 sous-tâches)  
+**Progression globale :** 5,67 % (14 / 247 sous-tâches)  
+**Étapes validées (PASS) :** 1 / 31 (ÉTAPE 00)  
+**Branche active :** `phase/01-analyse-cdc` — **Ne pas fusionner avant validation.**
 
-## Référence officielle unique
-`Cahier_des_charges_PFE_Wargame_geospatial.docx` — Version 1.0 (PFE 2026–2027).
+## Source de vérité
 
-## Règles maîtresses
-- **SIG & ETL** : Global Mapper est l'unique outil SIG/ETL du projet (choix d'ingénierie interne).
-- **Principe d'intégration** : « Autonomous First — CommandView Ready » (PFE 100% autonome, architecture et APIs préparées pour une intégration ultérieure dans le C4ISR CommandView).
-- **Unités** : Niveau minimal d'agrégation fixé au bataillon.
-- **Équipements** : Capacités abstraites uniquement (aucune arme réelle détaillée).
-- **Incertitude** : Séparation stricte État Réel (Umpire) vs État Perçu (Blue/Red).
-- **Suivi d'avancement** : Ne jamais modifier manuellement le pourcentage d'avancement ; toujours cocher les sous-tâches réelles dans `docs/ROADMAP.md` puis exécuter `python scripts/update_progress.py`.
-- **Développement** : Progression séquentielle stricte, une seule étape active à la fois, validation par preuves, zéro développement prématuré d'étapes aval.
+| Document | Rôle |
+|:---|:---|
+| `Cahier_des_charges_PFE_Wargame_geospatial.docx` v1.0 | Référence contractuelle absolue |
+| `MASTER_PROMPT.md` | Règles maîtresses du projet |
+| `docs/ROADMAP.md` | Progression par sous-tâches |
+| `docs/ETAT_AVANCEMENT.md` | Tableau de bord (généré automatiquement) |
+| `CHANGELOG.md` | Historique des changements significatifs |
+| `docs/etapes/ETAPE_XX.md` | Notes légères par étape |
 
-## Prochaine étape
-Finalisation de la validation de l'**ÉTAPE 01** après revue contradictoire du rapport d'audit par le client.
-**ÉTAPE 02 — Architecture fonctionnelle et technique** (Statut : `PLANNED`. Ne pas démarrer).
+## Décisions techniques validées
+
+1. **Global Mapper** = outil SIG/ETL du projet (choix interne, pas obligation contractuelle ; CdC Section 17 recommande QGIS à titre indicatif).
+2. **Échelon minimal : bataillon** — aucune sous-entité individuelle représentée.
+3. **Abstraction capacitaire totale** — zéro désignation d'armement ou caractéristique technique réelle.
+4. **Séparation hermétique** : État Réel (Umpire/moteur) vs États Perçus Blue/Red — aucun client joueur n'accède à l'état réel.
+5. **Critères d'acceptation officiels** : 9 critères textuels contractuels CdC Section 24 (`CRIT-01` à `CRIT-09`).
+6. **Principe architectural** : « Autonomous First — CommandView Ready » (CdC Section 16, 33).
+7. **Déterminisme** via PRNG `std::mt19937_64` + seed de scénario — **Proposition [C] à confirmer en ÉTAPE 02**.
+
+## Décisions encore ouvertes (à confirmer en ÉTAPE 02)
+- Choix définitif du système de coordonnées hexagonales (axiales `(q,r)` vs H3).
+- Confirmation du modèle de détail des structures de données C++.
+- Confirmation de l'architecture de déploiement Docker Compose.
+
+## Contraintes à respecter
+- Jamais modifier manuellement `ETAT_AVANCEMENT.md` — toujours via `python scripts/update_progress.py`.
+- Jamais démarrer une étape sans que la précédente soit `PASS`.
+- Pas de données SIG brutes dans Git (`data/raw/*` ignoré).
+- Pas de noms d'armes ou caractéristiques techniques réelles.
+- Pas de fusion dans `main`/`develop` sans validation contradictoire.
+
+## Politique documentaire (en vigueur depuis 2026-09-19)
+- **Notes légères par étape** dans `docs/etapes/ETAPE_XX.md` (concis, pas de gros rapports).
+- **Pas de rapports JSON automatiques** à chaque étape (sauf exception justifiée).
+- **PROJECT_MEMORY.md** : mémoire durable, mise à jour en fin de chaque étape.
+- **CHANGELOG.md** : changements significatifs et commits importants uniquement.
+- **Rapport final** : construit uniquement en fin de projet à partir des sources accumulées.
+
+## Fichiers à archiver (ne pas enrichir, ne pas supprimer)
+- `docs/rapports/rapport_etape_01.md` / `.json`
+- `docs/rapports/rapport_audit_source_etape_01.md` / `.json`
+- `docs/rapports/rapport_audit_arborescence.json`
+- `docs/rapport_mise_a_niveau_documentation.json` (doublon exact de `docs/rapports/rapport_mise_a_niveau_documentation.json`)
+
+## Erreurs / pièges à ne pas reproduire
+- Ne pas introduire d'exigences arbitraires (seuils de latence, FPS, nombres de tours) sans source dans le CdC.
+- Ne pas présenter une proposition d'architecture interne comme une exigence contractuelle.
+- Ne pas créer de nomenclature de critères d'acceptation sans base textuelle dans le CdC.
+- Ne pas commencer une étape fonctionnelle pendant une phase documentaire/gouvernance.
+
+## Travaux restant à faire
+- `P01-T02-S03` : Cocher après validation client → ÉTAPE 01 passera à `PASS`.
+- ÉTAPE 02 : Architecture fonctionnelle et technique (`PLANNED` — ne pas démarrer).

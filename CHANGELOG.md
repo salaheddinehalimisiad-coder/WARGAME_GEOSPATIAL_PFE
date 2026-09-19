@@ -1,4 +1,13 @@
 # CHANGELOG
+## [POLICY] — Normalisation de la politique documentaire (2026-09-19)
+- Adoption d'une documentation progressive légère : notes courtes par étape dans `docs/etapes/ETAPE_XX.md`.
+- Suppression de la génération automatique de gros rapports JSON à chaque étape.
+- `PROJECT_MEMORY.md` devient la mémoire durable et structurée du projet.
+- `CHANGELOG.md` conservé pour les changements et commits significatifs uniquement.
+- Création de `docs/etapes/ETAPE_00.md` et `docs/etapes/ETAPE_01.md`.
+- Identification de doublons documentaires : `docs/rapport_mise_a_niveau_documentation.json` est identique à `docs/rapports/rapport_mise_a_niveau_documentation.json` (conservation temporaire des deux en attente de décision).
+- Vérification des 6 diagrammes SVG (`docs/assets/architecture/`) : présents et intacts.
+
 
 ## [INIT / GIT & CI/CD] — Initialisation Dépôt Git & Pipeline CI/CD
 - Initialisation du dépôt local Git avec branche principale `main`.
