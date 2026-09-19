@@ -1,178 +1,146 @@
 {
   "total_subtasks": 247,
-  "completed_subtasks": 15,
-  "remaining_subtasks": 232,
-  "global_pct": 6.0728744939271255,
+  "completed_subtasks": 14,
+  "remaining_subtasks": 233,
+  "global_pct": 5.668016194331984,
   "total_steps": 31,
-  "completed_steps_count": 2,
-  "remaining_steps": 29,
+  "completed_steps_count": 1,
+  "remaining_steps": 30,
   "active_step": {
-    "num": "02",
-    "title": "Architecture fonctionnelle et technique",
-    "total": 9,
-    "completed": 0,
-    "remaining": 9,
-    "pct": 0.0,
-    "status": "PLANNED",
+    "num": "01",
+    "title": "Analyse détaillée du cahier des charges",
+    "total": 7,
+    "completed": 6,
+    "remaining": 1,
+    "pct": 85.71428571428571,
+    "status": "IN_PROGRESS",
     "is_blocked": false,
     "tasks": [
       {
-        "id": "T02-01",
-        "title": "Conception de l'architecture logicielle",
+        "id": "T01-01",
+        "title": "Analyse des exigences fonctionnelles",
         "subtasks": [
           {
-            "id": "P02-T01-S01",
-            "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-            "checked": false,
-            "line": 125,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "id": "P01-T01-S01",
+            "title": "Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille",
+            "checked": true,
+            "line": 83,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P02-T01-S02",
-            "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-            "checked": false,
-            "line": 126,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "id": "P01-T01-S02",
+            "title": "Extraire les exigences relatives aux unités, équipements et capteurs",
+            "checked": true,
+            "line": 84,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P02-T01-S03",
-            "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-            "checked": false,
-            "line": 127,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "id": "P01-T01-S03",
+            "title": "Définir formellement les règles de l'arbitre et la séparation réel versus perçu",
+            "checked": true,
+            "line": 85,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P02-T01-S04",
-            "title": "Rédiger le document descriptif des modules dans docs/ARCHITECTURE.md",
-            "checked": false,
-            "line": 128,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "id": "P01-T01-S04",
+            "title": "Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md",
+            "checked": true,
+            "line": 86,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           }
         ]
       },
       {
-        "id": "T02-02",
-        "title": "Production des diagrammes visuels",
+        "id": "T01-02",
+        "title": "Matrice de traçabilité et critères d'acceptation",
         "subtasks": [
           {
-            "id": "P02-T02-S01",
-            "title": "Concevoir et exporter le diagramme d'architecture globale en SVG",
-            "checked": false,
-            "line": 132,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "id": "P01-T02-S01",
+            "title": "Construire le tableau de correspondance entre articles du CdC et composants logiciels",
+            "checked": true,
+            "line": 90,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P02-T02-S02",
-            "title": "Concevoir et exporter le diagramme du pipeline SIG en SVG",
-            "checked": false,
-            "line": 133,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "id": "P01-T02-S02",
+            "title": "Identifier les contraintes de performance et de reproductibilité temporelle",
+            "checked": true,
+            "line": 91,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           },
           {
-            "id": "P02-T02-S03",
-            "title": "Concevoir et exporter le diagramme du flux de simulation en SVG",
+            "id": "P01-T02-S03",
+            "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
             "checked": false,
-            "line": 134,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
-          },
-          {
-            "id": "P02-T02-S04",
-            "title": "Concevoir et exporter le diagramme d'isolation Blue Red Umpire en SVG",
-            "checked": false,
-            "line": 135,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
-          },
-          {
-            "id": "P02-T02-S05",
-            "title": "Archiver l'ensemble des fichiers sources des diagrammes dans source/",
-            "checked": false,
-            "line": 136,
-            "step_num": "02",
-            "step_title": "Architecture fonctionnelle et technique"
+            "line": 92,
+            "step_num": "01",
+            "step_title": "Analyse détaillée du cahier des charges"
           }
         ]
       }
     ],
     "subtasks": [
       {
-        "id": "P02-T01-S01",
-        "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-        "checked": false,
-        "line": 125,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "id": "P01-T01-S01",
+        "title": "Extraire toutes les exigences fonctionnelles relatives au terrain et à la grille",
+        "checked": true,
+        "line": 83,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P02-T01-S02",
-        "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-        "checked": false,
-        "line": 126,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "id": "P01-T01-S02",
+        "title": "Extraire les exigences relatives aux unités, équipements et capteurs",
+        "checked": true,
+        "line": 84,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P02-T01-S03",
-        "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-        "checked": false,
-        "line": 127,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "id": "P01-T01-S03",
+        "title": "Définir formellement les règles de l'arbitre et la séparation réel versus perçu",
+        "checked": true,
+        "line": 85,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P02-T01-S04",
-        "title": "Rédiger le document descriptif des modules dans docs/ARCHITECTURE.md",
-        "checked": false,
-        "line": 128,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "id": "P01-T01-S04",
+        "title": "Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md",
+        "checked": true,
+        "line": 86,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P02-T02-S01",
-        "title": "Concevoir et exporter le diagramme d'architecture globale en SVG",
-        "checked": false,
-        "line": 132,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "id": "P01-T02-S01",
+        "title": "Construire le tableau de correspondance entre articles du CdC et composants logiciels",
+        "checked": true,
+        "line": 90,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P02-T02-S02",
-        "title": "Concevoir et exporter le diagramme du pipeline SIG en SVG",
-        "checked": false,
-        "line": 133,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "id": "P01-T02-S02",
+        "title": "Identifier les contraintes de performance et de reproductibilité temporelle",
+        "checked": true,
+        "line": 91,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       },
       {
-        "id": "P02-T02-S03",
-        "title": "Concevoir et exporter le diagramme du flux de simulation en SVG",
+        "id": "P01-T02-S03",
+        "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
         "checked": false,
-        "line": 134,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
-      },
-      {
-        "id": "P02-T02-S04",
-        "title": "Concevoir et exporter le diagramme d'isolation Blue Red Umpire en SVG",
-        "checked": false,
-        "line": 135,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
-      },
-      {
-        "id": "P02-T02-S05",
-        "title": "Archiver l'ensemble des fichiers sources des diagrammes dans source/",
-        "checked": false,
-        "line": 136,
-        "step_num": "02",
-        "step_title": "Architecture fonctionnelle et technique"
+        "line": 92,
+        "step_num": "01",
+        "step_title": "Analyse détaillée du cahier des charges"
       }
     ]
   },
@@ -335,10 +303,10 @@
       "num": "01",
       "title": "Analyse détaillée du cahier des charges",
       "total": 7,
-      "completed": 7,
-      "remaining": 0,
-      "pct": 100.0,
-      "status": "PASS",
+      "completed": 6,
+      "remaining": 1,
+      "pct": 85.71428571428571,
+      "status": "IN_PROGRESS",
       "is_blocked": false,
       "tasks": [
         {
@@ -402,7 +370,7 @@
             {
               "id": "P01-T02-S03",
               "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
-              "checked": true,
+              "checked": false,
               "line": 92,
               "step_num": "01",
               "step_title": "Analyse détaillée du cahier des charges"
@@ -462,7 +430,7 @@
         {
           "id": "P01-T02-S03",
           "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
-          "checked": true,
+          "checked": false,
           "line": 92,
           "step_num": "01",
           "step_title": "Analyse détaillée du cahier des charges"
@@ -5048,17 +5016,17 @@
       "line": 91,
       "step_num": "01",
       "step_title": "Analyse détaillée du cahier des charges"
-    },
-    {
-      "id": "P01-T02-S03",
-      "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
-      "checked": true,
-      "line": 92,
-      "step_num": "01",
-      "step_title": "Analyse détaillée du cahier des charges"
     }
   ],
   "pending_subtask_list": [
+    {
+      "id": "P01-T02-S03",
+      "title": "Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md",
+      "checked": false,
+      "line": 92,
+      "step_num": "01",
+      "step_title": "Analyse détaillée du cahier des charges"
+    },
     {
       "id": "P02-T01-S01",
       "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",

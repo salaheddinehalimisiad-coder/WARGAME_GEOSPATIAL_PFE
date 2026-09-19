@@ -56,12 +56,19 @@
 - **Création du répertoire centralisé de rapports** : Création de `docs/rapports/` et génération du rapport formel [`docs/rapports/rapport_audit_arborescence.json`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/rapports/rapport_audit_arborescence.json).
 - **Validation de la racine unique** : Structure normalisée strictement conforme aux exigences (racine unique, 7 dossiers, 8 fichiers maîtres).
 
-## [PASS / ÉTAPE 01] — Analyse détaillée du cahier des charges et matrice de traçabilité
-- **Spécifications fonctionnelles formelles (`docs/SPECIFICATIONS_FONCTIONNELLES.md`)** : Modélisation du MNT, des pentes, des couches vectorielles et de la discrétisation en grille hexagonale (coordonnées axiales/cubiques) ; formalisation du modèle d'unités à l'échelon minimal bataillon ; abstraction totale des équipements militaires sans référence commerciale ni données classifiées ; modélisation des capteurs, lignes de vue (LOS) et incertitude d'observation ; définition étanche de l'état réel et des états perçus ; spécification des rôles Blue, Red et Umpire ; formalisation de la boucle OODA et de la métrique de charge décisionnelle.
-- **Matrice de traçabilité intégrale (`docs/MATRICE_TRACABILITE.md`)** : Correspondance 100% exhaustive entre les 35 sections du Cahier des charges Version 1.0, les composants logiciels, les 31 étapes de la roadmap et les méthodes de test ; formalisation du déterminisme temporel (`std::mt19937_64`) et du protocole de mesure de performance sans seuils arbitraires ; établissement des 15 critères majeurs de recette finale (`[REC-01]` à `[REC-15]`) et du glossaire officiel.
-- **Validation formelle de l'ÉTAPE 01** : Complétion des 7 sous-tâches (7/7, 100,00 %), statut de l'ÉTAPE 01 déclaré `PASS`.
-- **Progression consolidée** : Avancement global porté à **6,07 %** (15 / 247 sous-tâches), 2 / 31 étapes validées (`PASS`).
-- **Étape active suivante** : ÉTAPE 02 — Architecture fonctionnelle et technique (statut : `PLANNED`).
+## [AUDIT / ÉTAPE 01] — Audit critique des sources et révision des spécifications selon le CdC v1.0
+- **Audit des sources contractuelles** : Dénombrement et vérification directe des 35 sections du fichier officiel `Cahier_des_charges_PFE_Wargame_geospatial.docx` (Version 1.0).
+- **Révision des spécifications fonctionnelles (`docs/SPECIFICATIONS_FONCTIONNELLES.md`)** :
+  - Classification explicite de chaque exigence en [A] Présente au CdC, [B] Déduite raisonnablement, [C] Proposition technique à valider, [D] Purgée de l'ancien cadrage.
+  - Purge intégrale de la boucle rigide en 4 phases, des classes rigides de contact (Inconnu/Catégorie/Identifié), des probabilités numériques de détection hardcodées (85%, 60%), des décotes temporelles arbitraires, des tables d'atténuation LOS ad-hoc, des attributs psychologiques de moral subjectif, et du terme VPC.
+  - Sanctuarisation de l'échelon bataillon minimal, de l'abstraction capacitaire des armements, de la séparation hermétique État Réel vs État Perçu, et du modèle de décision observable sans psychologie clinique.
+- **Révision de la matrice de traçabilité (`docs/MATRICE_TRACABILITE.md`)** :
+  - Couverture à 100% des 35 sections officielles avec typologie explicite (Exigence, Interprétation, Décision d'architecture, Choix technologique, Proposition future).
+  - Clarification du statut de Global Mapper : choix d'ingénierie et d'architecture interne du projet (distinct des technologies recommandées à titre indicatif dans la Section 17 du CdC).
+  - Remplacement de la nomenclature inventée REC-01..REC-15 par les 9 critères d'acceptation textuels contractuels de la Section 24 du CdC (`CRIT-01` à `CRIT-09`).
+- **Suivi d'avancement et statut** : ÉTAPE 01 maintenue au statut `IN_PROGRESS` (6 / 7 sous-tâches, 85,71 %) et avancement global à **5,67 %** (14 / 247 sous-tâches) dans l'attente de la validation contradictoire du rapport d'audit.
+- **Rapports d'audit générés** : [`docs/rapports/rapport_audit_source_etape_01.md`](docs/rapports/rapport_audit_source_etape_01.md) et [`docs/rapports/rapport_audit_source_etape_01.json`](docs/rapports/rapport_audit_source_etape_01.json).
+
 
 
 

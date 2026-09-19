@@ -89,7 +89,7 @@ Extraire, analyser et formaliser l'ensemble des exigences fonctionnelles, contra
 #### Sous-tâches
 - [x] P01-T02-S01 — Construire le tableau de correspondance entre articles du CdC et composants logiciels
 - [x] P01-T02-S02 — Identifier les contraintes de performance et de reproductibilité temporelle
-- [x] P01-T02-S03 — Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md
+- [ ] P01-T02-S03 — Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md
 
 ---
 
