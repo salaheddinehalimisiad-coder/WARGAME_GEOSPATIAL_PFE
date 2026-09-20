@@ -58,3 +58,12 @@ Analyser exhaustivement le cahier des charges officiel `Cahier_des_charges_PFE_W
 
 ## État de l'étape
 `IN_PROGRESS` — En attente de la revue contradictoire du rapport d'audit par le client/utilisateur avant passage à `PASS`.
+
+### Correction architecture après revue (2026-09-20)
+- **6 diagrammes SVG revus et synchronisés** (versions publiées et `docs/assets/architecture/source/`) : formulations trop spécifiques ou prescriptives neutralisées.
+- **Purge des termes non contractuels** : `A*`, `OODA`, `mt19937_64`, `React 18`, `PostgreSQL 16` / `PostGIS 3.4`, `score_actuel`, métriques arbitraires ("2 millisecondes").
+- **Rôle Umpire repositionné** : clarifié comme rôle de supervision/arbitrage distinct des factions de jeu Blue/Red.
+- **Assainissement des références** : suppression de la référence à `docs/RAPPORT_QA_SIG.md` (inexistant), remplacée par un protocole de contrôle qualité documenté.
+- **`docs/ARCHITECTURE.md` aligné** : texte rigoureusement synchronisé avec les diagrammes corrigés et le CdC officiel.
+- **Aucun développement fonctionnel** : architecture clarifiée et prête pour l'ÉTAPE 02.
+

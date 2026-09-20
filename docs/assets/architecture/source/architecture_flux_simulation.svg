@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960" width="960" height="1100" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1100" width="960" height="1100" style="background:#ffffff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
       <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
@@ -20,15 +20,15 @@
   <!-- Header -->
   <g transform="translate(40, 25)">
     <rect x="0" y="0" width="880" height="55" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-    <text x="24" y="34" font-size="18" font-weight="800" fill="#0f172a">CYCLE &amp; FLUX DE SIMULATION — WARGAME GÉOSPATIAL PFE</text>
-    <text x="856" y="34" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">BOUCLE OODA &amp; DÉTERMINISME BIT-À-BIT</text>
+    <text x="24" y="34" font-size="18" font-weight="800" fill="#0f172a">CYCLE &amp; FLUX DE SIMULATION</text>
+    <text x="856" y="34" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">FLUX FONCTIONNEL &amp; REPRODUCTIBILITÉ CONTRÔLÉE</text>
   </g>
 
   <!-- 1. ÉTAT INITIAL -->
   <g transform="translate(260, 100)">
     <rect x="0" y="0" width="440" height="60" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" filter="url(#shadow)"/>
     <text x="220" y="26" font-size="13" font-weight="800" fill="#1d4ed8" text-anchor="middle">1. ÉTAT INITIAL (WORLD STATE S0)</text>
-    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Positions de départ sur grille, ORBAT, MNT, météo initiale, seed RNG</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Positions de départ sur grille, ORBAT, MNT, météo initiale, paramètres de scénario</text>
   </g>
   <path d="M 480 160 L 480 185" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
@@ -44,7 +44,7 @@
   <g transform="translate(260, 270)">
     <rect x="0" y="0" width="440" height="60" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
     <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">3. RÈGLES MÉTIER &amp; CONTRAINTES PHYSIQUES</text>
-    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Pentes limites, coûts de surface, franchissement, doctrine bataillon</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Pentes limites, coûts de surface, franchissement, règles du scénario</text>
   </g>
   <path d="M 480 330 L 480 355" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
@@ -59,8 +59,8 @@
   <!-- 5. ÉVÉNEMENTS -->
   <g transform="translate(260, 440)">
     <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">5. ORDONNANCEMENT DES ÉVÉNEMENTS (EVENT QUEUE)</text>
-    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">File prioritaire chronologique, résolution déterministe des conflits</text>
+    <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">5. TRAITEMENT DES ÉVÉNEMENTS</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Événements planifiés et conditionnels, résolution déterministe des conflits</text>
   </g>
   <path d="M 480 500 L 480 525" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
@@ -68,7 +68,7 @@
   <g transform="translate(260, 525)">
     <rect x="0" y="0" width="440" height="60" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
     <text x="220" y="26" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">6. CALCUL DES OBSERVATIONS &amp; LIGNES DE VUE (LOS)</text>
-    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Tracé de rayon MNT, masquage végétal, sensibilité capteurs, bruit gaussien</text>
+    <text x="220" y="46" font-size="10" font-weight="500" fill="#475569" text-anchor="middle">Lignes de vue basées sur le terrain, masquage, sensibilité capteurs, incertitude paramétrable</text>
   </g>
   <path d="M 480 585 L 480 610" stroke="#2563eb" stroke-width="2" marker-end="url(#arrow-blue)"/>
 
@@ -85,7 +85,7 @@
   <g transform="translate(260, 700)">
     <rect x="0" y="0" width="440" height="70" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="2" filter="url(#shadow)"/>
     <text x="220" y="24" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">8. ÉTAT PERÇU SÉPARÉ (PERCEIVED STATE)</text>
-    <text x="220" y="44" font-size="10" font-weight="600" fill="#7f1d1d" text-anchor="middle">Filtrage asymétrique • Brouillard de guerre • Biais de capteur</text>
+    <text x="220" y="44" font-size="10" font-weight="600" fill="#7f1d1d" text-anchor="middle">Filtrage asymétrique • Brouillard de guerre • Incertitude paramétrable</text>
     <text x="110" y="62" font-size="9.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Vue Perçue Blue</text>
     <text x="330" y="62" font-size="9.5" font-weight="700" fill="#b91c1c" text-anchor="middle">Vue Perçue Red</text>
   </g>

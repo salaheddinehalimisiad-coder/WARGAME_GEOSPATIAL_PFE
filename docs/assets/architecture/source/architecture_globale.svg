@@ -17,7 +17,7 @@
   <!-- Title Header -->
   <g transform="translate(40, 40)">
     <rect x="0" y="0" width="1200" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">ARCHITECTURE GLOBALE DU SYSTÈME — WARGAME GÉOSPATIAL PFE</text>
+    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">ARCHITECTURE GLOBALE DU SYSTÈME</text>
     <text x="960" y="36" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">AUTONOMOUS FIRST — COMMANDVIEW READY</text>
   </g>
 
@@ -110,11 +110,11 @@
     <g transform="translate(15, 470)">
       <rect x="0" y="0" width="170" height="240" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
       <text x="85" y="24" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Caractéristiques BD</text>
-      <text x="14" y="52" font-size="9.5" font-weight="500" fill="#334155">• PostgreSQL 16</text>
-      <text x="14" y="74" font-size="9.5" font-weight="500" fill="#334155">• PostGIS 3.4</text>
+      <text x="14" y="52" font-size="9.5" font-weight="500" fill="#334155">• PostgreSQL</text>
+      <text x="14" y="74" font-size="9.5" font-weight="500" fill="#334155">• Extension PostGIS</text>
       <text x="14" y="96" font-size="9.5" font-weight="500" fill="#334155">• Index GiST spatial</text>
       <text x="14" y="118" font-size="9.5" font-weight="500" fill="#334155">• Intégrité 3NF</text>
-      <text x="14" y="140" font-size="9.5" font-weight="500" fill="#334155">• Requêtes spatiales &lt; 2ms</text>
+      <text x="14" y="140" font-size="9.5" font-weight="500" fill="#334155">• Requêtes spatiales mesurées</text>
       <text x="14" y="162" font-size="9.5" font-weight="500" fill="#334155">• Audit immuable</text>
       <text x="14" y="184" font-size="9.5" font-weight="500" fill="#334155">• Schéma versionné</text>
       <text x="14" y="206" font-size="9.5" font-weight="500" fill="#334155">• Conteneur Docker dédié</text>
@@ -135,20 +135,20 @@
       <rect x="0" y="0" width="280" height="85" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
       <text x="140" y="24" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">SimulationEngine &amp; WorldState</text>
       <text x="140" y="44" font-size="10" font-weight="600" fill="#1e293b" text-anchor="middle">État Réel Omniscient (Source de Vérité)</text>
-      <text x="140" y="62" font-size="9.5" font-weight="500" fill="#475569" text-anchor="middle">Déterminisme bit-à-bit • Pseudo-aléatoire seedé</text>
+      <text x="140" y="62" font-size="9.5" font-weight="500" fill="#475569" text-anchor="middle">Reproductibilité contrôlée • PRNG seedé à valider</text>
     </g>
 
     <g transform="translate(15, 150)">
       <rect x="0" y="0" width="135" height="75" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.2"/>
       <text x="67" y="24" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Temps &amp; Événements</text>
       <text x="67" y="42" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">SimulationClock</text>
-      <text x="67" y="58" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">EventQueue prioritaire</text>
+      <text x="67" y="58" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Événements planifiés/conditionnels</text>
     </g>
 
     <g transform="translate(160, 150)">
       <rect x="0" y="0" width="135" height="75" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.2"/>
-      <text x="67" y="24" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Déplacements A*</text>
-      <text x="67" y="42" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Hex Pathfinding</text>
+      <text x="67" y="24" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Déplacements sur grille</text>
+      <text x="67" y="42" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Calcul des chemins</text>
       <text x="67" y="58" font-size="9" font-weight="500" fill="#64748b" text-anchor="middle">Coûts relief &amp; routes</text>
     </g>
 
@@ -170,7 +170,7 @@
     <g transform="translate(15, 320)">
       <rect x="0" y="0" width="280" height="95" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
       <text x="140" y="22" font-size="11.5" font-weight="800" fill="#b91c1c" text-anchor="middle">ÉTAT RÉEL vs ÉTAT PERÇU (SÉPARATION)</text>
-      <text x="140" y="42" font-size="10" font-weight="600" fill="#7f1d1d" text-anchor="middle">Brouillard de guerre • Bruit gaussien • Dérive temporelle</text>
+    <text x="140" y="42" font-size="10" font-weight="600" fill="#7f1d1d" text-anchor="middle">Brouillard de guerre • Observations incertaines • Mise à jour progressive</text>
       <g transform="translate(10, 52)">
         <rect x="0" y="0" width="125" height="32" rx="4" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
         <text x="62" y="20" font-size="10" font-weight="700" fill="#1d4ed8" text-anchor="middle">PerceivedState Blue</text>
@@ -282,7 +282,7 @@
       <text x="65" y="44" font-size="9.5" font-weight="600" fill="#7f1d1d" text-anchor="middle">Perspective Opposante</text>
       <text x="65" y="66" font-size="9" font-weight="500" fill="#475569" text-anchor="middle">• Carte interactive</text>
       <text x="65" y="86" font-size="9" font-weight="500" fill="#475569" text-anchor="middle">• Grille hexagonale</text>
-      <text x="65" y="106" font-size="9" font-weight="500" fill="#475569" text-anchor="middle">• Ordres doctrine Red</text>
+      <text x="65" y="106" font-size="9" font-weight="500" fill="#475569" text-anchor="middle">• Ordres Red paramétrés</text>
       <text x="65" y="126" font-size="9" font-weight="500" fill="#475569" text-anchor="middle">• Brouillard Red</text>
     </g>
 

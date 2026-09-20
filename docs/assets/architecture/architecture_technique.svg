@@ -29,7 +29,7 @@
 
     <g transform="translate(15, 60)">
       <rect x="0" y="0" width="250" height="95" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
-      <text x="125" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">React 18 / TypeScript</text>
+      <text x="125" y="24" font-size="12" font-weight="800" fill="#0f172a" text-anchor="middle">React / TypeScript</text>
       <text x="12" y="48" font-size="10" font-weight="500" fill="#334155">• Single Page Application (SPA) modulaire</text>
       <text x="12" y="66" font-size="10" font-weight="500" fill="#334155">• Typage strict, hooks et state management</text>
       <text x="12" y="84" font-size="10" font-weight="500" fill="#334155">• Vite / NPM build pipeline optimisé</text>
@@ -49,7 +49,7 @@
       <text x="12" y="50" font-size="10.5" font-weight="700" fill="#2563eb">• Client Blue (COP Tactique)</text>
       <text x="24" y="68" font-size="9.5" font-weight="500" fill="#64748b">Vision amie et contacts bruités</text>
       <text x="12" y="88" font-size="10.5" font-weight="700" fill="#dc2626">• Client Red (Forces d'Opposition)</text>
-      <text x="24" y="106" font-size="9.5" font-weight="500" fill="#64748b">Doctrine Red et brouillard de guerre</text>
+      <text x="24" y="106" font-size="9.5" font-weight="500" fill="#64748b">Perspective Red et brouillard de guerre</text>
       <text x="12" y="126" font-size="10.5" font-weight="700" fill="#0f172a">• Client Umpire (Supervision Globale)</text>
       <text x="24" y="142" font-size="9.5" font-weight="500" fill="#64748b">Vérité terrain et contrôle simulation</text>
     </g>
@@ -87,7 +87,7 @@
       <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Spécification OpenAPI 3.0 conforme</text>
       <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Endpoints Scénarios &amp; Sessions</text>
       <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Endpoints Ordres &amp; Débriefing</text>
-      <text x="12" y="118" font-size="9.5" font-weight="600" fill="#047857">• Temps de réponse &lt; 15 ms</text>
+      <text x="12" y="118" font-size="9.5" font-weight="600" fill="#047857">• Temps de réponse mesuré</text>
     </g>
 
     <g transform="translate(15, 200)">
@@ -115,9 +115,9 @@
       <text x="12" y="44" font-size="9" font-weight="500" fill="#334155">• Points d'extension C4ISR prêts</text>
       <text x="12" y="62" font-size="9" font-weight="500" fill="#334155">• Bus de publication d'événements</text>
       <text x="12" y="80" font-size="9" font-weight="500" fill="#334155">• Schémas compatibles COP</text>
-      <text x="12" y="98" font-size="9" font-weight="500" fill="#334155">• Logs auditables par CommandView</text>
+      <text x="12" y="98" font-size="9" font-weight="500" fill="#334155">• Logs auditables et exportables</text>
       <text x="12" y="116" font-size="9" font-weight="500" fill="#334155">• Architecture Autonomous First</text>
-      <text x="12" y="134" font-size="9" font-weight="500" fill="#334155">• 100% fonctionnel sans CommandView</text>
+      <text x="12" y="134" font-size="9" font-weight="500" fill="#334155">• Fonctionnement autonome sans CommandView</text>
     </g>
   </g>
 
@@ -136,17 +136,17 @@
       <text x="115" y="24" font-size="11.5" font-weight="800" fill="#047857" text-anchor="middle">SimulationEngine</text>
       <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• C++20 pur sans couplage IHM</text>
       <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• WorldState (État Réel immuable)</text>
-      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Reproductibilité bit-à-bit stricte</text>
-      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• RNG Mersenne Twister seedé</text>
+      <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Reproductibilité contrôlée</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Reproductibilité contrôlée [méc. à valider]</text>
     </g>
 
     <g transform="translate(15, 185)">
       <rect x="0" y="0" width="230" height="110" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
       <text x="115" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">Moteurs Tactiques</text>
-      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• Pathfinding A* sur grille hexagonale</text>
+      <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• Calcul des déplacements sur grille hexagonale</text>
       <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Calcul Ligne de Vue MNT (LOS)</text>
       <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Détection et bruitage de position</text>
-      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Modèle d'ordres et validation OODA</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Traitement des ordres et validation</text>
     </g>
 
     <g transform="translate(15, 310)">
@@ -155,7 +155,7 @@
       <text x="12" y="48" font-size="9.5" font-weight="500" fill="#334155">• spdlog asynchrone multithread</text>
       <text x="12" y="66" font-size="9.5" font-weight="500" fill="#334155">• Traces JSON formatées à la microseconde</text>
       <text x="12" y="84" font-size="9.5" font-weight="500" fill="#334155">• Flush non-bloquant vers PostgreSQL</text>
-      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Checksums d'intégrité de log</text>
+      <text x="12" y="102" font-size="9.5" font-weight="500" fill="#334155">• Contrôles d'intégrité des logs</text>
     </g>
 
     <g transform="translate(15, 435)">
@@ -171,7 +171,7 @@
       <text x="115" y="22" font-size="11" font-weight="700" fill="#047857" text-anchor="middle">Tests &amp; Qualité C++20</text>
       <text x="12" y="44" font-size="9.5" font-weight="500" fill="#334155">• GoogleTest / CTest intégrés</text>
       <text x="12" y="62" font-size="9.5" font-weight="500" fill="#334155">• Zero-warning (-Wall -Wextra -Wpedantic)</text>
-      <text x="12" y="78" font-size="9.5" font-weight="500" fill="#334155">• Couverture de test cible >= 85%</text>
+      <text x="12" y="78" font-size="9.5" font-weight="500" fill="#334155">• Couverture mesurée et documentée</text>
     </g>
   </g>
 
@@ -202,8 +202,8 @@
     <!-- PostGIS Box -->
     <g transform="translate(10, 245)">
       <rect x="0" y="0" width="130" height="230" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-      <text x="65" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">PostgreSQL 16</text>
-      <text x="65" y="42" font-size="10.5" font-weight="700" fill="#2563eb" text-anchor="middle">PostGIS 3.4</text>
+      <text x="65" y="24" font-size="11.5" font-weight="800" fill="#0f172a" text-anchor="middle">PostgreSQL</text>
+      <text x="65" y="42" font-size="10.5" font-weight="700" fill="#2563eb" text-anchor="middle">PostGIS</text>
       <text x="8" y="68" font-size="9" font-weight="500" fill="#334155">• hex_cell</text>
       <text x="8" y="86" font-size="9" font-weight="500" fill="#334155">• elevation_grid</text>
       <text x="8" y="104" font-size="9" font-weight="500" fill="#334155">• terrain_feature</text>

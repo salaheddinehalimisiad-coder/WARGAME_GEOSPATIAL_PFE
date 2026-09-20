@@ -15,12 +15,12 @@ Diagrammes : Tous les schémas sont présentés sous forme vectorielle haute fid
 L'architecture du wargame géospatial repose sur un découpage en cinq couches horizontales étanches, garantissant l'indépendance de la simulation vis-à-vis de l'affichage et du réseau :
 
 1. **Préparation SIG amont** : Traitement des données géographiques exclusivement sous Global Mapper, garantissant l'intégrité du Modèle Numérique de Terrain (MNT), du réseau viaire et de l'occupation du sol. Les couches certifiées par le contrôle qualité (QA) sont exportées sans valeurs NoData vers les formats d'ingestion standardisés (GeoTIFF projeté métrique, GeoPackage).
-2. **Persistance spatiale PostgreSQL / PostGIS** : Source de vérité persistante du théâtre d'opérations. Elle stocke les polygones géoréférencés des cellules hexagonales, les attributs physiques agrégés du terrain, les scénarios, ainsi que les journaux d'audit immuables. L'indexation spatiale GiST garantit des temps de sélection inférieurs à 2 millisecondes.
-3. **Moteur de simulation C++20 (`SimulationEngine`)** : Cœur autonome fonctionnant en temps discret ou continu discrétisé. Il détient l'état réel omniscient (`WorldState`), applique les règles d'engagement au niveau bataillon, résout le pathfinding A* hexagonal pondéré par le relief, calcule les lignes de vue altimétriques (LOS) et génère l'état perçu propre à chaque camp grâce à un modèle d'incertitude paramétrable.
+2. **Persistance spatiale PostgreSQL / PostGIS** : Source de vérité persistante du théâtre d'opérations. Elle stocke les polygones géoréférencés des cellules hexagonales, les attributs physiques agrégés du terrain, les scénarios, ainsi que les journaux d'audit immuables. L'indexation spatiale GiST garantit des temps de sélection optimisés.
+3. **Moteur de simulation C++20 (`SimulationEngine`)** : Cœur autonome fonctionnant en temps discret ou continu discrétisé. Il détient l'état réel omniscient (`WorldState`), applique les règles d'engagement au niveau bataillon, calcule les déplacements sur la grille hexagonale pondérés par le relief, calcule les lignes de vue altimétriques (LOS) et génère l'état perçu propre à chaque camp grâce à un modèle d'incertitude paramétrable.
 4. **Services backend et API Drogon** : Framework C++ haute performance fournissant des contrôleurs REST conformes à OpenAPI 3.0 pour la gestion des sessions et la prise d'ordres, ainsi qu'un serveur WebSocket assurant la diffusion en direct des mises à jour aux clients autorisés.
 5. **Applications frontend React / TypeScript** : Trois interfaces dédiées aux rôles tactiques :
    - **Interface Blue** : Common Operational Picture (COP) tactique amie, visualisation des contacts perçus bruités et console d'ordres.
-   - **Interface Red** : Vue tactique de l'opposition avec ses propres capteurs, son brouillard de guerre et ses ordres doctrinaux.
+   - **Interface Red** : Vue tactique de l'opposition avec ses propres capteurs, son brouillard de guerre et ses ordres tactiques.
    - **Interface Umpire** : Console omnisciente de l'arbitre, capable de superposer vérité terrain et perceptions, de moduler l'horloge et d'injecter des incidents.
    - **Module de Rejeu & Débriefing (AAR)** : Navigation temporelle pas-à-pas et indicateurs d'aide à la décision.
 
@@ -39,7 +39,7 @@ Le pipeline SIG assure la transformation rigoureuse des données brutes en un mo
   1. *Collecte* : Importation des dalles MNT et couches vectorielles sélectionnées et validées dans un projet de travail `.gmw`.
   2. *Préparation* : Reprojection systématique dans le Système de Coordonnées de Référence (CRS) métrique officiel (UTM) et traitement des valeurs NoData selon une méthode documentée et validée.
   3. *Nettoyage topologique* : Découpage strict sur l'emprise géographique d'exercice (Bounding Box) et élimination des artefacts géométriques (micro-polygones, nœuds pendants).
-  4. *Contrôle qualité (QA)* : Validation formelle consignée dans `docs/RAPPORT_QA_SIG.md` avant gel des données et ingestion dans PostGIS.
+  4. *Contrôle qualité (QA)* : Validation formelle selon un protocole de contrôle documenté avant gel des données et ingestion dans PostGIS.
 
 ---
 
@@ -62,11 +62,11 @@ Le schéma de données est structuré en troisième forme normale (3NF) et combi
 
 ![Flux de Simulation](assets/architecture/architecture_flux_simulation.svg)
 
-### Explication du flux d'exécution et boucle OODA
+### Explication du flux d'exécution et de simulation
 
-Le moteur C++20 orchestre chaque cycle de simulation selon une boucle fermée déterministe garantissant une reproductibilité bit-à-bit :
+Le moteur C++20 orchestre chaque cycle de simulation selon une boucle fermée déterministe garantissant une reproductibilité contrôlée :
 
-1. **État initial (WorldState $S_0$)** : Chargement de la grille, des unités et initialisation du générateur de nombres pseudo-aléatoires (`std::mt19937_64`) avec une graine fixe.
+1. **État initial (WorldState $S_0$)** : Chargement de la grille, des unités et initialisation des paramètres de scénario (avec reproductibilité contrôlée [prop.]).
 2. **Actions & Ordres** : Réception des ordres des joueurs via l'API Drogon.
 3. **Règles & Contraintes** : Filtrage de faisabilité physique (franchissement du relief, points de mouvement restants).
 4. **Temps & Événements** : Avancement de la `SimulationClock` et dépilement ordonné de l'`EventQueue`.
@@ -103,9 +103,9 @@ Le système met en œuvre une politique d'isolation stricte de l'information (br
 
 La solution s'articule autour de technologies modernes, standardisées et conteneurisées :
 
-- **Frontend** : React 18, TypeScript, OpenLayers / Leaflet pour la cartographie interactive, styles soignés et composants réactifs.
+- **Frontend** : React, TypeScript, OpenLayers / Leaflet pour la cartographie interactive, styles soignés et composants réactifs.
 - **Backend & Services** : Framework C++ Drogon, offrant des performances d'exécution maximales, des contrôleurs REST documentés par OpenAPI 3.0 et une passerelle WebSocket bidirectionnelle.
 - **Cœur de simulation C++20** : Moteur compilé avec les normes C++20 les plus strictes (`-Wall -Wextra -Wpedantic`), testé unitairement par GoogleTest et exempt de toute dépendance graphique.
-- **Base de données & SIG** : PostgreSQL 16 associé à PostGIS 3.4 déployé via Docker Compose, alimenté par les données issues de Global Mapper.
+- **Base de données & SIG** : PostgreSQL associé à PostGIS déployé via Docker Compose, alimenté par les données issues de Global Mapper.
 - **Outillage DevOps & CI/CD** : Intégration continue GitHub Actions (`.github/workflows/ci.yml`), scripts de pilotage documentaire déterministes (`scripts/update_progress.py`), et gouvernance Git basée sur des branches isolées par phase.
 - **Extension CommandView Ready** : Points d'ancrage prévus pour une intégration future au système C4ISR CommandView (bus d'événements, formats de données standardisés, observabilité).

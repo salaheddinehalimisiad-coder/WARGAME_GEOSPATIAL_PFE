@@ -14,7 +14,7 @@
   <!-- Title Header -->
   <g transform="translate(40, 30)">
     <rect x="0" y="0" width="1080" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">MODÈLE RELATIONNEL &amp; ENTITÉS — WARGAME GÉOSPATIAL PFE</text>
+    <text x="24" y="36" font-size="20" font-weight="800" fill="#0f172a">MODÈLE RELATIONNEL &amp; ENTITÉS</text>
     <text x="1056" y="36" font-size="12" font-weight="600" fill="#64748b" text-anchor="end">SCHÉMA DE DONNÉES MÉTIER &amp; PERSISTANCE</text>
   </g>
 
@@ -28,7 +28,7 @@
     <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">emprise_bbox : Polygon</text>
     <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">regles_jeu : JSON</text>
     <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">conditions_meteo : JSON</text>
-    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">duree_max_tours : Int</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">limite_temporelle : JSON</text>
   </g>
 
   <!-- ENTITY: GAME_SESSION -->
@@ -39,8 +39,8 @@
     <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : UUID</text>
     <text x="14" y="70" font-size="9.5" font-weight="600" fill="#2563eb">FK scenario_id : UUID</text>
     <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">statut : Enum (Init, Play, Pause, End)</text>
-    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">tour_courant : Int</text>
-    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">graine_aleatoire : BigInt</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">temps_simule_courant : Timestamp</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#94a3b8">graine_aleatoire : BigInt [prop.]</text>
     <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">date_debut / fin : Timestamp</text>
   </g>
 
@@ -54,11 +54,11 @@
     <rect x="0" y="0" width="180" height="32" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
     <text x="90" y="21" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">Side (Faction)</text>
     <text x="14" y="52" font-size="10" font-weight="600" fill="#0f172a">PK id : Enum</text>
-    <text x="14" y="70" font-size="9.5" font-weight="500" fill="#475569">code : (Blue, Red, Umpire)</text>
+    <text x="14" y="70" font-size="9.5" font-weight="500" fill="#475569">code : (Blue, Red)</text>
     <text x="14" y="88" font-size="9.5" font-weight="500" fill="#475569">nom : String</text>
-    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">doctrine : String</text>
-    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">objectifs_secrets : JSON</text>
-    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">score_actuel : Float</text>
+    <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">profil_jeu : String</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">objectifs_pedagogiques : JSON</text>
+    <text x="14" y="142" font-size="9.5" font-weight="500" fill="#94a3b8">[+ attributs à valider en Étape 02]</text>
   </g>
 
   <!-- Relation GameSession -> Side -->
@@ -74,7 +74,7 @@
     <text x="14" y="70" font-size="9.5" font-weight="600" fill="#047857">FK session_id : UUID</text>
     <text x="14" y="88" font-size="9.5" font-weight="600" fill="#047857">FK side_id : Enum</text>
     <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">temps_reaction_moyen : Float</text>
-    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">taux_perte_attrition : Float</text>
+    <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">indicateur_pertes : Float</text>
     <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">ecart_moyen_reel_percu : Float</text>
   </g>
 
@@ -109,7 +109,7 @@
     <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">nom_bataillon : String</text>
     <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">type : Enum (Infanterie, Blinde..)</text>
     <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">posture : Enum (Defensif, Mvt, Halte..)</text>
-    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">cohesion_relative : Float [0..1]</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">disponibilite_relative : Float [0..1]</text>
     <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">points_mouvement_restants : Int</text>
   </g>
 
@@ -218,13 +218,13 @@
     <text x="14" y="106" font-size="9.5" font-weight="500" fill="#475569">acteur : String (Blue, Red, Umpire, Sys)</text>
     <text x="14" y="124" font-size="9.5" font-weight="500" fill="#475569">categorie_evenement : String</text>
     <text x="14" y="142" font-size="9.5" font-weight="500" fill="#475569">payload_json : JSONB</text>
-    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#475569">checksum_sha256 : String</text>
-    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#475569">statut_rejeu_valide : Bool</text>
+    <text x="14" y="160" font-size="9.5" font-weight="500" fill="#94a3b8">checksum_integrite [prop.]</text>
+    <text x="14" y="178" font-size="9.5" font-weight="500" fill="#94a3b8">statut_rejeu [prop.]</text>
   </g>
 
   <!-- Bottom Info -->
   <g transform="translate(40, 815)">
     <rect x="0" y="0" width="1080" height="40" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-    <text x="20" y="25" font-size="11" font-weight="600" fill="#334155">Principes Clés : 3NF relationnelle • Indexation spatiale GiST sur geom • Immutabilité des LogEntry • Abstraction totale du matériel • Zéro arme réelle</text>
+    <text x="20" y="25" font-size="11" font-weight="600" fill="#334155">Principes Clés : 3NF relationnelle • Indexation spatiale GiST sur geom • Audit traitable • Abstraction totale du matériel • Zéro arme réelle • Umpire = rôle distinct des factions</text>
   </g>
 </svg>
