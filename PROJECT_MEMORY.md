@@ -1,10 +1,11 @@
 # PROJECT MEMORY
 
 ## État actuel du projet
-**Étape active :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`PASS`, 7/7 sous-tâches terminées)  
-**Progression globale :** 6,07 % (15 / 247 sous-tâches)  
-**Étapes validées (PASS) :** 2 / 31 (ÉTAPE 00, ÉTAPE 01)  
-**Branche active :** `phase/01-analyse-cdc` — **Ne pas fusionner avant validation.**
+**Étape validée :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`PASS`, 7/7 sous-tâches terminées)<br>
+**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 0/9 sous-tâches terminées)<br>
+**Progression globale :** 6,07 % (15 / 247 sous-tâches)<br>
+**Étapes validées (PASS) :** 2 / 31 (ÉTAPE 00, ÉTAPE 01)<br>
+**Branche active :** `phase/02-architecture` — **Ne pas fusionner avant validation.**
 
 ## Source de vérité
 
@@ -59,5 +60,4 @@
 - Ne pas commencer une étape fonctionnelle pendant une phase documentaire/gouvernance.
 
 ## Travaux restant à faire
-- `P01-T02-S03` : Cocher après validation client → ÉTAPE 01 passera à `PASS`.
-- ÉTAPE 02 : Architecture fonctionnelle et technique (`PLANNED` — ne pas démarrer).
+- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 9 sous-tâches à auditer et concevoir).

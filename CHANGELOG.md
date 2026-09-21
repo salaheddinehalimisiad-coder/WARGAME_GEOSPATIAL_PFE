@@ -1,4 +1,9 @@
 # CHANGELOG
+## [IN_PROGRESS / ÉTAPE 02] — Ouverture de la phase d'architecture (2026-09-21)
+- Ouverture officielle de l'ÉTAPE 02 (Architecture fonctionnelle et technique) au statut `IN_PROGRESS`.
+- Création et bascule sur la branche dédiée `phase/02-architecture`.
+- Réutilisation des 6 diagrammes d'architecture SVG existants comme base de référence validée (sans recréation).
+
 ## [PASS / ÉTAPE 01] — Clôture de l'analyse du CdC et validation de la recette (2026-09-21)
 - Validation formelle contradictoire de la sous-tâche `P01-T02-S03` et des 9 critères d'acceptation contractuels `CRIT-01` à `CRIT-09` (CdC Section 24).
 - Complétion intégrale des 7 sous-tâches de l'ÉTAPE 01 (7/7, 100,00 %).
