@@ -18,14 +18,14 @@
   <!-- Donut Ring Progress (Completed) -->
   <circle cx="200" cy="200" r="130" fill="none" stroke="url(#progress-grad)" stroke-width="32"
           stroke-dasharray="816.814"
-          stroke-dashoffset="770.517"
+          stroke-dashoffset="767.210"
           stroke-linecap="round"
           transform="rotate(-90 200 200)" />
 
   <!-- Center Text -->
-  <text x="200" y="188" text-anchor="middle" font-size="44" font-weight="800" fill="#0f172a">5.67 %</text>
+  <text x="200" y="188" text-anchor="middle" font-size="44" font-weight="800" fill="#0f172a">6.07 %</text>
   <text x="200" y="222" text-anchor="middle" font-size="14" font-weight="600" fill="#64748b" letter-spacing="1">AVANCEMENT GLOBAL</text>
-  <text x="200" y="242" text-anchor="middle" font-size="12" font-weight="500" fill="#94a3b8">14 / 247 sous-tâches</text>
+  <text x="200" y="242" text-anchor="middle" font-size="12" font-weight="500" fill="#94a3b8">15 / 247 sous-tâches</text>
 
   <!-- Right Panel Info -->
   <g transform="translate(400, 70)">
@@ -37,7 +37,7 @@
     <g transform="translate(0, 50)">
       <circle cx="10" cy="10" r="7" fill="#2563eb" />
       <text x="26" y="14" font-size="14" font-weight="600" fill="#1e293b">Sous-tâches terminées</text>
-      <text x="230" y="14" font-size="15" font-weight="700" fill="#2563eb" text-anchor="end">14</text>
+      <text x="230" y="14" font-size="15" font-weight="700" fill="#2563eb" text-anchor="end">15</text>
       <rect x="0" y="24" width="230" height="1" fill="#f1f5f9" />
     </g>
 
@@ -45,7 +45,7 @@
     <g transform="translate(0, 85)">
       <circle cx="10" cy="10" r="7" fill="#cbd5e1" />
       <text x="26" y="14" font-size="14" font-weight="600" fill="#1e293b">Sous-tâches restantes</text>
-      <text x="230" y="14" font-size="15" font-weight="700" fill="#64748b" text-anchor="end">233</text>
+      <text x="230" y="14" font-size="15" font-weight="700" fill="#64748b" text-anchor="end">232</text>
       <rect x="0" y="24" width="230" height="1" fill="#f1f5f9" />
     </g>
 
@@ -61,7 +61,7 @@
     <g transform="translate(0, 160)">
       <rect x="0" y="0" width="230" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
       <text x="12" y="20" font-size="11" font-weight="700" fill="#3b82f6" letter-spacing="0.5">ÉTAPE ACTIVE</text>
-      <text x="12" y="42" font-size="13" font-weight="700" fill="#0f172a">ÉTAPE 01 — Analyse détaillée du...</text>
+      <text x="12" y="42" font-size="13" font-weight="700" fill="#0f172a">ÉTAPE 02 — Architecture fonctio...</text>
     </g>
   </g>
 </svg>

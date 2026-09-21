@@ -1,4 +1,11 @@
 # CHANGELOG
+## [PASS / ÉTAPE 01] — Clôture de l'analyse du CdC et validation de la recette (2026-09-21)
+- Validation formelle contradictoire de la sous-tâche `P01-T02-S03` et des 9 critères d'acceptation contractuels `CRIT-01` à `CRIT-09` (CdC Section 24).
+- Complétion intégrale des 7 sous-tâches de l'ÉTAPE 01 (7/7, 100,00 %).
+- Statut officiel de l'ÉTAPE 01 déclaré `PASS`.
+- Avancement global du projet porté à 6,07 % (15 / 247 sous-tâches).
+- Alignement préalable des 6 diagrammes d'architecture SVG (commit `c04fcdd`) et synchronisation stricte avec `docs/ARCHITECTURE.md`.
+
 ## [POLICY] — Normalisation de la politique documentaire (2026-09-19)
 - Adoption d'une documentation progressive légère : notes courtes par étape dans `docs/etapes/ETAPE_XX.md`.
 - Suppression de la génération automatique de gros rapports JSON à chaque étape.

@@ -1,10 +1,11 @@
 # ÉTAPE 01 — Analyse détaillée du cahier des charges
 
-**Statut :** `IN_PROGRESS` (6 / 7 sous-tâches — en attente de validation contradictoire)  
+**Statut :** `PASS` (7 / 7 sous-tâches terminées)  
 **Branche Git :** `phase/01-analyse-cdc`  
 **Commits associés :**
 - `d0756e6` — `feat(analysis): formalize functional specs and requirements traceability matrix (ETAPE 01)`
 - `d61e216` — `refactor(specs): perform critical source audit against official CdC v1.0, purge legacy artifacts and classify requirements [A-D]`
+- `c04fcdd` — `docs(architecture): align diagrams with official CdC`
 
 ---
 
@@ -54,10 +55,15 @@ Analyser exhaustivement le cahier des charges officiel `Cahier_des_charges_PFE_W
 ## Points importants pour la suite (ÉTAPE 02)
 - Les propositions `[C]` (PRNG seedé, coordonnées axiales `(q,r)`, Docker) devront être confirmées formellement en ÉTAPE 02 lors de la conception de l'architecture.
 - La matrice de traçabilité devra être mise à jour avec les composants architecturaux réels définis en ÉTAPE 02.
-- La sous-tâche `P01-T02-S03` sera cochée `[x]` uniquement après validation client du rapport d'audit.
+- La sous-tâche `P01-T02-S03` a été validée formellement après revue contradictoire des 9 critères d'acceptation de la Section 24 du CdC.
 
 ## État de l'étape
-`IN_PROGRESS` — En attente de la revue contradictoire du rapport d'audit par le client/utilisateur avant passage à `PASS`.
+`PASS` — 7 / 7 sous-tâches validées avec traçabilité intégrale du CdC v1.0.
+
+### Clôture et validation finale (2026-09-21)
+- **Validation P01-T02-S03** : Revue contradictoire rigoureuse effectuée avec le client sur les 9 critères contractuels `CRIT-01` à `CRIT-09` issus de la Section 24 du CdC (concordance textuelle exacte à 100 %, zéro exigence inventée, zéro terme obsolète).
+- **Matrice de traçabilité** : 35/35 sections du CdC v1.0 couvertes, typologie rigoureuse, critères contractuels isolés des propositions techniques.
+- **Clôture de l'ÉTAPE 01** : Étape officiellement validée `PASS`.
 
 ### Correction architecture après revue (2026-09-20)
 - **6 diagrammes SVG revus et synchronisés** (versions publiées et `docs/assets/architecture/source/`) : formulations trop spécifiques ou prescriptives neutralisées.

@@ -1,9 +1,9 @@
 # PROJECT MEMORY
 
 ## État actuel du projet
-**Étape active :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`IN_PROGRESS`, 6/7 sous-tâches)  
-**Progression globale :** 5,67 % (14 / 247 sous-tâches)  
-**Étapes validées (PASS) :** 1 / 31 (ÉTAPE 00)  
+**Étape active :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`PASS`, 7/7 sous-tâches terminées)  
+**Progression globale :** 6,07 % (15 / 247 sous-tâches)  
+**Étapes validées (PASS) :** 2 / 31 (ÉTAPE 00, ÉTAPE 01)  
 **Branche active :** `phase/01-analyse-cdc` — **Ne pas fusionner avant validation.**
 
 ## Source de vérité
@@ -23,7 +23,7 @@
 2. **Échelon minimal : bataillon** — aucune sous-entité individuelle représentée.
 3. **Abstraction capacitaire totale** — zéro désignation d'armement ou caractéristique technique réelle.
 4. **Séparation hermétique** : État Réel (Umpire/moteur) vs États Perçus Blue/Red — aucun client joueur n'accède à l'état réel.
-5. **Critères d'acceptation officiels** : 9 critères textuels contractuels CdC Section 24 (`CRIT-01` à `CRIT-09`).
+5. **Critères d'acceptation officiels** : 9 critères textuels contractuels CdC Section 24 (`CRIT-01` à `CRIT-09`), validés contradictoirement sans exigence inventée ni altération.
 6. **Principe architectural** : « Autonomous First — CommandView Ready » (CdC Section 16, 33).
 7. **Déterminisme** via PRNG `std::mt19937_64` + seed de scénario — **Proposition [C] à confirmer en ÉTAPE 02**.
 
