@@ -1,8 +1,8 @@
 {
   "total_subtasks": 247,
-  "completed_subtasks": 16,
-  "remaining_subtasks": 231,
-  "global_pct": 6.477732793522267,
+  "completed_subtasks": 17,
+  "remaining_subtasks": 230,
+  "global_pct": 6.882591093117409,
   "total_steps": 31,
   "completed_steps_count": 2,
   "remaining_steps": 29,
@@ -10,9 +10,9 @@
     "num": "02",
     "title": "Architecture fonctionnelle et technique",
     "total": 9,
-    "completed": 1,
-    "remaining": 8,
-    "pct": 11.11111111111111,
+    "completed": 2,
+    "remaining": 7,
+    "pct": 22.22222222222222,
     "status": "IN_PROGRESS",
     "is_blocked": false,
     "tasks": [
@@ -31,7 +31,7 @@
           {
             "id": "P02-T01-S02",
             "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-            "checked": false,
+            "checked": true,
             "line": 126,
             "step_num": "02",
             "step_title": "Architecture fonctionnelle et technique"
@@ -113,7 +113,7 @@
       {
         "id": "P02-T01-S02",
         "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-        "checked": false,
+        "checked": true,
         "line": 126,
         "step_num": "02",
         "step_title": "Architecture fonctionnelle et technique"
@@ -473,9 +473,9 @@
       "num": "02",
       "title": "Architecture fonctionnelle et technique",
       "total": 9,
-      "completed": 1,
-      "remaining": 8,
-      "pct": 11.11111111111111,
+      "completed": 2,
+      "remaining": 7,
+      "pct": 22.22222222222222,
       "status": "IN_PROGRESS",
       "is_blocked": false,
       "tasks": [
@@ -494,7 +494,7 @@
             {
               "id": "P02-T01-S02",
               "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-              "checked": false,
+              "checked": true,
               "line": 126,
               "step_num": "02",
               "step_title": "Architecture fonctionnelle et technique"
@@ -576,7 +576,7 @@
         {
           "id": "P02-T01-S02",
           "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-          "checked": false,
+          "checked": true,
           "line": 126,
           "step_num": "02",
           "step_title": "Architecture fonctionnelle et technique"
@@ -5064,17 +5064,17 @@
       "line": 125,
       "step_num": "02",
       "step_title": "Architecture fonctionnelle et technique"
-    }
-  ],
-  "pending_subtask_list": [
+    },
     {
       "id": "P02-T01-S02",
       "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",
-      "checked": false,
+      "checked": true,
       "line": 126,
       "step_num": "02",
       "step_title": "Architecture fonctionnelle et technique"
-    },
+    }
+  ],
+  "pending_subtask_list": [
     {
       "id": "P02-T01-S03",
       "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",

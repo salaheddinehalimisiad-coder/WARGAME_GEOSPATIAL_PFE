@@ -2,8 +2,8 @@
 
 ## État actuel du projet
 **Étape validée :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`PASS`, 7/7 sous-tâches terminées)<br>
-**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 1/9 sous-tâches terminées : P02-T01-S01 `PASS`)<br>
-**Progression globale :** 6,48 % (16 / 247 sous-tâches)<br>
+**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 2/9 sous-tâches terminées : P02-T01-S01 & P02-T01-S02 `PASS`)<br>
+**Progression globale :** 6,88 % (17 / 247 sous-tâches)<br>
 **Étapes validées (PASS) :** 2 / 31 (ÉTAPE 00, ÉTAPE 01)<br>
 **Branche active :** `phase/02-architecture` — **Ne pas fusionner avant validation.**
 
@@ -28,8 +28,13 @@
 6. **Principe architectural** : « Autonomous First — CommandView Ready » (CdC Section 16, 33).
 7. **Déterminisme** via PRNG `std::mt19937_64` + seed de scénario — **Proposition [C] à confirmer en ÉTAPE 02**.
 8. **Découpage modulaire C++20 `core / terrain / units / sim / api`** validé formellement (P02-T01-S01 = `PASS`) : choix d'ingénierie interne [C], graphe acyclique strict (DAG), propriété univoque des données (`terrain` possède les données géographiques chargées, `sim` possède le `WorldState`), isolation hermétique Réel/Perçu et rôles Blue/Red/Umpire.
+9. **Interfaces de services REST et WebSocket sous Drogon** validées formellement (P02-T01-S02 = `PASS`) : 12 opérations REST réparties en 9 familles, 6 flux WebSocket réactifs, distinction stricte entre dépendance logicielle statique (`api → sim`) et flux runtime via abstractions d'événements, isolation absolue de la vérité terrain et des traces brutes réservées à l'Arbitre, contrat documentable avec OpenAPI [C].
 
 ## Décisions encore ouvertes (à confirmer en ÉTAPE 02)
+- Choix définitif de la spécification OpenAPI (version 3.0 vs 3.1) [D].
+- Format concret de sérialisation des charges utiles (JSON vs binaire optimisé) [D].
+- Mécanisme concret de remontée d'événements `sim → api` (observer synchrone vs file asynchrone) [D].
+- Mécanisme concret d'authentification et gestion des tokens de rôle [D].
 - Choix définitif du système de coordonnées hexagonales (axiales `(q,r)` vs H3).
 - Confirmation du modèle de détail des structures de données C++.
 - Confirmation de l'architecture de déploiement Docker Compose.
@@ -61,4 +66,4 @@
 - Ne pas commencer une étape fonctionnelle pendant une phase documentaire/gouvernance.
 
 ## Travaux restant à faire
-- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 8 sous-tâches restantes, prochaine : P02-T01-S02).
+- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 7 sous-tâches restantes, prochaine : P02-T01-S03).

@@ -1,6 +1,6 @@
 # ÉTAPE 02 — Architecture fonctionnelle et technique
 
-**Statut :** `IN_PROGRESS` (1 / 9 sous-tâches terminées)<br>
+**Statut :** `IN_PROGRESS` (2 / 9 sous-tâches terminées)<br>
 **Date d'ouverture :** 2026-09-21<br>
 **Branche Git :** `phase/02-architecture`<br>
 **Sous-tâches prévues :** 9 (T02-01 : 4 sous-tâches, T02-02 : 5 sous-tâches)
@@ -21,3 +21,4 @@ Concevoir l'architecture modulaire globale du système, définir les contrats d'
 
 ## État d'avancement
 - **`P02-T01-S01` [PASS]** : Définition architecturale du découpage en modules C++20 (`core`, `terrain`, `units`, `sim`, `api`) validée formellement. Responsabilités, graphe acyclique de dépendances (DAG), dépendances interdites, propriété des données (`terrain` pour le terrain, `sim` pour le WorldState), séparation hermétique Réel/Perçu et rôles Blue/Red/Umpire formalisés dans `docs/ARCHITECTURE.md`.
+- **`P02-T01-S02` [PASS]** : Spécification des interfaces de communication REST (12 opérations, 9 familles) et WebSocket (6 flux asynchrones) sous Drogon validée formellement. Distinction dépendance statique (`api → sim`) vs flux runtime via abstraction d'événements, isolation stricte Blue/Red/Umpire (traces brutes réservées à l'Arbitre) et modèle d'interface documentable avec OpenAPI formalisés dans `docs/ARCHITECTURE.md`.

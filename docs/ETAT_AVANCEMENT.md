@@ -1,6 +1,6 @@
 # ÉTAT D’AVANCEMENT DU PROJET
 
-**Dernière mise à jour automatique :** 2026-09-21 21:57:59  
+**Dernière mise à jour automatique :** 2026-09-21 22:16:38  
 **Source de vérité :** [`docs/ROADMAP.md`](file:///c:/Users/salah/Desktop/WARGAME_GEOSPATIAL_PFE/docs/ROADMAP.md)  
 **Outil de synchronisation :** `python scripts/update_progress.py`
 
@@ -15,11 +15,11 @@
 
 ### Avancement global
 
-# **6,48 %**
+# **6,88 %**
 
 ### Sous-tâches
 
-**16 / 247** sous-tâches terminées (231 restantes)
+**17 / 247** sous-tâches terminées (230 restantes)
 
 ### Étape active
 
@@ -27,7 +27,7 @@
 
 ### Statut étape active
 
-`IN_PROGRESS` (1 / 9 sous-tâches terminées — 11.11 %)
+`IN_PROGRESS` (2 / 9 sous-tâches terminées — 22.22 %)
 
 ---
 
@@ -36,9 +36,9 @@
 | Indicateur | Valeur |
 |---|---:|
 | **Sous-tâches totales** | 247 |
-| **Sous-tâches terminées** | 16 |
-| **Sous-tâches restantes** | 231 |
-| **Pourcentage global** | **6,48 %** |
+| **Sous-tâches terminées** | 17 |
+| **Sous-tâches restantes** | 230 |
+| **Pourcentage global** | **6,88 %** |
 | **Étapes terminées (PASS)** | 2 / 31 |
 | **Étape active** | **ÉTAPE 02 — Architecture fonctionnelle et technique** |
 | **Statut étape active** | `IN_PROGRESS` |
@@ -48,21 +48,21 @@
 
 ## Dernières tâches terminées
 
-- [x] `P01-T01-S04` — Rédiger la spécification des rôles Blue, Red et Umpire dans docs/SPECIFICATIONS_FONCTIONNELLES.md *(ÉTAPE 01)*
 - [x] `P01-T02-S01` — Construire le tableau de correspondance entre articles du CdC et composants logiciels *(ÉTAPE 01)*
 - [x] `P01-T02-S02` — Identifier les contraintes de performance et de reproductibilité temporelle *(ÉTAPE 01)*
 - [x] `P01-T02-S03` — Établir la liste des critères d'acceptation de recette finale dans docs/MATRICE_TRACABILITE.md *(ÉTAPE 01)*
 - [x] `P02-T01-S01` — Définir le découpage en modules C++20 (core, terrain, units, sim, api) *(ÉTAPE 02)*
+- [x] `P02-T01-S02` — Spécifier les interfaces de communication REST et WebSocket sous Drogon *(ÉTAPE 02)*
 
 ---
 
 ## Prochaines tâches
 
-- [ ] `P02-T01-S02` — Spécifier les interfaces de communication REST et WebSocket sous Drogon *(ÉTAPE 02)*
 - [ ] `P02-T01-S03` — Définir la frontière d'intégration future avec le système C4ISR CommandView *(ÉTAPE 02)*
 - [ ] `P02-T01-S04` — Rédiger le document descriptif des modules dans docs/ARCHITECTURE.md *(ÉTAPE 02)*
 - [ ] `P02-T02-S01` — Concevoir et exporter le diagramme d'architecture globale en SVG *(ÉTAPE 02)*
 - [ ] `P02-T02-S02` — Concevoir et exporter le diagramme du pipeline SIG en SVG *(ÉTAPE 02)*
+- [ ] `P02-T02-S03` — Concevoir et exporter le diagramme du flux de simulation en SVG *(ÉTAPE 02)*
 
 ---
 
@@ -78,7 +78,7 @@
 |:---|---:|---:|---:|:---:|
 | ÉTAPE 00 — Initialisation du projet | 8 | 8 | 100,00 % | `PASS` |
 | ÉTAPE 01 — Analyse détaillée du cahier des charges | 7 | 7 | 100,00 % | `PASS` |
-| ÉTAPE 02 — Architecture fonctionnelle et technique | 1 | 9 | 11,11 % | `IN_PROGRESS` |
+| ÉTAPE 02 — Architecture fonctionnelle et technique | 2 | 9 | 22,22 % | `IN_PROGRESS` |
 | ÉTAPE 03 — Modèle de données | 0 | 7 | 0,00 % | `PLANNED` |
 | ÉTAPE 04 — Préparation de l’environnement | 0 | 8 | 0,00 % | `PLANNED` |
 | ÉTAPE 05 — Collecte SIG avec Global Mapper | 0 | 8 | 0,00 % | `PLANNED` |
