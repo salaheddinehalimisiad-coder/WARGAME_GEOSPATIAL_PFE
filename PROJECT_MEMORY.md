@@ -2,8 +2,8 @@
 
 ## État actuel du projet
 **Étape validée :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`PASS`, 7/7 sous-tâches terminées)<br>
-**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 0/9 sous-tâches terminées)<br>
-**Progression globale :** 6,07 % (15 / 247 sous-tâches)<br>
+**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 1/9 sous-tâches terminées : P02-T01-S01 `PASS`)<br>
+**Progression globale :** 6,48 % (16 / 247 sous-tâches)<br>
 **Étapes validées (PASS) :** 2 / 31 (ÉTAPE 00, ÉTAPE 01)<br>
 **Branche active :** `phase/02-architecture` — **Ne pas fusionner avant validation.**
 
@@ -27,6 +27,7 @@
 5. **Critères d'acceptation officiels** : 9 critères textuels contractuels CdC Section 24 (`CRIT-01` à `CRIT-09`), validés contradictoirement sans exigence inventée ni altération.
 6. **Principe architectural** : « Autonomous First — CommandView Ready » (CdC Section 16, 33).
 7. **Déterminisme** via PRNG `std::mt19937_64` + seed de scénario — **Proposition [C] à confirmer en ÉTAPE 02**.
+8. **Découpage modulaire C++20 `core / terrain / units / sim / api`** validé formellement (P02-T01-S01 = `PASS`) : choix d'ingénierie interne [C], graphe acyclique strict (DAG), propriété univoque des données (`terrain` possède les données géographiques chargées, `sim` possède le `WorldState`), isolation hermétique Réel/Perçu et rôles Blue/Red/Umpire.
 
 ## Décisions encore ouvertes (à confirmer en ÉTAPE 02)
 - Choix définitif du système de coordonnées hexagonales (axiales `(q,r)` vs H3).
@@ -60,4 +61,4 @@
 - Ne pas commencer une étape fonctionnelle pendant une phase documentaire/gouvernance.
 
 ## Travaux restant à faire
-- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 9 sous-tâches à auditer et concevoir).
+- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 8 sous-tâches restantes, prochaine : P02-T01-S02).

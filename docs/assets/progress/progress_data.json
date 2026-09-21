@@ -1,8 +1,8 @@
 {
   "total_subtasks": 247,
-  "completed_subtasks": 15,
-  "remaining_subtasks": 232,
-  "global_pct": 6.0728744939271255,
+  "completed_subtasks": 16,
+  "remaining_subtasks": 231,
+  "global_pct": 6.477732793522267,
   "total_steps": 31,
   "completed_steps_count": 2,
   "remaining_steps": 29,
@@ -10,10 +10,10 @@
     "num": "02",
     "title": "Architecture fonctionnelle et technique",
     "total": 9,
-    "completed": 0,
-    "remaining": 9,
-    "pct": 0.0,
-    "status": "PLANNED",
+    "completed": 1,
+    "remaining": 8,
+    "pct": 11.11111111111111,
+    "status": "IN_PROGRESS",
     "is_blocked": false,
     "tasks": [
       {
@@ -23,7 +23,7 @@
           {
             "id": "P02-T01-S01",
             "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-            "checked": false,
+            "checked": true,
             "line": 125,
             "step_num": "02",
             "step_title": "Architecture fonctionnelle et technique"
@@ -105,7 +105,7 @@
       {
         "id": "P02-T01-S01",
         "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-        "checked": false,
+        "checked": true,
         "line": 125,
         "step_num": "02",
         "step_title": "Architecture fonctionnelle et technique"
@@ -473,10 +473,10 @@
       "num": "02",
       "title": "Architecture fonctionnelle et technique",
       "total": 9,
-      "completed": 0,
-      "remaining": 9,
-      "pct": 0.0,
-      "status": "PLANNED",
+      "completed": 1,
+      "remaining": 8,
+      "pct": 11.11111111111111,
+      "status": "IN_PROGRESS",
       "is_blocked": false,
       "tasks": [
         {
@@ -486,7 +486,7 @@
             {
               "id": "P02-T01-S01",
               "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-              "checked": false,
+              "checked": true,
               "line": 125,
               "step_num": "02",
               "step_title": "Architecture fonctionnelle et technique"
@@ -568,7 +568,7 @@
         {
           "id": "P02-T01-S01",
           "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-          "checked": false,
+          "checked": true,
           "line": 125,
           "step_num": "02",
           "step_title": "Architecture fonctionnelle et technique"
@@ -5056,17 +5056,17 @@
       "line": 92,
       "step_num": "01",
       "step_title": "Analyse détaillée du cahier des charges"
-    }
-  ],
-  "pending_subtask_list": [
+    },
     {
       "id": "P02-T01-S01",
       "title": "Définir le découpage en modules C++20 (core, terrain, units, sim, api)",
-      "checked": false,
+      "checked": true,
       "line": 125,
       "step_num": "02",
       "step_title": "Architecture fonctionnelle et technique"
-    },
+    }
+  ],
+  "pending_subtask_list": [
     {
       "id": "P02-T01-S02",
       "title": "Spécifier les interfaces de communication REST et WebSocket sous Drogon",

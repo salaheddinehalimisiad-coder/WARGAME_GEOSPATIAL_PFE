@@ -1,5 +1,6 @@
 # CHANGELOG
 ## [IN_PROGRESS / ÉTAPE 02] — Ouverture de la phase d'architecture (2026-09-21)
+- Validation formelle de la sous-tâche `P02-T01-S01` : formalisation du découpage modulaire C++20 (`core`, `terrain`, `units`, `sim`, `api`), dépendances acycliques (DAG), propriété univoque des données et isolation Réel/Perçu dans `docs/ARCHITECTURE.md`.
 - Ouverture officielle de l'ÉTAPE 02 (Architecture fonctionnelle et technique) au statut `IN_PROGRESS`.
 - Création et bascule sur la branche dédiée `phase/02-architecture`.
 - Réutilisation des 6 diagrammes d'architecture SVG existants comme base de référence validée (sans recréation).

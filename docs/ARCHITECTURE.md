@@ -109,3 +109,111 @@ La solution s'articule autour de technologies modernes, standardisées et conten
 - **Base de données & SIG** : PostgreSQL associé à PostGIS déployé via Docker Compose, alimenté par les données issues de Global Mapper.
 - **Outillage DevOps & CI/CD** : Intégration continue GitHub Actions (`.github/workflows/ci.yml`), scripts de pilotage documentaire déterministes (`scripts/update_progress.py`), et gouvernance Git basée sur des branches isolées par phase.
 - **Extension CommandView Ready** : Points d'ancrage prévus pour une intégration future au système C4ISR CommandView (bus d'événements, formats de données standardisés, observabilité).
+
+---
+
+## Découpage modulaire C++20 (`src/`)
+
+### Objectif du découpage
+Conformément aux exigences de modularité, de découplage logique et de testabilité indépendante (*CdC Section 16, 21, 24*), le cœur logiciel en C++20 est structuré selon un découpage en cinq modules logiques étanches.
+
+> [!NOTE]
+> Le découpage exact en cinq modules `core / terrain / units / sim / api` constitue un **choix d'ingénierie interne du projet [C]** mis au service des exigences fonctionnelles et contractuelles du CdC v1.0.
+
+### Responsabilités des modules
+
+#### 1. Module `core` [C]
+Fournit le socle universel transverse partagé par l'ensemble des modules :
+- Abstraction des identifiants typés (`UnitId`, `CellId`, `SessionId`, `EventId`).
+- Types géométriques et mathématiques élémentaires (vecteurs, distances, angles).
+- Abstraction générique des coordonnées spatiales de la grille (sans figer de format concret prématuré).
+- Structures communes de retour et de gestion d'erreurs, horodatage et utilitaires transverses.
+- *Interdictions* : Aucune logique métier tactique, aucun état de simulation, aucune dépendance réseau, SQL ou IHM.
+
+#### 2. Module `terrain` [A / C]
+Responsable exclusif de la représentation en mémoire et de l'interrogation des données géographiques :
+- Modélisation de la grille spatiale hexagonale régulière (*CdC Section 5.2 [A]*).
+- Attributs physiques et environnementaux agrégés par cellule : altitude MNT, pente maximale calculée, couverture végétale, présence hydrographique, franchissabilité et réseau viaire (*CdC Section 5.2 [A]*).
+- Primitives de calcul spatial pur : relations d'adjacence, calculs de distance sur la grille, profils altimétriques et calcul géométrique brut de ligne de vue (LOS altimétrique).
+- *Interdictions* : Aucune logique d'adjudication ou d'engagement, aucune connaissance des unités, aucun accès direct SQL (les données sont injectées au chargement).
+
+#### 3. Module `units` [A / C]
+Modélise les entités opérationnelles et leurs capacités abstraites :
+- Échelon minimal strict fixé au **bataillon** (*CdC Section 5.3 [A]*), sans représentation de sous-entités individuelles.
+- Attributs obligatoires de l'unité : identifiant, affiliation (`Blue` / `Red`), type/rôle générique (infanterie, blindé, appui, reconnaissance, logistique), posture opérationnelle et effectif/disponibilité relative (*CdC Section 5.3 [A]*).
+- **Abstraction capacitaire totale** des équipements et capteurs sans aucune référence à des armes réelles, calibres ou désignations réelles (*CdC Section 5.4, 31 [A]*).
+- *Interdictions* : Zéro caractéristique d'arme réelle, aucune gestion du temps ou de l'ordonnancement de simulation.
+
+#### 4. Module `sim` [A / C]
+Cœur autonome du moteur de simulation :
+- **Autorité souveraine sur l'État Réel (`WorldState`)** : détient et fait évoluer la situation objective du monde (unités réelles, postures, horloge logique, file d'événements) (*CdC Section 6, 7 [A]*).
+- **Gestion temporelle et événementielle** : pilote l'horloge logique et ordonnance la file prioritaire des événements (*CdC Section 8 [A]*).
+- **Résolution et transitions d'état** : valide la franchissabilité du relief, applique les règles d'adjudication de façon déterministe et calcule les transitions d'état (*CdC Section 7, 24 [A]*).
+- **Génération de l'incertitude et du brouillard de guerre (FOW)** : applique les modèles de détection selon le relief et construit les **États Perçus** distincts pour chaque camp (*CdC Section 6 [A]*).
+- **Journalisation structurée** : émet le flux immuable des traces d'audit pour la reconstruction et le rejeu (*CdC Section 13, 14 [A]*).
+- *Interdictions* : Totalement indépendant de l'IHM et du serveur d'exposition réseau ; testable de manière autonome en bibliothèque headless (*CdC Section 16, 24 [A]*).
+
+#### 5. Module `api` [A / C]
+Façade applicative d'exposition et de médiation :
+- Point d'entrée des requêtes et commandes externes.
+- Authentification et acheminement des ordres selon le rôle opérationnel (`Blue`, `Red`, `Umpire`) (*CdC Section 11 [A]*).
+- **Filtrage étanche des flux d'information** : garantit qu'un camp ne reçoit que sa situation perçue, et réserve la vision omnisciente (état réel + perceptions) à l'Arbitre (*CdC Section 6, 11 [A]*).
+- *Interdictions* : Aucun calcul physique ou tactique (ne calcule ni trajectoire, ni visibilité, ni combat).
+
+### Graphe des dépendances autorisées (DAG)
+
+Le graphe des dépendances est strictement orienté et sans cycle :
+
+```text
+       [ core ]
+       ^      ^
+      /        \
+ [ terrain ]  [ units ]
+      ^        ^
+       \      /
+        [ sim ]
+           ^
+           |
+         [ api ]
+```
+
+- `terrain` → `core` : utilisation des identifiants et primitives communes.
+- `units` → `core` : utilisation des identifiants et énumérations génériques.
+- `sim` → `core` : utilisation des utilitaires communs, horodatage et types de base.
+- `sim` → `terrain` : consultation du terrain comme donnée de référence en lecture seule.
+- `sim` → `units` : manipulation des états dynamiques des unités et application des profils capacitaires.
+- `api` → `sim` : transmission des ordres et interrogation des états perçus / état réel.
+- `api` → `core` : manipulation des types et identifiants partagés.
+
+### Dépendances interdites
+
+- `core` ne dépend d'aucun autre module (socle terminal autonome).
+- `terrain` ne dépend pas de `units`, `sim`, ni `api` (la géographie est neutre et indépendante des troupes et règles).
+- `units` ne dépend pas de `terrain`, `sim`, ni `api` (les profils capacitaires sont indépendants de la carte géographique).
+- `sim` ne dépend pas de `api` (inversion stricte des dépendances : le moteur ignore le protocole d'exposition externe).
+- `sim` ne dépend pas de l'IHM (React), ni des serveurs web, ni des outils SIG amont (Global Mapper).
+- `units` ne dépend d'aucune donnée ou nomenclature d'arme réelle.
+
+### Propriété des données (Data Ownership)
+
+- **Données géographiques et grille** : `terrain` est le propriétaire exclusif de la représentation du terrain chargée en mémoire. `sim` ne possède pas le terrain mais l'utilise comme donnée d'entrée et de référence de calcul.
+- **État de simulation (`WorldState`)** : `sim` est le propriétaire exclusif de l'état dynamique de la session (bataillons déployés, positions effectives, horloge, événements, traces).
+- **Profils structurels d'unités** : `units` détient les définitions de profils capacitaires abstraits ; leurs instances vivantes sont managées dans le `WorldState` de `sim`.
+- **Perceptions et observations** : `sim` produit les états perçus ; `api` les reçoit et les distribue en respectant le cloisonnement de chaque camp.
+- **Sessions et connexions** : `api` est propriétaire du contexte de session externe et de l'association rôle-utilisateur.
+
+### Séparation État Réel / États Perçus et Rôles Blue / Red / Umpire
+
+1. **État Réel (Ground Truth)** : situation objective absolue détenue exclusivement par `sim`. Accessible uniquement par le rôle Arbitre (Umpire) via `api`. Jamais exposée aux joueurs.
+2. **États Perçus (Situations Perçues)** : situations subjectives calculées par `sim` pour Blue et Red selon les capteurs, le relief, les masques et les règles d'incertitude.
+3. **Cloisonnement des rôles** :
+   - `Blue` : dispose uniquement de la vue perçue amie et des contacts adverses détectés.
+   - `Red` : dispose uniquement de sa propre vue perçue et de ses détections.
+   - `Umpire` : rôle d'arbitrage disposant de la superposition de l'état réel et des deux états perçus, avec contrôle de l'horloge et injection d'événements.
+
+### Classification des éléments `[A] / [B] / [C] / [D]`
+
+- **[A] Exigences contractuelles du CdC** : découplage simulation/présentation (*Sec. 16*), échelon bataillon (*Sec. 5.3*), abstraction capacitaire totale (*Sec. 5.4, 31*), séparation Réel / Perçu (*Sec. 6, 11*), horloge logique et événements (*Sec. 8*), journalisation et rejeu (*Sec. 13, 14*), rôles Blue/Red/Umpire (*Sec. 11*), déterminisme fonctionnel (*Sec. 24*).
+- **[B] Contraintes logiquement déduites** : testabilité du moteur indépendamment de l'IHM et de l'exposition (*déduit de Sec. 16, 24*), filtrage d'information au niveau de l'exposition (*déduit de Sec. 6, 11*), graphe de dépendances acyclique (*déduit de Sec. 16*).
+- **[C] Choix d'ingénierie et d'architecture interne du projet** : découpage modulaire en cinq modules `core / terrain / units / sim / api`, Global Mapper comme outil SIG/ETL opérationnel du projet, framework Drogon pour les services C++, GoogleTest pour les tests unitaires automatisés, PRNG seedé pour garantir le déterminisme d'adjudication.
+- **[D] Éléments encore ouverts / décisions futures** : choix définitif de la représentation géométrique concrète des coordonnées de grille (axiale, cubique, H3), format précis des conteneurs de transfert mémoire entre `sim` et `api`, échelle de normalisation numérique des valeurs relatives de capacités.

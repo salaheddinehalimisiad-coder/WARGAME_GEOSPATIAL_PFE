@@ -1,6 +1,6 @@
 # ÉTAPE 02 — Architecture fonctionnelle et technique
 
-**Statut :** `IN_PROGRESS` (0 / 9 sous-tâches terminées)<br>
+**Statut :** `IN_PROGRESS` (1 / 9 sous-tâches terminées)<br>
 **Date d'ouverture :** 2026-09-21<br>
 **Branche Git :** `phase/02-architecture`<br>
 **Sous-tâches prévues :** 9 (T02-01 : 4 sous-tâches, T02-02 : 5 sous-tâches)
@@ -20,4 +20,4 @@ Concevoir l'architecture modulaire globale du système, définir les contrats d'
   6. `architecture_technique.svg`
 
 ## État d'avancement
-Étape officiellement ouverte. Aucun résultat de conception détaillée n'a été produit à ce stade.
+- **`P02-T01-S01` [PASS]** : Définition architecturale du découpage en modules C++20 (`core`, `terrain`, `units`, `sim`, `api`) validée formellement. Responsabilités, graphe acyclique de dépendances (DAG), dépendances interdites, propriété des données (`terrain` pour le terrain, `sim` pour le WorldState), séparation hermétique Réel/Perçu et rôles Blue/Red/Umpire formalisés dans `docs/ARCHITECTURE.md`.

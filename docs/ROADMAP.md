@@ -122,7 +122,7 @@ Concevoir l'architecture modulaire globale du système, définir les contrats d'
 
 ### Tâche T02-01 — Conception de l'architecture logicielle
 #### Sous-tâches
-- [ ] P02-T01-S01 — Définir le découpage en modules C++20 (core, terrain, units, sim, api)
+- [x] P02-T01-S01 — Définir le découpage en modules C++20 (core, terrain, units, sim, api)
 - [ ] P02-T01-S02 — Spécifier les interfaces de communication REST et WebSocket sous Drogon
 - [ ] P02-T01-S03 — Définir la frontière d'intégration future avec le système C4ISR CommandView
 - [ ] P02-T01-S04 — Rédiger le document descriptif des modules dans docs/ARCHITECTURE.md
