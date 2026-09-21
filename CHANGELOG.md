@@ -1,5 +1,6 @@
 # CHANGELOG
 ## [IN_PROGRESS / ÉTAPE 02] — Ouverture de la phase d'architecture (2026-09-21)
+- Validation formelle de la sous-tâche `P02-T01-S03` : définition architecturale de la frontière d'intégration avec CommandView (« Autonomous First — CommandView Ready »), patron d'adaptateur périphérique, invariance des privilèges et protection absolue du brouillard de guerre dans `docs/ARCHITECTURE.md`.
 - Validation formelle de la sous-tâche `P02-T01-S02` : spécification des interfaces REST (12 opérations, 9 familles) et WebSocket (6 flux asynchrones) sous Drogon, distinction dépendance statique vs flux runtime, isolation étanche des traces brutes réservées à l'Arbitre dans `docs/ARCHITECTURE.md`.
 - Validation formelle de la sous-tâche `P02-T01-S01` : formalisation du découpage modulaire C++20 (`core`, `terrain`, `units`, `sim`, `api`), dépendances acycliques (DAG), propriété univoque des données et isolation Réel/Perçu dans `docs/ARCHITECTURE.md`.
 - Ouverture officielle de l'ÉTAPE 02 (Architecture fonctionnelle et technique) au statut `IN_PROGRESS`.

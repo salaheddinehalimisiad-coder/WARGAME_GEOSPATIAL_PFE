@@ -322,3 +322,94 @@ Pour assurer l'interactivité en temps réel sans scrutation (polling), six flux
 - Format concret de sérialisation des charges utiles (JSON textuel vs sérialisation binaire pour les transferts lourds).
 - Mécanisme d'adaptation pour la remontée d'événements `sim → api` (patron observateur abstrait synchrone vs file de messages asynchrone).
 - Mécanisme concret de gestion des tokens de rôle et des contextes de session.
+
+---
+
+## Frontière d'intégration CommandView — « Autonomous First — CommandView Ready »
+
+### Principe d'autonomie et préparation C4ISR [A / B]
+Conformément aux Sections 16 et 33 du cahier des charges officiel :
+- **Priorité à l'autonomie (« Autonomous First ») [A]** : Le système fonctionne de manière **100 % autonome** pour le PFE. Il ne dépend d'aucun composant, base distribuée ou serveur C4ISR externe pour s'exécuter, être simulé ou être testé unitairement.
+- **Absence de dépendance opérationnelle [B]** : En tant que démonstrateur pédagogique et expérimental (*CdC Section 31*), le wargame ne constitue ni une doctrine opérationnelle ni une liaison directe à des forces réelles.
+- **Préparation aux interfaces ouvertes (« CommandView Ready ») [A]** : Le système prépare des interfaces ouvertes et découplées permettant un raccordement ultérieur au système C4ISR CommandView sans altérer le cœur de simulation.
+- *Rappel méthodologique* : Le CdC établit le besoin d’extensibilité et d’intégration future, mais ne définit pas ici le protocole technique détaillé ; celui-ci reste à décider [D].
+
+### Frontière d'intégration et futur adaptateur CommandView [C]
+L'intégration repose sur le patron architectural de la **passerelle d'adaptation (Adapter / Anti-Corruption Layer) [C]** positionnée en périphérie :
+
+```text
+┌────────────────────────────────────────────────────────┐
+│               WARGAME GÉOSPATIAL AUTONOME              │
+│                                                        │
+│   [ core ] ─── [ terrain ] ─── [ units ] ─── [ sim ]   │
+│                                                ▲       │
+│                                                │       │
+│                                             [ api ]    │
+└────────────────────────────────────────────────┬───────┘
+                                                 │
+                     Interface d'intégration     │  (Contrats ouverts REST / WebSocket)
+                     ouverte et découplée        │
+                                                 ▼
+┌────────────────────────────────────────────────────────┐
+│             FUTUR ADAPTATEUR COMMANDVIEW [C]           │
+│  (Passerelle de médiation, traduction et connectivité) │
+└────────────────────────────────────────────────┬───────┘
+                                                 │
+                     Liaison C4ISR               │  (Modalités techniques à définir
+                     externe ultérieure          │   ultérieurement [D])
+                                                 ▼
+┌────────────────────────────────────────────────────────┐
+│               SYSTÈME C4ISR COMMANDVIEW                │
+└────────────────────────────────────────────────────────┘
+```
+
+- Le cœur `sim` conserve une étanchéité totale et ignore CommandView.
+- La liaison s'établit via la façade `api` sans aucun accès direct aux structures internes de `WorldState`.
+
+### Flux conceptuels d'échange
+
+#### Flux entrants (CommandView → Adaptateur → `api` → `sim`)
+- Transmission d'ordres tactiques ou d'injections d'incidents issus d'un opérateur distant.
+- *Règle absolue* : Tout ordre externe est soumis aux mêmes contrôles d'admissibilité physique et tactique par `sim` qu'une commande locale.
+
+#### Flux sortants (`sim` → `api` → Adaptateur → CommandView)
+- Diffusion des situations perçues (Blue COP, Red COP), des événements de simulation et des indicateurs de débriefing.
+- *Règle absolue* : Respect strict du brouillard de guerre ; aucune coordonnée adverse non observée n'est transmise aux flux opérationnels joueurs.
+
+### Catégories de données potentiellement échangeables
+
+| Catégorie de données | Potentiellement exposable à CommandView ? | Niveau d'accès | Conditions, restrictions et règles de sécurité | Classification |
+|:---|:---:|:---|:---|:---:|
+| **Métadonnées de session / scénario** | **Oui (conditionnel)** | Façade `api` / Adaptateur | Potentiellement exposable selon le futur contrat d'intégration ; restreint aux données publiques (nom, emprise, statut). | **[A / C]** |
+| **Situation perçue amie (Blue / Red COP)** | **Oui (conditionnel)** | Façade `api` / Adaptateur | Potentiellement exposable selon le rôle associé au flux externe. Un flux Blue ne reçoit que ses propres unités et perceptions. | **[A / B]** |
+| **Observations adverses (Détections)** | **Oui (conditionnel)** | Façade `api` / Adaptateur | Potentiellement exposable sous forme bruitée uniquement (estimation spatiale, indice de confiance). Aucune vérité terrain brute. | **[A / B]** |
+| **Vérité terrain (`WorldState`)** | **Strictement restreint** | Façade `api` / Adaptateur | **Strictement réservé au rôle Umpire (Supervision d'arbitrage).** Totalement inaccessible aux flux joueurs. | **[A / B]** |
+| **Événements de simulation** | **Oui (conditionnel)** | Façade `api` / Adaptateur | Potentiellement exposable selon le niveau d'observabilité de l'événement et le rôle destinataire. | **[A / C]** |
+| **Ordres et décisions** | **Oui (conditionnel)** | Façade `api` / Adaptateur | Potentiellement exposable pour l'historisation des manœuvres du camp émetteur. | **[A / C]** |
+| **Traces brutes de session** | **Strictement restreint** | Façade `api` / Adaptateur | **Strictement réservé au rôle Umpire** pour l'analyse post-exercice. Jamais transmis aux flux joueurs. | **[A / B]** |
+| **Indicateurs synthétiques (Débriefing)** | **Oui (conditionnel)** | Façade `api` / Adaptateur | Potentiellement exposable selon la phase (débriefing) et les règles pédagogiques fixées par l'Umpire. | **[A / C]** |
+| **Structures mémoire C++ internes de `sim`** | **INTERDICTION STRICTE** | Aucun | **Aucune structure mémoire interne n'est exposée.** Le moteur demeure encapsulé. | **[A / B]** |
+
+### Règles de protection et invariance des privilèges
+
+> [!IMPORTANT]
+> **Règle générale d'isolation** : L’existence du futur adaptateur CommandView n’accorde aucun droit d’accès supplémentaire au système externe ; toute donnée exposée reste soumise aux mêmes règles de rôle, de perception et de confidentialité que dans l’application autonome.
+
+1. **Inviolabilité du brouillard de guerre (*CdC Sec. 6, 11 [A]*)** : L'intégration externe ne peut en aucun cas contourner les règles d'incertitude.
+2. **Autorité exclusive du moteur (*CdC Sec. 7 [A]*)** : CommandView ne peut pas forcer une transition d'état sans validation préalable de `sim`.
+3. **Imperméabilité de l'adjudication [B]** : L'adaptateur est un médiateur de protocoles ; il ne contient aucune logique de combat ni calcul de terrain.
+
+### Responsabilités des composants
+
+| Composant | Responsabilité | Ce qu’il ne doit jamais faire |
+|:---|:---|:---|
+| **`sim`** | Détenir la vérité terrain, exécuter les règles de simulation, calculer les observations et émettre des événements neutres. | Connaître Drogon, CommandView, les protocoles C4ISR ou le réseau externe. |
+| **`api`** | Exposer les interfaces ouvertes standardisées du wargame, contrôler les rôles et filtrer les flux d'information. | Contenir des dépendances rigides vers une technologie spécifique à CommandView. |
+| **Futur Adaptateur CommandView [C]** | Assurer la médiation, la conversion de formats, la traduction sémantique et la connectivité C4ISR externe. | Contenir de la logique de simulation, recalculer des lignes de vue ou contourner les filtres d'incertitude. |
+| **CommandView** | Système C4ISR externe récepteur des flux d'observabilité ou émetteur d'ordres haut niveau. | Muter directement la mémoire du wargame ou violer les règles du scénario pédagogique. |
+
+### Classification des éléments `[A] / [B] / [C] / [D]`
+- **[A] Exigences contractuelles explicites du CdC** : principe « Autonomous First — CommandView Ready » (*Sec. 16, 33*), fonctionnement 100% autonome pour le PFE (*Sec. 16*), préparation à une intégration ultérieure au moyen d’interfaces ouvertes et découplées (*Sec. 16, 33*), séparation hermétique Réel / Perçu et étanchéité des rôles Blue/Red/Umpire (*Sec. 6, 11*).
+- **[B] Contraintes logiquement déduites** : absence de dépendance opérationnelle réelle (*Sec. 31*), invariance des privilèges (l'adaptateur ne crée aucun passe-droit), isolation du moteur de simulation vis-à-vis des composants C4ISR externes.
+- **[C] Choix d'ingénierie interne du projet** : patron architectural *Adapter / Anti-Corruption Layer*, point de raccordement via la façade `api`, typologie des catégories de données échangeables.
+- **[D] Décisions futures encore ouvertes (non définies par le CdC)** : protocole concret de liaison C4ISR, normes de messages opérationnels, format d'échange et schéma de fédération d'identités.

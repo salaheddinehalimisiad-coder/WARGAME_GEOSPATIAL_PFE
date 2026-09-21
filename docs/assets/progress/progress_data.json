@@ -1,8 +1,8 @@
 {
   "total_subtasks": 247,
-  "completed_subtasks": 17,
-  "remaining_subtasks": 230,
-  "global_pct": 6.882591093117409,
+  "completed_subtasks": 18,
+  "remaining_subtasks": 229,
+  "global_pct": 7.28744939271255,
   "total_steps": 31,
   "completed_steps_count": 2,
   "remaining_steps": 29,
@@ -10,9 +10,9 @@
     "num": "02",
     "title": "Architecture fonctionnelle et technique",
     "total": 9,
-    "completed": 2,
-    "remaining": 7,
-    "pct": 22.22222222222222,
+    "completed": 3,
+    "remaining": 6,
+    "pct": 33.33333333333333,
     "status": "IN_PROGRESS",
     "is_blocked": false,
     "tasks": [
@@ -39,7 +39,7 @@
           {
             "id": "P02-T01-S03",
             "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-            "checked": false,
+            "checked": true,
             "line": 127,
             "step_num": "02",
             "step_title": "Architecture fonctionnelle et technique"
@@ -121,7 +121,7 @@
       {
         "id": "P02-T01-S03",
         "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-        "checked": false,
+        "checked": true,
         "line": 127,
         "step_num": "02",
         "step_title": "Architecture fonctionnelle et technique"
@@ -473,9 +473,9 @@
       "num": "02",
       "title": "Architecture fonctionnelle et technique",
       "total": 9,
-      "completed": 2,
-      "remaining": 7,
-      "pct": 22.22222222222222,
+      "completed": 3,
+      "remaining": 6,
+      "pct": 33.33333333333333,
       "status": "IN_PROGRESS",
       "is_blocked": false,
       "tasks": [
@@ -502,7 +502,7 @@
             {
               "id": "P02-T01-S03",
               "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-              "checked": false,
+              "checked": true,
               "line": 127,
               "step_num": "02",
               "step_title": "Architecture fonctionnelle et technique"
@@ -584,7 +584,7 @@
         {
           "id": "P02-T01-S03",
           "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-          "checked": false,
+          "checked": true,
           "line": 127,
           "step_num": "02",
           "step_title": "Architecture fonctionnelle et technique"
@@ -5072,17 +5072,17 @@
       "line": 126,
       "step_num": "02",
       "step_title": "Architecture fonctionnelle et technique"
-    }
-  ],
-  "pending_subtask_list": [
+    },
     {
       "id": "P02-T01-S03",
       "title": "Définir la frontière d'intégration future avec le système C4ISR CommandView",
-      "checked": false,
+      "checked": true,
       "line": 127,
       "step_num": "02",
       "step_title": "Architecture fonctionnelle et technique"
-    },
+    }
+  ],
+  "pending_subtask_list": [
     {
       "id": "P02-T01-S04",
       "title": "Rédiger le document descriptif des modules dans docs/ARCHITECTURE.md",

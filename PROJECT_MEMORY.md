@@ -2,8 +2,8 @@
 
 ## État actuel du projet
 **Étape validée :** ÉTAPE 01 — Analyse détaillée du cahier des charges (`PASS`, 7/7 sous-tâches terminées)<br>
-**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 2/9 sous-tâches terminées : P02-T01-S01 & P02-T01-S02 `PASS`)<br>
-**Progression globale :** 6,88 % (17 / 247 sous-tâches)<br>
+**Étape active :** ÉTAPE 02 — Architecture fonctionnelle et technique (`IN_PROGRESS`, 3/9 sous-tâches terminées : P02-T01-S01, S02, S03 `PASS`)<br>
+**Progression globale :** 7,29 % (18 / 247 sous-tâches)<br>
 **Étapes validées (PASS) :** 2 / 31 (ÉTAPE 00, ÉTAPE 01)<br>
 **Branche active :** `phase/02-architecture` — **Ne pas fusionner avant validation.**
 
@@ -29,8 +29,10 @@
 7. **Déterminisme** via PRNG `std::mt19937_64` + seed de scénario — **Proposition [C] à confirmer en ÉTAPE 02**.
 8. **Découpage modulaire C++20 `core / terrain / units / sim / api`** validé formellement (P02-T01-S01 = `PASS`) : choix d'ingénierie interne [C], graphe acyclique strict (DAG), propriété univoque des données (`terrain` possède les données géographiques chargées, `sim` possède le `WorldState`), isolation hermétique Réel/Perçu et rôles Blue/Red/Umpire.
 9. **Interfaces de services REST et WebSocket sous Drogon** validées formellement (P02-T01-S02 = `PASS`) : 12 opérations REST réparties en 9 familles, 6 flux WebSocket réactifs, distinction stricte entre dépendance logicielle statique (`api → sim`) et flux runtime via abstractions d'événements, isolation absolue de la vérité terrain et des traces brutes réservées à l'Arbitre, contrat documentable avec OpenAPI [C].
+10. **Frontière d'intégration CommandView (« Autonomous First — CommandView Ready »)** validée formellement (P02-T01-S03 = `PASS`) : fonctionnement 100 % autonome du wargame préservé sans dépendance opérationnelle réelle, patron d'adaptateur périphérique (Anti-Corruption Layer) sans couplage avec `sim`, invariance stricte des privilèges (aucun passe-droit pour le système externe), et protection absolue du brouillard de guerre et de l'état réel.
 
 ## Décisions encore ouvertes (à confirmer en ÉTAPE 02)
+- Protocole concret de liaison C4ISR et normes de messages opérationnels CommandView [D].
 - Choix définitif de la spécification OpenAPI (version 3.0 vs 3.1) [D].
 - Format concret de sérialisation des charges utiles (JSON vs binaire optimisé) [D].
 - Mécanisme concret de remontée d'événements `sim → api` (observer synchrone vs file asynchrone) [D].
@@ -66,4 +68,4 @@
 - Ne pas commencer une étape fonctionnelle pendant une phase documentaire/gouvernance.
 
 ## Travaux restant à faire
-- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 7 sous-tâches restantes, prochaine : P02-T01-S03).
+- ÉTAPE 02 : Architecture fonctionnelle et technique (`IN_PROGRESS`, 6 sous-tâches restantes, prochaine : P02-T01-S04).
